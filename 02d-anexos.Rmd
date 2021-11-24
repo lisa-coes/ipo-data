@@ -1,0 +1,28 @@
+## Anexos {-}
+
+```{r tabqrp, echo=FALSE, message=FALSE, warning=FALSE}
+pacman::p_load(dplyr,kntr,kableExtra)
+# Función para que las tablas renderizen tanto en html como pdf
+table_format = if(knitr::is_html_output()) { # Usar en argumento "format=" de kable
+  "html"
+} else if(knitr::is_latex_output()) {
+  "latex"
+}
+
+# Título tabla
+cap1 <- "Algunas situaciones de QRP"
+
+# Crear tabla
+tab01 <- read.csv(file = "input/tables/tabqrp.csv",header = 1,sep = ",",encoding = "UTF-8") # Leer .csv con estructura de la tabla
+cnames <- c("Dimensión","Práctica") # Nombre de las columnas
+kable(tab01,table_format,booktabs = T, linesep = "",col.names = cnames, caption = cap1) %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"), # Argumento para mantener posición de la tabla en esta sección del documento
+    position = "center",
+    font_size = 10,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "5 cm", ) %>%
+  column_spec(column = 2,width = "5 cm") %>%
+  collapse_rows(columns = 1:2,valign = "middle") # Para colapsar filas con el mismo contenido
+```
