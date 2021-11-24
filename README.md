@@ -1,2 +1,4 @@
-# lisa-book
-Ciencia Social Abierta: Apertura, Transparencia y Reproducibilidad en las Ciencias Sociales
+# Protocolo Apertura de Datos Sociales (PADSOC)
+
+Protocolo para la Apertura de Datos Sociales
+
