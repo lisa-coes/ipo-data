@@ -1,0 +1,1565 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10,
+  landscape,
+  legalpaper]{article}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Libro de códigos},
+  pdfauthor={Fondecyt regular N°1160921},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[left=0.1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{times}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Libro de códigos}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Estudio ``Meritocracia y Redistribución''}
+\author{Fondecyt regular N°1160921}
+\date{}
+
+\begin{document}
+\maketitle
+
+\huge
+
+\normalsize
+
+\hypertarget{ola-1}{%
+\section{Ola 1}\label{ola-1}}
+
+\huge
+
+\normalsize
+
+\huge
+
+\begin{table}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}{l>{\raggedright\arraybackslash}p{10cm}}
+\toprule
+  & Etiqueta\\
+\midrule
+ResponseId & Response ID\\
+ticket & ticket\\
+Finished & Finished\\
+Progress & Progress\\
+Intro & PROYECTO ECONOMÍA MORAL DE LA MERITOCRACIA Y PREFERENCIAS REDISTRIBUTIVAS
+ 
+
+INFORMACIÓN
+
+ 
+
+Usted ha sido invitado(a) a participar en la investigación “Economía moral de la meritocracia y preferencias redistributivas.” Su objetivo es analizar la relación entre creencias en la meritocracia y preferencias sobre la redistribución de recursos en Chile. Usted ha sido seleccionado(a) porque buscamos representar a la población chilena en su diversidad.
+
+
+
+El investigador responsable de este estudio es el Prof. Juan Carlos Castillo de la Facultad de Ciencias Sociales de la Universidad de Chile. La investigación es patrocinada por el Fondo Nacional de Investigación Científica y Tecnológica - FONDECYT. Para decidir participar en esta investigación, es importante que considere la siguiente:
+ 
+
+Participación: Su participación consistirá que se le pedirá que responda un cuestionario elaborado por el equipo de investigación para conocer su opinión y experiencia sobre diversos temas relacionados con e\\
+\addlinespace
+get\_ah\_1 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - Tener padres con altos niveles de educación\\
+get\_ah\_2 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - Tener ambición\\
+get\_ah\_3 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - Conocer a las personas adecuadas\\
+get\_ah\_4 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - Tener contactos políticos\\
+get\_ah\_5 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - La raza u origen étnico de las personas\\
+\addlinespace
+get\_ah\_6 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - El sexo de las personas, ser hombre o mujer\\
+get\_ah\_DO\_1 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order Tener padres con altos niveles de educación\\
+get\_ah\_DO\_2 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order Tener ambición\\
+get\_ah\_DO\_3 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order Conocer a las personas adecuadas\\
+get\_ah\_DO\_4 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order Tener contactos políticos\\
+\addlinespace
+get\_ah\_DO\_5 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order La raza u origen étnico de las personas\\
+get\_ah\_DO\_6 & Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order El sexo de las personas, ser hombre o mujer\\
+meritv01\_perc\_effort & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan logran obtener mayores recompensas que quienes se esfuerzan menos.\\
+meritv01\_perc\_talent & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento logran obtener mayores recompensas que quienes poseen menos talento.\\
+meritv01\_perc\_wpart & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen padres ricos logran salir adelante.\\
+\addlinespace
+meritv01\_perc\_netw & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen buenos contactos logran salir adelante.\\
+meritv01\_pref\_effort & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan deberían obtener mayores recompensas que quienes se esfuerzan menos.\\
+meritv01\_pref\_talent & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento deberían obtener mayores recompensas que quienes poseen menos talento.\\
+meritv01\_pref\_wpart & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen padres ricos salgan adelante.\\
+meritv01\_pref\_netw & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen buenos contactos salgan adelante.\\
+\addlinespace
+merit\_perc\_scale & Para salir adelante en Chile actualmente. ¿Qué es más importante, el talento o el esfuerzo de las personas? Marque en la siguiente escala entre 1 y 7 según sea su preferencia.\\
+Q3\_1 & Y, ¿Qué debería ser más importante?\\
+Q4\_1 & Y en su caso personal, los logros y recompensas que he obtenido en la vida se deben principalmente a:\\
+meritv02\_perc\_effort & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan logran obtener mayores recompensas que quienes se esfuerzan menos.\\
+meritv02\_pref\_effort & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan deberían obtener mayores recompensas que quienes se esfuerzan menos.\\
+\addlinespace
+meritv02\_perc\_talent & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento logran obtener mayores recompensas que quienes poseen menos talento.\\
+meritv02\_pref\_talent & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento deberían obtener mayores recompensas que quienes poseen menos talento.\\
+meritv02\_perc\_wpart & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen padres ricos logran salir adelante.\\
+meritv02\_pref\_wpart & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen padres ricos salgan adelante.\\
+meritv02\_perc\_netw & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen buenos contactos logran salir adelante.\\
+\addlinespace
+meritv02\_pref\_netw & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen buenos contactos salgan adelante.\\
+merit\_perc\_scale.0 & Para salir adelante en Chile actualmente. ¿Qué es más importante, el talento o el esfuerzo de las personas? Marque en la siguiente escala entre 1 y 7 según sea su preferencia.\\
+Q205\_1 & Y, ¿Qué debería ser más importante?\\
+Q206\_1 & Y en su caso personal, los logros y recompensas que he obtenido en la vida se deben principalmente a:\\
+meritv03\_perc\_effort & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan logran obtener mayores recompensas que quienes se esfuerzan menos.\\
+\addlinespace
+meritv03\_perc\_talent & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento logran obtener mayores recompensas que quienes poseen menos talento.\\
+meritv03\_perc\_wpart & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen padres ricos logran salir adelante.\\
+meritv03\_perc\_netw & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen buenos contactos logran salir adelante.\\
+meritv03\_pref\_effort & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan deberían obtener mayores recompensas que quienes se esfuerzan menos.\\
+meritv03\_pref\_talent & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento deberían obtener mayores recompensas que quienes poseen menos talento.\\
+\addlinespace
+meritv03\_pref\_wpart & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen padres ricos salgan adelante.\\
+meritv03\_pref\_netw & Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen buenos contactos salgan adelante.\\
+merit\_perc\_scale.1 & Para salir adelante en Chile actualmente. ¿Qué es más importante, el talento o el esfuerzo de las personas? Marque en la siguiente escala entre 1 y 7 según sea su preferencia.\\
+Q209\_1 & Y, ¿Qué debería ser más importante?\\
+Q210\_1 & Y en su caso personal, los logros y recompensas que he obtenido en la vida se deben principalmente a:\\
+\addlinespace
+sal\_perc\_1 & Quisiéramos saber cuánto dinero cree usted que obtienen algunas ocupaciones. Muchas personas no están seguras al respecto, pero su mejor estimación será suficiente.  ¿Cuánto cree UD. que gana al mes…?. - El gerente de una Gran Empresa Nacional\\
+sal\_perc\_2 & Quisiéramos saber cuánto dinero cree usted que obtienen algunas ocupaciones. Muchas personas no están seguras al respecto, pero su mejor estimación será suficiente.  ¿Cuánto cree UD. que gana al mes…?. - Un obrero no calificado de una fábrica\\
+sal\_just\_1 & Ahora, quisiéramos saber cuánto dinero cree usted que deberían obtener estas ocupaciones. Al igual que anteriormente, su mejor estimación es suficiente. ¿Cuánto cree usted que debería ganar al mes ...?. - El gerente de una Gran Empresa Nacional\\
+sal\_just\_2 & Ahora, quisiéramos saber cuánto dinero cree usted que deberían obtener estas ocupaciones. Al igual que anteriormente, su mejor estimación es suficiente. ¿Cuánto cree usted que debería ganar al mes ...?. - Un obrero no calificado de una fábrica\\
+percep\_pov & ¿Usted
+cree que actualmente en Chile la cantidad de personas pobres es mayor, igual o
+menor que hace 20 años atrás?\\
+\addlinespace
+pospol\_1 & Cambiando de tema, tradicionalmente en nuestro país la gente define las posiciones políticas como más cercanas a la izquierda, al centro o a la derecha. Usando una escala de 0 a 10 donde 0 es ser de “izquierda”, 5 es ser de “centro” y 10 es ser de “derecha”: - ¿Dónde se ubicaría usted en esta escala?\\
+egal\_1 & ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Uno de los mayores problemas que tiene Chile es que no le damos a todas las personas las mismas oportunidades\\
+egal\_2 & ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Si en Chile hubiera más igualdad, tendríamos muchos menos problemas\\
+egal\_5 & ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Una mayor igualdad de ingresos le permitiría a la mayoría de las personas vivir mejor\\
+egal\_6 & ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Los ingresos deberían hacerse más iguales porque las necesidades de cada familia, como salud y educación, son las mismas\\
+\addlinespace
+igualitarismo\_DO\_egal\_1 & ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Display Order egal\_1\\
+igualitarismo\_DO\_egal\_2 & ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Display Order egal\_2\\
+igualitarismo\_DO\_egal\_5 & ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Display Order egal\_5\\
+igualitarismo\_DO\_egal\_6 & ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Display Order egal\_6\\
+edad & ¿Cua´l es su edad?\\
+\addlinespace
+sexo & ¿Cuál es su sexo?\\
+educat & ¿Cua´l es su mayor nivel educacional alcanzado?\\
+edcep & ¿Cua´l es su mayor nivel educacional alcanzado?\\
+ingresos & De los siguientes tramos de ingresos mensuales que se presentan, ¿podri´a Ud. indicarme en cua´l de ellos se encuentra su hogar, considerando todos los ingresos li´quidos por sueldos y salarios de todas las personas que trabajan remuneradamente, jubilaciones, pensiones, aportes de parientes o amigos, arriendos y otros?\\
+ess01\_1 & Estatus subjetivo\\
+\addlinespace
+ess02\_1 & Estatus subjetivo familia origen\\
+ess03\_1 & Estatus subjetivo hijos\\
+estlab & ¿Cuál de estas situaciones describe mejor su actividad principal durante el último mes?\\
+comuna & ¿En qué comuna vive?\\
+StartDate & Start Date\\
+\addlinespace
+EndDate & End Date\\
+Duration\_\_in\_seconds\_ & Duration (in seconds)\\
+RecordedDate & Recorded Date\\
+IPAddress & IP Address\\
+Status & Response Type\\
+\addlinespace
+RecipientLastName & Recipient Last Name\\
+RecipientFirstName & Recipient First Name\\
+RecipientEmail & Recipient Email\\
+ExternalReference & External Data Reference\\
+LocationLatitude & Location Latitude\\
+\addlinespace
+LocationLongitude & Location Longitude\\
+DistributionChannel & Distribution Channel\\
+UserLanguage & User Language\\
+FL\_21\_DO\_merit\_perc\_pref\_julio19v01 & FL\_21 - Block Randomizer - Display Order merit\_perc\_pref\_julio19v01\\
+FL\_21\_DO\_merit\_perc\_pref\_julio19v02 & FL\_21 - Block Randomizer - Display Order merit\_perc\_pref\_julio19v02\\
+\addlinespace
+FL\_21\_DO\_merit\_perc\_pref\_julio19v03 & FL\_21 - Block Randomizer - Display Order merit\_perc\_pref\_julio19v03\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\normalsize
+
+\huge
+
+\normalsize
+
+\tiny
+
+\begin{verbatim}
+## 
+## Response ID (ResponseId) <character>
+## # total N=2457  valid N=2457  mean=1229.00  sd=709.42
+## 
+## Value  |    N | Raw % | Valid % | Cum. %
+## ----------------------------------------
+## n < 10 | 2457 |   100 |     100 |    100
+## <NA>   |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## ticket (ticket) <character>
+## # total N=2457  valid N=2457  mean=1210.64  sd=698.47
+## 
+## Value  |    N | Raw % | Valid % | Cum. %
+## ----------------------------------------
+## n < 10 | 2457 |   100 |     100 |    100
+## <NA>   |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## Finished (Finished) <numeric>
+## # total N=2457  valid N=2457  mean=0.94  sd=0.23
+## 
+## Value | Label |    N | Raw % | Valid % | Cum. %
+## -----------------------------------------------
+##     0 | False |  136 |  5.54 |    5.54 |   5.54
+##     1 |  True | 2321 | 94.46 |   94.46 | 100.00
+##  <NA> |  <NA> |    0 |  0.00 |    <NA> |   <NA>
+## 
+## 
+## Progress (Progress) <numeric>
+## # total N=2457  valid N=2457  mean=96.63  sd=15.32
+## 
+## Value  |    N | Raw % | Valid % | Cum. %
+## ----------------------------------------
+## 3      |   12 |  0.49 |    0.49 |   0.49
+## 20     |   40 |  1.63 |    1.63 |   2.12
+## 23     |   10 |  0.41 |    0.41 |   2.52
+## 53     |   20 |  0.81 |    0.81 |   3.34
+## 57     |   10 |  0.41 |    0.41 |   3.74
+## 100    | 2321 | 94.46 |   94.46 |  98.21
+## n < 10 |   44 |  1.79 |    1.79 | 100.00
+## <NA>   |    0 |  0.00 |    <NA> |   <NA>
+## 
+## 
+## PROYECTO ECONOMÍA MORAL DE LA MERITOCRACIA Y PREFERENCIAS REDISTRIBUTIVAS
+##  
+## 
+## INFORMACIÓN
+## 
+##  
+## 
+## Usted ha sido invitado(a) a participar en la investigación “Economía moral de la meritocracia y preferencias redistributivas.” Su objetivo es analizar la relación entre creencias en la meritocracia y preferencias sobre la redistribución de recursos en Chile. Usted ha sido seleccionado(a) porque buscamos representar a la población chilena en su diversidad.
+## 
+## 
+## 
+## El investigador responsable de este estudio es el Prof. Juan Carlos Castillo de la Facultad de Ciencias Sociales de la Universidad de Chile. La investigación es patrocinada por el Fondo Nacional de Investigación Científica y Tecnológica - FONDECYT. Para decidir participar en esta investigación, es importante que considere la siguiente:
+##  
+## 
+## Participación: Su participación consistirá que se le pedirá que responda un cuestionario elaborado por el equipo de investigación para conocer su opinión y experiencia sobre diversos temas relacionados con e (Intro) <numeric>
+## # total N=2457  valid N=2457  mean=1.09  sd=0.29
+## 
+## Value |                                Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------------
+##     1 |    ACEPTO participar en este estudio | 2236 | 91.01 |   91.01 |  91.01
+##     2 | NO ACEPTO participar en este estudio |  221 |  8.99 |    8.99 | 100.00
+##  <NA> |                                 <NA> |    0 |  0.00 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - Tener padres con altos niveles de educación (get_ah_1) <numeric>
+## # total N=2457  valid N=2173  mean=2.98  sd=1.23
+## 
+## Value |               Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------
+##     1 |    No Es importante | 272 | 11.07 |   12.52 |  12.52
+##     2 |   No muy importante | 563 | 22.91 |   25.91 |  38.43
+##     3 | Bastante importante | 552 | 22.47 |   25.40 |  63.83
+##     4 |      Muy importante | 509 | 20.72 |   23.42 |  87.25
+##     5 |            Esencial | 277 | 11.27 |   12.75 | 100.00
+##  <NA> |                <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - Tener ambición (get_ah_2) <numeric>
+## # total N=2457  valid N=2173  mean=3.54  sd=1.10
+## 
+## Value |               Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------
+##     1 |    No Es importante |  94 |  3.83 |    4.33 |   4.33
+##     2 |   No muy importante | 281 | 11.44 |   12.93 |  17.26
+##     3 | Bastante importante | 643 | 26.17 |   29.59 |  46.85
+##     4 |      Muy importante | 662 | 26.94 |   30.46 |  77.31
+##     5 |            Esencial | 493 | 20.07 |   22.69 | 100.00
+##  <NA> |                <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - Conocer a las personas adecuadas (get_ah_3) <numeric>
+## # total N=2457  valid N=2173  mean=3.57  sd=1.12
+## 
+## Value |               Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------
+##     1 |    No Es importante | 100 |  4.07 |    4.60 |   4.60
+##     2 |   No muy importante | 274 | 11.15 |   12.61 |  17.21
+##     3 | Bastante importante | 602 | 24.50 |   27.70 |  44.91
+##     4 |      Muy importante | 682 | 27.76 |   31.39 |  76.30
+##     5 |            Esencial | 515 | 20.96 |   23.70 | 100.00
+##  <NA> |                <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - Tener contactos políticos (get_ah_4) <numeric>
+## # total N=2457  valid N=2173  mean=2.57  sd=1.37
+## 
+## Value |               Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------
+##     1 |    No Es importante | 624 | 25.40 |   28.72 |  28.72
+##     2 |   No muy importante | 566 | 23.04 |   26.05 |  54.76
+##     3 | Bastante importante | 359 | 14.61 |   16.52 |  71.28
+##     4 |      Muy importante | 366 | 14.90 |   16.84 |  88.13
+##     5 |            Esencial | 258 | 10.50 |   11.87 | 100.00
+##  <NA> |                <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - La raza u origen étnico de las personas (get_ah_5) <numeric>
+## # total N=2457  valid N=2173  mean=2.33  sd=1.29
+## 
+## Value |               Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------
+##     1 |    No Es importante | 756 | 30.77 |   34.79 |  34.79
+##     2 |   No muy importante | 596 | 24.26 |   27.43 |  62.22
+##     3 | Bastante importante | 340 | 13.84 |   15.65 |  77.86
+##     4 |      Muy importante | 314 | 12.78 |   14.45 |  92.31
+##     5 |            Esencial | 167 |  6.80 |    7.69 | 100.00
+##  <NA> |                <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - El sexo de las personas, ser hombre o mujer (get_ah_6) <numeric>
+## # total N=2457  valid N=2173  mean=2.29  sd=1.27
+## 
+## Value |               Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------
+##     1 |    No Es importante | 789 | 32.11 |   36.31 |  36.31
+##     2 |   No muy importante | 551 | 22.43 |   25.36 |  61.67
+##     3 | Bastante importante | 383 | 15.59 |   17.63 |  79.29
+##     4 |      Muy importante | 304 | 12.37 |   13.99 |  93.28
+##     5 |            Esencial | 146 |  5.94 |    6.72 | 100.00
+##  <NA> |                <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order Tener padres con altos niveles de educación (get_ah_DO_1) <numeric>
+## # total N=2457  valid N=2173  mean=3.56  sd=1.68
+## 
+## Value |   N | Raw % | Valid % | Cum. %
+## --------------------------------------
+##     1 | 329 | 13.39 |   15.14 |  15.14
+##     2 | 348 | 14.16 |   16.01 |  31.16
+##     3 | 360 | 14.65 |   16.57 |  47.72
+##     4 | 410 | 16.69 |   18.87 |  66.59
+##     5 | 364 | 14.81 |   16.75 |  83.34
+##     6 | 362 | 14.73 |   16.66 | 100.00
+##  <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order Tener ambición (get_ah_DO_2) <numeric>
+## # total N=2457  valid N=2173  mean=3.48  sd=1.69
+## 
+## Value |   N | Raw % | Valid % | Cum. %
+## --------------------------------------
+##     1 | 357 | 14.53 |   16.43 |  16.43
+##     2 | 359 | 14.61 |   16.52 |  32.95
+##     3 | 391 | 15.91 |   17.99 |  50.94
+##     4 | 369 | 15.02 |   16.98 |  67.92
+##     5 | 347 | 14.12 |   15.97 |  83.89
+##     6 | 350 | 14.25 |   16.11 | 100.00
+##  <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order Conocer a las personas adecuadas (get_ah_DO_3) <numeric>
+## # total N=2457  valid N=2173  mean=3.49  sd=1.70
+## 
+## Value |   N | Raw % | Valid % | Cum. %
+## --------------------------------------
+##     1 | 373 | 15.18 |   17.17 |  17.17
+##     2 | 348 | 14.16 |   16.01 |  33.18
+##     3 | 367 | 14.94 |   16.89 |  50.07
+##     4 | 360 | 14.65 |   16.57 |  66.64
+##     5 | 386 | 15.71 |   17.76 |  84.40
+##     6 | 339 | 13.80 |   15.60 | 100.00
+##  <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order Tener contactos políticos (get_ah_DO_4) <numeric>
+## # total N=2457  valid N=2173  mean=3.49  sd=1.72
+## 
+## Value |   N | Raw % | Valid % | Cum. %
+## --------------------------------------
+##     1 | 371 | 15.10 |   17.07 |  17.07
+##     2 | 365 | 14.86 |   16.80 |  33.87
+##     3 | 353 | 14.37 |   16.24 |  50.12
+##     4 | 355 | 14.45 |   16.34 |  66.45
+##     5 | 366 | 14.90 |   16.84 |  83.29
+##     6 | 363 | 14.77 |   16.71 | 100.00
+##  <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order La raza u origen étnico de las personas (get_ah_DO_5) <numeric>
+## # total N=2457  valid N=2173  mean=3.52  sd=1.73
+## 
+## Value |   N | Raw % | Valid % | Cum. %
+## --------------------------------------
+##     1 | 353 | 14.37 |   16.24 |  16.24
+##     2 | 390 | 15.87 |   17.95 |  34.19
+##     3 | 346 | 14.08 |   15.92 |  50.12
+##     4 | 331 | 13.47 |   15.23 |  65.35
+##     5 | 359 | 14.61 |   16.52 |  81.87
+##     6 | 394 | 16.04 |   18.13 | 100.00
+##  <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Para surgir en la vida, ¿cuan importante cree ud. que es...? - Display Order El sexo de las personas, ser hombre o mujer (get_ah_DO_6) <numeric>
+## # total N=2457  valid N=2173  mean=3.46  sd=1.73
+## 
+## Value |   N | Raw % | Valid % | Cum. %
+## --------------------------------------
+##     1 | 390 | 15.87 |   17.95 |  17.95
+##     2 | 363 | 14.77 |   16.71 |  34.65
+##     3 | 356 | 14.49 |   16.38 |  51.04
+##     4 | 348 | 14.16 |   16.01 |  67.05
+##     5 | 351 | 14.29 |   16.15 |  83.20
+##     6 | 365 | 14.86 |   16.80 | 100.00
+##  <NA> | 284 | 11.56 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan logran obtener mayores recompensas que quienes se esfuerzan menos. (meritv01_perc_effort) <numeric>
+## # total N=2457  valid N=713  mean=3.16  sd=1.36
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |  109 |  4.44 |   15.29 |  15.29
+##     2 |                  En desacuerdo |  137 |  5.58 |   19.21 |  34.50
+##     3 | Ni de acuerdo ni en desacuerdo |  145 |  5.90 |   20.34 |  54.84
+##     4 |                     De acuerdo |  173 |  7.04 |   24.26 |  79.10
+##     5 |          Totalmente de acuerdo |  149 |  6.06 |   20.90 | 100.00
+##  <NA> |                           <NA> | 1744 | 70.98 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento logran obtener mayores recompensas que quienes poseen menos talento. (meritv01_perc_talent) <numeric>
+## # total N=2457  valid N=712  mean=2.98  sd=1.12
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   74 |  3.01 |   10.39 |  10.39
+##     2 |                  En desacuerdo |  167 |  6.80 |   23.46 |  33.85
+##     3 | Ni de acuerdo ni en desacuerdo |  237 |  9.65 |   33.29 |  67.13
+##     4 |                     De acuerdo |  168 |  6.84 |   23.60 |  90.73
+##     5 |          Totalmente de acuerdo |   66 |  2.69 |    9.27 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen padres ricos logran salir adelante. (meritv01_perc_wpart) <numeric>
+## # total N=2457  valid N=712  mean=3.60  sd=1.36
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   83 |  3.38 |   11.66 |  11.66
+##     2 |                  En desacuerdo |   73 |  2.97 |   10.25 |  21.91
+##     3 | Ni de acuerdo ni en desacuerdo |  136 |  5.54 |   19.10 |  41.01
+##     4 |                     De acuerdo |  174 |  7.08 |   24.44 |  65.45
+##     5 |          Totalmente de acuerdo |  246 | 10.01 |   34.55 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen buenos contactos logran salir adelante. (meritv01_perc_netw) <numeric>
+## # total N=2457  valid N=712  mean=3.73  sd=1.27
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   72 |  2.93 |   10.11 |  10.11
+##     2 |                  En desacuerdo |   51 |  2.08 |    7.16 |  17.28
+##     3 | Ni de acuerdo ni en desacuerdo |  106 |  4.31 |   14.89 |  32.16
+##     4 |                     De acuerdo |  250 | 10.18 |   35.11 |  67.28
+##     5 |          Totalmente de acuerdo |  233 |  9.48 |   32.72 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan deberían obtener mayores recompensas que quienes se esfuerzan menos. (meritv01_pref_effort) <numeric>
+## # total N=2457  valid N=712  mean=3.91  sd=1.22
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   57 |  2.32 |    8.01 |   8.01
+##     2 |                  En desacuerdo |   39 |  1.59 |    5.48 |  13.48
+##     3 | Ni de acuerdo ni en desacuerdo |  108 |  4.40 |   15.17 |  28.65
+##     4 |                     De acuerdo |  213 |  8.67 |   29.92 |  58.57
+##     5 |          Totalmente de acuerdo |  295 | 12.01 |   41.43 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento deberían obtener mayores recompensas que quienes poseen menos talento. (meritv01_pref_talent) <numeric>
+## # total N=2457  valid N=712  mean=3.27  sd=1.17
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   67 |  2.73 |    9.41 |   9.41
+##     2 |                  En desacuerdo |   99 |  4.03 |   13.90 |  23.31
+##     3 | Ni de acuerdo ni en desacuerdo |  243 |  9.89 |   34.13 |  57.44
+##     4 |                     De acuerdo |  184 |  7.49 |   25.84 |  83.29
+##     5 |          Totalmente de acuerdo |  119 |  4.84 |   16.71 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen padres ricos salgan adelante. (meritv01_pref_wpart) <numeric>
+## # total N=2457  valid N=712  mean=2.55  sd=1.12
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |  164 |  6.67 |   23.03 |  23.03
+##     2 |                  En desacuerdo |  162 |  6.59 |   22.75 |  45.79
+##     3 | Ni de acuerdo ni en desacuerdo |  241 |  9.81 |   33.85 |  79.63
+##     4 |                     De acuerdo |  119 |  4.84 |   16.71 |  96.35
+##     5 |          Totalmente de acuerdo |   26 |  1.06 |    3.65 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen buenos contactos salgan adelante. (meritv01_pref_netw) <numeric>
+## # total N=2457  valid N=712  mean=2.33  sd=1.06
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |  193 |  7.86 |   27.11 |  27.11
+##     2 |                  En desacuerdo |  201 |  8.18 |   28.23 |  55.34
+##     3 | Ni de acuerdo ni en desacuerdo |  223 |  9.08 |   31.32 |  86.66
+##     4 |                     De acuerdo |   79 |  3.22 |   11.10 |  97.75
+##     5 |          Totalmente de acuerdo |   16 |  0.65 |    2.25 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Para salir adelante en Chile actualmente. ¿Qué es más importante, el talento o el esfuerzo de las personas? Marque en la siguiente escala entre 1 y 7 según sea su preferencia. (merit_perc_scale) <numeric>
+## # total N=2457  valid N=704  mean=4.65  sd=1.59
+## 
+## Value |               Label |    N | Raw % | Valid % | Cum. %
+## -------------------------------------------------------------
+##     1 |     (1)  El talento |   35 |  1.42 |    4.97 |   4.97
+##     2 |                 (2) |   21 |  0.85 |    2.98 |   7.95
+##     3 |                 (3) |   17 |  0.69 |    2.41 |  10.37
+##     4 | (4) Ambos por igual |  371 | 15.10 |   52.70 |  63.07
+##     5 |                 (5) |   54 |  2.20 |    7.67 |  70.74
+##     6 |                 (6) |   48 |  1.95 |    6.82 |  77.56
+##     7 |     (7) El esfuerzo |  158 |  6.43 |   22.44 | 100.00
+##  <NA> |                <NA> | 1753 | 71.35 |    <NA> |   <NA>
+## 
+## 
+## Y, ¿Qué debería ser más importante? (Q3_1) <numeric>
+## # total N=2457  valid N=701  mean=4.66  sd=1.59
+## 
+## Value  |                Label |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------------------------------
+## 1      |      (1)  El talento |   38 |  1.55 |    5.42 |   5.42
+## 3      |                  (3) |   13 |  0.53 |    1.85 |   7.28
+## 4      | (4)  Ambos por igual |  401 | 16.32 |   57.20 |  64.48
+## 5      |                  (5) |   36 |  1.47 |    5.14 |  69.61
+## 6      |                  (6) |   39 |  1.59 |    5.56 |  75.18
+## 7      |     (7)  El esfuerzo |  165 |  6.72 |   23.54 |  98.72
+## n < 10 |               <none> |    9 |  0.37 |    1.28 | 100.00
+## <NA>   |                 <NA> | 1756 | 71.47 |    <NA> |   <NA>
+## 
+## 
+## Y en su caso personal, los logros y recompensas que he obtenido en la vida se deben principalmente a: (Q4_1) <numeric>
+## # total N=2457  valid N=705  mean=5.26  sd=1.56
+## 
+## Value  |               Label |    N | Raw % | Valid % | Cum. %
+## --------------------------------------------------------------
+## 1      |     (1)  El talento |   13 |  0.53 |    1.84 |   1.84
+## 3      |                 (3) |   14 |  0.57 |    1.99 |   3.83
+## 4      | (4) Ambos por igual |  303 | 12.33 |   42.98 |  46.81
+## 5      |                 (5) |   49 |  1.99 |    6.95 |  53.76
+## 6      |                 (6) |   52 |  2.12 |    7.38 |  61.13
+## 7      |    (7)  El esfuerzo |  267 | 10.87 |   37.87 |  99.01
+## n < 10 |              <none> |    7 |  0.28 |    0.99 | 100.00
+## <NA>   |                <NA> | 1752 | 71.31 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan logran obtener mayores recompensas que quienes se esfuerzan menos. (meritv02_perc_effort) <numeric>
+## # total N=2457  valid N=717  mean=3.10  sd=1.40
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |  124 |  5.05 |   17.29 |  17.29
+##     2 |                  En desacuerdo |  142 |  5.78 |   19.80 |  37.10
+##     3 | Ni de acuerdo ni en desacuerdo |  141 |  5.74 |   19.67 |  56.76
+##     4 |                     De acuerdo |  155 |  6.31 |   21.62 |  78.38
+##     5 |          Totalmente de acuerdo |  155 |  6.31 |   21.62 | 100.00
+##  <NA> |                           <NA> | 1740 | 70.82 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan deberían obtener mayores recompensas que quienes se esfuerzan menos. (meritv02_pref_effort) <numeric>
+## # total N=2457  valid N=717  mean=3.73  sd=1.35
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   94 |  3.83 |   13.11 |  13.11
+##     2 |                  En desacuerdo |   43 |  1.75 |    6.00 |  19.11
+##     3 | Ni de acuerdo ni en desacuerdo |   81 |  3.30 |   11.30 |  30.40
+##     4 |                     De acuerdo |  243 |  9.89 |   33.89 |  64.30
+##     5 |          Totalmente de acuerdo |  256 | 10.42 |   35.70 | 100.00
+##  <NA> |                           <NA> | 1740 | 70.82 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento logran obtener mayores recompensas que quienes poseen menos talento. (meritv02_perc_talent) <numeric>
+## # total N=2457  valid N=717  mean=3.03  sd=1.11
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   69 |  2.81 |    9.62 |   9.62
+##     2 |                  En desacuerdo |  160 |  6.51 |   22.32 |  31.94
+##     3 | Ni de acuerdo ni en desacuerdo |  237 |  9.65 |   33.05 |  64.99
+##     4 |                     De acuerdo |  185 |  7.53 |   25.80 |  90.79
+##     5 |          Totalmente de acuerdo |   66 |  2.69 |    9.21 | 100.00
+##  <NA> |                           <NA> | 1740 | 70.82 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento deberían obtener mayores recompensas que quienes poseen menos talento. (meritv02_pref_talent) <numeric>
+## # total N=2457  valid N=717  mean=3.13  sd=1.16
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   69 |  2.81 |    9.62 |   9.62
+##     2 |                  En desacuerdo |  134 |  5.45 |   18.69 |  28.31
+##     3 | Ni de acuerdo ni en desacuerdo |  245 |  9.97 |   34.17 |  62.48
+##     4 |                     De acuerdo |  172 |  7.00 |   23.99 |  86.47
+##     5 |          Totalmente de acuerdo |   97 |  3.95 |   13.53 | 100.00
+##  <NA> |                           <NA> | 1740 | 70.82 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen padres ricos logran salir adelante. (meritv02_perc_wpart) <numeric>
+## # total N=2457  valid N=717  mean=3.66  sd=1.37
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   86 |  3.50 |   11.99 |  11.99
+##     2 |                  En desacuerdo |   69 |  2.81 |    9.62 |  21.62
+##     3 | Ni de acuerdo ni en desacuerdo |  113 |  4.60 |   15.76 |  37.38
+##     4 |                     De acuerdo |  187 |  7.61 |   26.08 |  63.46
+##     5 |          Totalmente de acuerdo |  262 | 10.66 |   36.54 | 100.00
+##  <NA> |                           <NA> | 1740 | 70.82 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen padres ricos salgan adelante. (meritv02_pref_wpart) <numeric>
+## # total N=2457  valid N=717  mean=2.75  sd=1.20
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |  153 |  6.23 |   21.34 |  21.34
+##     2 |                  En desacuerdo |  129 |  5.25 |   17.99 |  39.33
+##     3 | Ni de acuerdo ni en desacuerdo |  227 |  9.24 |   31.66 |  70.99
+##     4 |                     De acuerdo |  163 |  6.63 |   22.73 |  93.72
+##     5 |          Totalmente de acuerdo |   45 |  1.83 |    6.28 | 100.00
+##  <NA> |                           <NA> | 1740 | 70.82 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen buenos contactos logran salir adelante. (meritv02_perc_netw) <numeric>
+## # total N=2457  valid N=717  mean=3.73  sd=1.22
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   60 |  2.44 |    8.37 |   8.37
+##     2 |                  En desacuerdo |   62 |  2.52 |    8.65 |  17.02
+##     3 | Ni de acuerdo ni en desacuerdo |  106 |  4.31 |   14.78 |  31.80
+##     4 |                     De acuerdo |  272 | 11.07 |   37.94 |  69.74
+##     5 |          Totalmente de acuerdo |  217 |  8.83 |   30.26 | 100.00
+##  <NA> |                           <NA> | 1740 | 70.82 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen buenos contactos salgan adelante. (meritv02_pref_netw) <numeric>
+## # total N=2457  valid N=717  mean=2.39  sd=1.11
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |  181 |  7.37 |   25.24 |  25.24
+##     2 |                  En desacuerdo |  221 |  8.99 |   30.82 |  56.07
+##     3 | Ni de acuerdo ni en desacuerdo |  195 |  7.94 |   27.20 |  83.26
+##     4 |                     De acuerdo |   93 |  3.79 |   12.97 |  96.23
+##     5 |          Totalmente de acuerdo |   27 |  1.10 |    3.77 | 100.00
+##  <NA> |                           <NA> | 1740 | 70.82 |    <NA> |   <NA>
+## 
+## 
+## Para salir adelante en Chile actualmente. ¿Qué es más importante, el talento o el esfuerzo de las personas? Marque en la siguiente escala entre 1 y 7 según sea su preferencia. (merit_perc_scale.0) <numeric>
+## # total N=2457  valid N=709  mean=4.43  sd=1.48
+## 
+## Value |               Label |    N | Raw % | Valid % | Cum. %
+## -------------------------------------------------------------
+##     1 |     (1)  El talento |   35 |  1.42 |    4.94 |   4.94
+##     2 |                 (2) |   19 |  0.77 |    2.68 |   7.62
+##     3 |                 (3) |   30 |  1.22 |    4.23 |  11.85
+##     4 | (4) Ambos por igual |  421 | 17.13 |   59.38 |  71.23
+##     5 |                 (5) |   49 |  1.99 |    6.91 |  78.14
+##     6 |                 (6) |   38 |  1.55 |    5.36 |  83.50
+##     7 |     (7) El esfuerzo |  117 |  4.76 |   16.50 | 100.00
+##  <NA> |                <NA> | 1748 | 71.14 |    <NA> |   <NA>
+## 
+## 
+## Y, ¿Qué debería ser más importante? (Q205_1) <numeric>
+## # total N=2457  valid N=712  mean=4.73  sd=1.59
+## 
+## Value  |                Label |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------------------------------
+## 1      |      (1)  El talento |   35 |  1.42 |    4.92 |   4.92
+## 3      |                  (3) |   14 |  0.57 |    1.97 |   6.88
+## 4      | (4)  Ambos por igual |  402 | 16.36 |   56.46 |  63.34
+## 5      |                  (5) |   34 |  1.38 |    4.78 |  68.12
+## 6      |                  (6) |   39 |  1.59 |    5.48 |  73.60
+## 7      |     (7)  El esfuerzo |  181 |  7.37 |   25.42 |  99.02
+## n < 10 |               <none> |    7 |  0.28 |    0.98 | 100.00
+## <NA>   |                 <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Y en su caso personal, los logros y recompensas que he obtenido en la vida se deben principalmente a: (Q206_1) <numeric>
+## # total N=2457  valid N=712  mean=5.23  sd=1.58
+## 
+## Value |               Label |    N | Raw % | Valid % | Cum. %
+## -------------------------------------------------------------
+##     1 |     (1)  El talento |   14 |  0.57 |    1.97 |   1.97
+##     2 |                 (2) |   10 |  0.41 |    1.40 |   3.37
+##     3 |                 (3) |   18 |  0.73 |    2.53 |   5.90
+##     4 | (4) Ambos por igual |  299 | 12.17 |   41.99 |  47.89
+##     5 |                 (5) |   59 |  2.40 |    8.29 |  56.18
+##     6 |                 (6) |   41 |  1.67 |    5.76 |  61.94
+##     7 |    (7)  El esfuerzo |  271 | 11.03 |   38.06 | 100.00
+##  <NA> |                <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan logran obtener mayores recompensas que quienes se esfuerzan menos. (meritv03_perc_effort) <numeric>
+## # total N=2457  valid N=712  mean=3.33  sd=1.37
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   84 |  3.42 |   11.80 |  11.80
+##     2 |                  En desacuerdo |  149 |  6.06 |   20.93 |  32.72
+##     3 | Ni de acuerdo ni en desacuerdo |  107 |  4.35 |   15.03 |  47.75
+##     4 |                     De acuerdo |  189 |  7.69 |   26.54 |  74.30
+##     5 |          Totalmente de acuerdo |  183 |  7.45 |   25.70 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento logran obtener mayores recompensas que quienes poseen menos talento. (meritv03_perc_talent) <numeric>
+## # total N=2457  valid N=712  mean=3.07  sd=1.25
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   81 |  3.30 |   11.38 |  11.38
+##     2 |                  En desacuerdo |  178 |  7.24 |   25.00 |  36.38
+##     3 | Ni de acuerdo ni en desacuerdo |  173 |  7.04 |   24.30 |  60.67
+##     4 |                     De acuerdo |  172 |  7.00 |   24.16 |  84.83
+##     5 |          Totalmente de acuerdo |  108 |  4.40 |   15.17 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen padres ricos logran salir adelante. (meritv03_perc_wpart) <numeric>
+## # total N=2457  valid N=712  mean=3.72  sd=1.36
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   76 |  3.09 |   10.67 |  10.67
+##     2 |                  En desacuerdo |   79 |  3.22 |   11.10 |  21.77
+##     3 | Ni de acuerdo ni en desacuerdo |   90 |  3.66 |   12.64 |  34.41
+##     4 |                     De acuerdo |  188 |  7.65 |   26.40 |  60.81
+##     5 |          Totalmente de acuerdo |  279 | 11.36 |   39.19 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes tienen buenos contactos logran salir adelante. (meritv03_perc_netw) <numeric>
+## # total N=2457  valid N=712  mean=3.90  sd=1.24
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   58 |  2.36 |    8.15 |   8.15
+##     2 |                  En desacuerdo |   48 |  1.95 |    6.74 |  14.89
+##     3 | Ni de acuerdo ni en desacuerdo |   91 |  3.70 |   12.78 |  27.67
+##     4 |                     De acuerdo |  225 |  9.16 |   31.60 |  59.27
+##     5 |          Totalmente de acuerdo |  290 | 11.80 |   40.73 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes más se esfuerzan deberían obtener mayores recompensas que quienes se esfuerzan menos. (meritv03_pref_effort) <numeric>
+## # total N=2457  valid N=712  mean=4.04  sd=1.16
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   48 |  1.95 |    6.74 |   6.74
+##     2 |                  En desacuerdo |   33 |  1.34 |    4.63 |  11.38
+##     3 | Ni de acuerdo ni en desacuerdo |   80 |  3.26 |   11.24 |  22.61
+##     4 |                     De acuerdo |  232 |  9.44 |   32.58 |  55.20
+##     5 |          Totalmente de acuerdo |  319 | 12.98 |   44.80 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Quienes poseen más talento deberían obtener mayores recompensas que quienes poseen menos talento. (meritv03_pref_talent) <numeric>
+## # total N=2457  valid N=712  mean=3.33  sd=1.23
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |   61 |  2.48 |    8.57 |   8.57
+##     2 |                  En desacuerdo |  123 |  5.01 |   17.28 |  25.84
+##     3 | Ni de acuerdo ni en desacuerdo |  197 |  8.02 |   27.67 |  53.51
+##     4 |                     De acuerdo |  180 |  7.33 |   25.28 |  78.79
+##     5 |          Totalmente de acuerdo |  151 |  6.15 |   21.21 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen padres ricos salgan adelante. (meritv03_pref_wpart) <numeric>
+## # total N=2457  valid N=712  mean=2.77  sd=1.19
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |  129 |  5.25 |   18.12 |  18.12
+##     2 |                  En desacuerdo |  164 |  6.67 |   23.03 |  41.15
+##     3 | Ni de acuerdo ni en desacuerdo |  216 |  8.79 |   30.34 |  71.49
+##     4 |                     De acuerdo |  151 |  6.15 |   21.21 |  92.70
+##     5 |          Totalmente de acuerdo |   52 |  2.12 |    7.30 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Pensando en la sociedad chilena, ¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones? - Está bien que quienes tienen buenos contactos salgan adelante. (meritv03_pref_netw) <numeric>
+## # total N=2457  valid N=712  mean=2.50  sd=1.14
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |       Totalmente en desacuerdo |  154 |  6.27 |   21.63 |  21.63
+##     2 |                  En desacuerdo |  235 |  9.56 |   33.01 |  54.63
+##     3 | Ni de acuerdo ni en desacuerdo |  170 |  6.92 |   23.88 |  78.51
+##     4 |                     De acuerdo |  119 |  4.84 |   16.71 |  95.22
+##     5 |          Totalmente de acuerdo |   34 |  1.38 |    4.78 | 100.00
+##  <NA> |                           <NA> | 1745 | 71.02 |    <NA> |   <NA>
+## 
+## 
+## Para salir adelante en Chile actualmente. ¿Qué es más importante, el talento o el esfuerzo de las personas? Marque en la siguiente escala entre 1 y 7 según sea su preferencia. (merit_perc_scale.1) <numeric>
+## # total N=2457  valid N=699  mean=4.55  sd=1.60
+## 
+## Value |               Label |    N | Raw % | Valid % | Cum. %
+## -------------------------------------------------------------
+##     1 |     (1)  El talento |   45 |  1.83 |    6.44 |   6.44
+##     2 |                 (2) |   12 |  0.49 |    1.72 |   8.15
+##     3 |                 (3) |   20 |  0.81 |    2.86 |  11.02
+##     4 | (4) Ambos por igual |  388 | 15.79 |   55.51 |  66.52
+##     5 |                 (5) |   49 |  1.99 |    7.01 |  73.53
+##     6 |                 (6) |   38 |  1.55 |    5.44 |  78.97
+##     7 |     (7) El esfuerzo |  147 |  5.98 |   21.03 | 100.00
+##  <NA> |                <NA> | 1758 | 71.55 |    <NA> |   <NA>
+## 
+## 
+## Y, ¿Qué debería ser más importante? (Q209_1) <numeric>
+## # total N=2457  valid N=700  mean=4.77  sd=1.64
+## 
+## Value  |                Label |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------------------------------
+## 1      |      (1)  El talento |   38 |  1.55 |    5.43 |   5.43
+## 4      | (4)  Ambos por igual |  390 | 15.87 |   55.71 |  61.14
+## 5      |                  (5) |   36 |  1.47 |    5.14 |  66.29
+## 6      |                  (6) |   25 |  1.02 |    3.57 |  69.86
+## 7      |     (7)  El esfuerzo |  196 |  7.98 |   28.00 |  97.86
+## n < 10 |               <none> |   15 |  0.61 |    2.14 | 100.00
+## <NA>   |                 <NA> | 1757 | 71.51 |    <NA> |   <NA>
+## 
+## 
+## Y en su caso personal, los logros y recompensas que he obtenido en la vida se deben principalmente a: (Q210_1) <numeric>
+## # total N=2457  valid N=708  mean=5.25  sd=1.60
+## 
+## Value  |               Label |    N | Raw % | Valid % | Cum. %
+## --------------------------------------------------------------
+## 1      |     (1)  El talento |   18 |  0.73 |    2.54 |   2.54
+## 3      |                 (3) |   14 |  0.57 |    1.98 |   4.52
+## 4      | (4) Ambos por igual |  297 | 12.09 |   41.95 |  46.47
+## 5      |                 (5) |   51 |  2.08 |    7.20 |  53.67
+## 6      |                 (6) |   44 |  1.79 |    6.21 |  59.89
+## 7      |    (7)  El esfuerzo |  277 | 11.27 |   39.12 |  99.01
+## n < 10 |              <none> |    7 |  0.28 |    0.99 | 100.00
+## <NA>   |                <NA> | 1749 | 71.18 |    <NA> |   <NA>
+## 
+## 
+## Quisiéramos saber cuánto dinero cree usted que obtienen algunas ocupaciones. Muchas personas no están seguras al respecto, pero su mejor estimación será suficiente.  ¿Cuánto cree UD. que gana al mes…?. - El gerente de una Gran Empresa Nacional (sal_perc_1) <numeric>
+## # total N=2457  valid N=2119  mean=15694926.85  sd=21397757.39
+## 
+## Value    |                         Label |   N | Raw % | Valid % | Cum. %
+## -------------------------------------------------------------------------
+## 750000   |    Entre  $700.000    y   $800.000 |  11 |  0.45 |    0.52 |   0.52
+## 850000   |   Entre   $800.000    y   $900.000 |  12 |  0.49 |    0.57 |   1.09
+## 950000   |       $900.000     y  $1.000.000 |  32 |  1.30 |    1.51 |   2.60
+## 1250000  |       $1.000.000   y  $1.500.000 |  76 |  3.09 |    3.59 |   6.18
+## 1750000  |       $1.500.000   y  $2.000.000 |  99 |  4.03 |    4.67 |  10.85
+## 2250000  |       $2.000.000   y  $2.500.000 |  93 |  3.79 |    4.39 |  15.24
+## 2750000  |       $2.500.000   y  $3.000.000 |  98 |  3.99 |    4.62 |  19.87
+## 3500000  |       $3.000.000   y  $4.000.000 | 130 |  5.29 |    6.13 |  26.00
+## 4500000  |       $4.000.000   y  $5.000.000 | 151 |  6.15 |    7.13 |  33.13
+## 5500000  |       $5.000.000   y  $6.000.000 | 150 |  6.11 |    7.08 |  40.21
+## 7e+06    |       $6.000.000   y  $8.000.000 | 142 |  5.78 |    6.70 |  46.91
+## 9e+06    |       $8.000.000   y  $10.000.000 | 214 |  8.71 |   10.10 |  57.01
+## 12500000 |   $10.000.000  y  $15.000.000 | 209 |  8.51 |    9.86 |  66.87
+## 17500000 |   $15.000.000  y  $20.000.000 | 166 |  6.76 |    7.83 |  74.71
+## 22500000 |   $20.000.000  y  $25.000.000 | 115 |  4.68 |    5.43 |  80.13
+## 27500000 |   $25.000.000  y  $30.000.000 |  80 |  3.26 |    3.78 |  83.91
+## 32500000 |   $30.000.000  y  $35.000.000 |  43 |  1.75 |    2.03 |  85.94
+## 37500000 |   $35.000.000  y  $40.000.000 |  35 |  1.42 |    1.65 |  87.59
+## 42500000 |   $40.000.000  y  $45.000.000 |  28 |  1.14 |    1.32 |  88.91
+## 47500000 |   $45.000.000  y  $50.000.000 |  30 |  1.22 |    1.42 |  90.33
+## 5.5e+07  |   $50.000.000  y  $60.000.000 |  37 |  1.51 |    1.75 |  92.07
+## 6.5e+07  |   $60.000.000  y  $70.000.000 |  10 |  0.41 |    0.47 |  92.54
+## 8.5e+07  |   $80.000.000  y  $90.000.000 |  10 |  0.41 |    0.47 |  93.02
+## 9.5e+07  |   $90.000.000  y  $100.000.000 |  16 |  0.65 |    0.76 |  93.77
+## 1e+08    |           Más     de  $100.000.000 |  62 |  2.52 |    2.93 |  96.70
+## n < 10   |                        <none> |  70 |  2.85 |    3.30 | 100.00
+## <NA>     |                          <NA> | 338 | 13.76 |    <NA> |   <NA>
+## 
+## 
+## Quisiéramos saber cuánto dinero cree usted que obtienen algunas ocupaciones. Muchas personas no están seguras al respecto, pero su mejor estimación será suficiente.  ¿Cuánto cree UD. que gana al mes…?. - Un obrero no calificado de una fábrica (sal_perc_2) <numeric>
+## # total N=2457  valid N=2113  mean=363878.37  sd=215482.79
+## 
+## Value  |                        Label |   N | Raw % | Valid % | Cum. %
+## ----------------------------------------------------------------------
+## 50000  |            Menos de  $50.000 |  22 |  0.90 |    1.04 |   1.04
+## 75000  |  Entre  $50.000  y  $100.000 |  18 |  0.73 |    0.85 |   1.89
+## 125000 | Entre   $100.000     y  $150.000 |  25 |  1.02 |    1.18 |   3.08
+## 175000 | Entre   $150.000     y  $200.000 |  68 |  2.77 |    3.22 |   6.29
+## 225000 | Entre   $200.000     y  $250.000 | 171 |  6.96 |    8.09 |  14.39
+## 275000 | Entre   $250.000     y  $300.000 | 437 | 17.79 |   20.68 |  35.07
+## 325000 | Entre   $300.000     y  $350.000 | 486 | 19.78 |   23.00 |  58.07
+## 375000 | Entre   $350.000     y  $400.000 | 350 | 14.25 |   16.56 |  74.63
+## 425000 | Entre   $400.000     y  $450.000 | 172 |  7.00 |    8.14 |  82.77
+## 475000 |  Entre  $450.000     y  $500.000 | 125 |  5.09 |    5.92 |  88.69
+## 550000 |  Entre  $500.000     y  $600.000 |  94 |  3.83 |    4.45 |  93.14
+## 625000 |  Entre  $600.000     y  $650.000 |  31 |  1.26 |    1.47 |  94.60
+## 675000 |   Entre     $650.000    y   $700.000 |  38 |  1.55 |    1.80 |  96.40
+## 750000 |   Entre     $700.000    y   $800.000 |  42 |  1.71 |    1.99 |  98.39
+## 850000 |  Entre  $800.000    y   $900.000 |  13 |  0.53 |    0.62 |  99.01
+## n < 10 |                       <none> |  21 |  0.85 |    0.99 | 100.00
+## <NA>   |                         <NA> | 344 | 14.00 |    <NA> |   <NA>
+## 
+## 
+## Ahora, quisiéramos saber cuánto dinero cree usted que deberían obtener estas ocupaciones. Al igual que anteriormente, su mejor estimación es suficiente. ¿Cuánto cree usted que debería ganar al mes ...?. - El gerente de una Gran Empresa Nacional (sal_just_1) <numeric>
+## # total N=2457  valid N=2108  mean=5298078.75  sd=9707218.21
+## 
+## Value    |                        Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+## 325000   | Entre     $300.000     y  $350.000 |  13 |  0.53 |    0.62 |   0.62
+## 475000   |  Entre    $450.000     y  $500.000 |  23 |  0.94 |    1.09 |   1.71
+## 550000   |  Entre    $500.000     y  $600.000 |  46 |  1.87 |    2.18 |   3.89
+## 625000   |  Entre    $600.000     y  $650.000 |  24 |  0.98 |    1.14 |   5.03
+## 675000   |   Entre   $650.000    y   $700.000 |  23 |  0.94 |    1.09 |   6.12
+## 750000   |   Entre   $700.000    y   $800.000 |  41 |  1.67 |    1.94 |   8.06
+## 850000   |  Entre    $800.000    y   $900.000 |  39 |  1.59 |    1.85 |   9.91
+## 950000   |       $900.000     y  $1.000.000 | 147 |  5.98 |    6.97 |  16.89
+## 1250000  |       $1.000.000   y  $1.500.000 | 184 |  7.49 |    8.73 |  25.62
+## 1750000  |       $1.500.000   y  $2.000.000 | 202 |  8.22 |    9.58 |  35.20
+## 2250000  |       $2.000.000   y  $2.500.000 | 172 |  7.00 |    8.16 |  43.36
+## 2750000  |       $2.500.000   y  $3.000.000 | 186 |  7.57 |    8.82 |  52.18
+## 3500000  |       $3.000.000   y  $4.000.000 | 182 |  7.41 |    8.63 |  60.82
+## 4500000  |       $4.000.000   y  $5.000.000 | 203 |  8.26 |    9.63 |  70.45
+## 5500000  |       $5.000.000   y  $6.000.000 | 150 |  6.11 |    7.12 |  77.56
+## 7e+06    |       $6.000.000   y  $8.000.000 | 107 |  4.35 |    5.08 |  82.64
+## 9e+06    |   $8.000.000   y  $10.000.000 | 122 |  4.97 |    5.79 |  88.43
+## 12500000 |   $10.000.000  y  $15.000.000 |  90 |  3.66 |    4.27 |  92.69
+## 17500000 |   $15.000.000  y  $20.000.000 |  38 |  1.55 |    1.80 |  94.50
+## 22500000 |   $20.000.000  y  $25.000.000 |  29 |  1.18 |    1.38 |  95.87
+## n < 10   |                       <none> |  87 |  3.54 |    4.13 | 100.00
+## <NA>     |                         <NA> | 349 | 14.20 |    <NA> |   <NA>
+## 
+## 
+## Ahora, quisiéramos saber cuánto dinero cree usted que deberían obtener estas ocupaciones. Al igual que anteriormente, su mejor estimación es suficiente. ¿Cuánto cree usted que debería ganar al mes ...?. - Un obrero no calificado de una fábrica (sal_just_2) <numeric>
+## # total N=2457  valid N=2105  mean=785261.28  sd=2992948.25
+## 
+## Value   |                        Label |   N | Raw % | Valid % | Cum. %
+## -----------------------------------------------------------------------
+## 225000  | Entre  $200.000     y  $250.000 |  10 |  0.41 |    0.48 |   0.48
+## 275000  | Entre  $250.000     y  $300.000 |  22 |  0.90 |    1.05 |   1.52
+## 325000  | Entre  $300.000     y  $350.000 |  54 |  2.20 |    2.57 |   4.09
+## 375000  | Entre  $350.000     y  $400.000 |  78 |  3.17 |    3.71 |   7.79
+## 425000  | Entre  $400.000     y  $450.000 | 120 |  4.88 |    5.70 |  13.49
+## 475000  |  Entre     $450.000     y  $500.000 | 355 | 14.45 |   16.86 |  30.36
+## 550000  |  Entre     $500.000     y  $600.000 | 506 | 20.59 |   24.04 |  54.39
+## 625000  |  Entre     $600.000     y  $650.000 | 199 |  8.10 |    9.45 |  63.85
+## 675000  |   Entre    $650.000    y   $700.000 | 165 |  6.72 |    7.84 |  71.69
+## 750000  |   Entre    $700.000    y   $800.000 | 199 |  8.10 |    9.45 |  81.14
+## 850000  |  Entre     $800.000    y   $900.000 | 113 |  4.60 |    5.37 |  86.51
+## 950000  |        $900.000     y  $1.000.000 | 125 |  5.09 |    5.94 |  92.45
+## 1250000 |    $1.000.000   y  $1.500.000 |  77 |  3.13 |    3.66 |  96.10
+## 1750000 |    $1.500.000   y  $2.000.000 |  34 |  1.38 |    1.62 |  97.72
+## 2250000 |    $2.000.000   y  $2.500.000 |  14 |  0.57 |    0.67 |  98.38
+## n < 10  |                       <none> |  34 |  1.38 |    1.62 | 100.00
+## <NA>    |                         <NA> | 352 | 14.33 |    <NA> |   <NA>
+## 
+## 
+## ¿Usted
+## cree que actualmente en Chile la cantidad de personas pobres es mayor, igual o
+## menor que hace 20 años atrás? (percep_pov) <numeric>
+## # total N=2457  valid N=2213  mean=1.92  sd=0.89
+## 
+## Value | Label |   N | Raw % | Valid % | Cum. %
+## ----------------------------------------------
+##     1 | Mayor | 972 | 39.56 |   43.92 |  43.92
+##     2 | Igual | 455 | 18.52 |   20.56 |  64.48
+##     3 | Menor | 786 | 31.99 |   35.52 | 100.00
+##  <NA> |  <NA> | 244 |  9.93 |    <NA> |   <NA>
+## 
+## 
+## Cambiando de tema, tradicionalmente en nuestro país la gente define las posiciones políticas como más cercanas a la izquierda, al centro o a la derecha. Usando una escala de 0 a 10 donde 0 es ser de “izquierda”, 5 es ser de “centro” y 10 es ser de “derecha”: - ¿Dónde se ubicaría usted en esta escala? (pospol_1) <numeric>
+## # total N=2457  valid N=2057  mean=5.57  sd=2.18
+## 
+## Value |         Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------
+##     1 | (0) Izquierda | 140 |  5.70 |    6.81 |   6.81
+##     2 |           (1) |  67 |  2.73 |    3.26 |  10.06
+##     3 |           (2) | 123 |  5.01 |    5.98 |  16.04
+##     4 |           (3) | 191 |  7.77 |    9.29 |  25.33
+##     5 |           (4) | 214 |  8.71 |   10.40 |  35.73
+##     6 |    (5) Centro | 907 | 36.91 |   44.09 |  79.82
+##     7 |           (6) | 144 |  5.86 |    7.00 |  86.83
+##     8 |           (7) |  92 |  3.74 |    4.47 |  91.30
+##     9 |           (8) |  77 |  3.13 |    3.74 |  95.04
+##    10 |           (9) |  29 |  1.18 |    1.41 |  96.45
+##    11 |  (10) Derecha |  73 |  2.97 |    3.55 | 100.00
+##  <NA> |          <NA> | 400 | 16.28 |    <NA> |   <NA>
+## 
+## 
+## ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Uno de los mayores problemas que tiene Chile es que no le damos a todas las personas las mismas oportunidades (egal_1) <numeric>
+## # total N=2457  valid N=2160  mean=4.51  sd=0.88
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |              Muy en desacuerdo |   39 |  1.59 |    1.81 |   1.81
+##     2 |                  En desacuerdo |   74 |  3.01 |    3.43 |   5.23
+##     3 | Ni de acuerdo ni en desacuerdo |  117 |  4.76 |    5.42 |  10.65
+##     4 |                     De acuerdo |  454 | 18.48 |   21.02 |  31.67
+##     5 |                 Muy de acuerdo | 1476 | 60.07 |   68.33 | 100.00
+##  <NA> |                           <NA> |  297 | 12.09 |    <NA> |   <NA>
+## 
+## 
+## ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Si en Chile hubiera más igualdad, tendríamos muchos menos problemas (egal_2) <numeric>
+## # total N=2457  valid N=2160  mean=4.43  sd=0.88
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |              Muy en desacuerdo |   28 |  1.14 |    1.30 |   1.30
+##     2 |                  En desacuerdo |   81 |  3.30 |    3.75 |   5.05
+##     3 | Ni de acuerdo ni en desacuerdo |  170 |  6.92 |    7.87 |  12.92
+##     4 |                     De acuerdo |  542 | 22.06 |   25.09 |  38.01
+##     5 |                 Muy de acuerdo | 1339 | 54.50 |   61.99 | 100.00
+##  <NA> |                           <NA> |  297 | 12.09 |    <NA> |   <NA>
+## 
+## 
+## ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Una mayor igualdad de ingresos le permitiría a la mayoría de las personas vivir mejor (egal_5) <numeric>
+## # total N=2457  valid N=2159  mean=4.50  sd=0.80
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |              Muy en desacuerdo |   11 |  0.45 |    0.51 |   0.51
+##     2 |                  En desacuerdo |   66 |  2.69 |    3.06 |   3.57
+##     3 | Ni de acuerdo ni en desacuerdo |  152 |  6.19 |    7.04 |  10.61
+##     4 |                     De acuerdo |  524 | 21.33 |   24.27 |  34.88
+##     5 |                 Muy de acuerdo | 1406 | 57.22 |   65.12 | 100.00
+##  <NA> |                           <NA> |  298 | 12.13 |    <NA> |   <NA>
+## 
+## 
+## ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Los ingresos deberían hacerse más iguales porque las necesidades de cada familia, como salud y educación, son las mismas (egal_6) <numeric>
+## # total N=2457  valid N=2159  mean=4.32  sd=0.99
+## 
+## Value |                          Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------------------
+##     1 |              Muy en desacuerdo |   27 |  1.10 |    1.25 |   1.25
+##     2 |                  En desacuerdo |  146 |  5.94 |    6.76 |   8.01
+##     3 | Ni de acuerdo ni en desacuerdo |  214 |  8.71 |    9.91 |  17.92
+##     4 |                     De acuerdo |  490 | 19.94 |   22.70 |  40.62
+##     5 |                 Muy de acuerdo | 1282 | 52.18 |   59.38 | 100.00
+##  <NA> |                           <NA> |  298 | 12.13 |    <NA> |   <NA>
+## 
+## 
+## ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Display Order egal_1 (igualitarismo_DO_egal_1) <numeric>
+## # total N=2457  valid N=2163  mean=2.51  sd=1.12
+## 
+## Value |   N | Raw % | Valid % | Cum. %
+## --------------------------------------
+##     1 | 540 | 21.98 |   24.97 |  24.97
+##     2 | 531 | 21.61 |   24.55 |  49.51
+##     3 | 538 | 21.90 |   24.87 |  74.39
+##     4 | 554 | 22.55 |   25.61 | 100.00
+##  <NA> | 294 | 11.97 |    <NA> |   <NA>
+## 
+## 
+## ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Display Order egal_2 (igualitarismo_DO_egal_2) <numeric>
+## # total N=2457  valid N=2163  mean=2.50  sd=1.13
+## 
+## Value |   N | Raw % | Valid % | Cum. %
+## --------------------------------------
+##     1 | 551 | 22.43 |   25.47 |  25.47
+##     2 | 544 | 22.14 |   25.15 |  50.62
+##     3 | 511 | 20.80 |   23.62 |  74.25
+##     4 | 557 | 22.67 |   25.75 | 100.00
+##  <NA> | 294 | 11.97 |    <NA> |   <NA>
+## 
+## 
+## ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Display Order egal_5 (igualitarismo_DO_egal_5) <numeric>
+## # total N=2457  valid N=2163  mean=2.50  sd=1.12
+## 
+## Value |   N | Raw % | Valid % | Cum. %
+## --------------------------------------
+##     1 | 539 | 21.94 |   24.92 |  24.92
+##     2 | 545 | 22.18 |   25.20 |  50.12
+##     3 | 533 | 21.69 |   24.64 |  74.76
+##     4 | 546 | 22.22 |   25.24 | 100.00
+##  <NA> | 294 | 11.97 |    <NA> |   <NA>
+## 
+## 
+## ¿En    qué    medida    se    encuentra    usted    de    acuerdo    o    en    desacuerdo    con    cada    una    de    las    siguientes    afirmaciones? - Display Order egal_6 (igualitarismo_DO_egal_6) <numeric>
+## # total N=2457  valid N=2163  mean=2.49  sd=1.10
+## 
+## Value |   N | Raw % | Valid % | Cum. %
+## --------------------------------------
+##     1 | 533 | 21.69 |   24.64 |  24.64
+##     2 | 543 | 22.10 |   25.10 |  49.75
+##     3 | 581 | 23.65 |   26.86 |  76.61
+##     4 | 506 | 20.59 |   23.39 | 100.00
+##  <NA> | 294 | 11.97 |    <NA> |   <NA>
+## 
+## 
+## ¿Cua´l es su edad? (edad) <numeric>
+## # total N=2457  valid N=2216  mean=3.13  sd=1.45
+## 
+## Value |    Label |   N | Raw % | Valid % | Cum. %
+## -------------------------------------------------
+##     1 |  18 - 24 | 411 | 16.73 |   18.55 |  18.55
+##     2 |  25 - 34 | 418 | 17.01 |   18.86 |  37.41
+##     3 |  35 - 44 | 423 | 17.22 |   19.09 |  56.50
+##     4 |  45 - 54 | 398 | 16.20 |   17.96 |  74.46
+##     5 | 55 o más | 566 | 23.04 |   25.54 | 100.00
+##  <NA> |     <NA> | 241 |  9.81 |    <NA> |   <NA>
+## 
+## 
+## ¿Cuál es su sexo? (sexo) <numeric>
+## # total N=2457  valid N=2216  mean=1.50  sd=0.50
+## 
+## Value |  Label |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------
+##     1 | Hombre | 1104 | 44.93 |   49.82 |  49.82
+##     2 |  Mujer | 1112 | 45.26 |   50.18 | 100.00
+##  <NA> |   <NA> |  241 |  9.81 |    <NA> |   <NA>
+## 
+## 
+## ¿Cua´l es su mayor nivel educacional alcanzado? (educat) <numeric>
+## # total N=2457  valid N=2216  mean=2.72  sd=0.83
+## 
+## Value |                                                                               Label |   N | Raw % | Valid % | Cum. %
+## ----------------------------------------------------------------------------------------------------------------------------
+##     1 |                 Básica o menos (Sin estudios - básica incompleta - básica completa) |  65 |  2.65 |    2.93 |   2.93
+##     2 |                                           Media (Media incompleta - media completa) | 958 | 38.99 |   43.23 |  46.16
+##     3 | No universitaria (Técnica incompleta - técnica completa - universitaria incompleta) | 723 | 29.43 |   32.63 |  78.79
+##     4 |                           Universitaria o más ( Universitaria completa - postgrado) | 470 | 19.13 |   21.21 | 100.00
+##  <NA> |                                                                                <NA> | 241 |  9.81 |    <NA> |   <NA>
+## 
+## 
+## ¿Cua´l es su mayor nivel educacional alcanzado? (edcep) <numeric>
+## # total N=2457  valid N=2100  mean=6.44  sd=1.93
+## 
+## Value  |                                          Label |   N | Raw % | Valid % | Cum. %
+## ----------------------------------------------------------------------------------------
+## 2      |                    Educación básica incompleta |  23 |  0.94 |    1.10 |   1.10
+## 3      |                      Educación básica completa |  51 |  2.08 |    2.43 |   3.52
+## 4      |                     Educación media incompleta | 108 |  4.40 |    5.14 |   8.67
+## 5      |                       Educación media completa | 795 | 32.36 |   37.86 |  46.52
+## 6      | Educación superior no universitaria incompleta | 172 |  7.00 |    8.19 |  54.71
+## 7      |   Educación superior no universitaria completa | 251 | 10.22 |   11.95 |  66.67
+## 8      |             Educación universitaria incompleta | 273 | 11.11 |   13.00 |  79.67
+## 9      |               Educación universitaria completa | 291 | 11.84 |   13.86 |  93.52
+## 10     |       Estudios de postgrado, master, doctorado | 132 |  5.37 |    6.29 |  99.81
+## n < 10 |                                         <none> |   4 |  0.16 |    0.19 | 100.00
+## <NA>   |                                           <NA> | 357 | 14.53 |    <NA> |   <NA>
+## 
+## 
+## De los siguientes tramos de ingresos mensuales que se presentan, ¿podri´a Ud. indicarme en cua´l de ellos se encuentra su hogar, considerando todos los ingresos li´quidos por sueldos y salarios de todas las personas que trabajan remuneradamente, jubilaciones, pensiones, aportes de parientes o amigos, arriendos y otros? (ingresos) <numeric>
+## # total N=2457  valid N=2100  mean=10.58  sd=2.17
+## 
+## Value  |                                          Label |   N | Raw % | Valid % | Cum. %
+## ----------------------------------------------------------------------------------------
+## 1      |           Menos de $35.000 mensuales li´quidos |  13 |  0.53 |    0.62 |   0.62
+## 2      |       De $35.001 a $56.000 mensuales li´quidos |  16 |  0.65 |    0.76 |   1.38
+## 4      |      De $78.001 a $101.000 mensuales li´quidos |  25 |  1.02 |    1.19 |   2.57
+## 5      |     De $101.001 a $134.000 mensuales li´quidos |  27 |  1.10 |    1.29 |   3.86
+## 6      |     De $134.001 a $179.000 mensuales li´quidos |  29 |  1.18 |    1.38 |   5.24
+## 7      |     De $179.001 a $224.000 mensuales li´quidos |  57 |  2.32 |    2.71 |   7.95
+## 8      |     De $224.001 a $291.000 mensuales li´quidos |  55 |  2.24 |    2.62 |  10.57
+## 9      |     De $291.001 a $358.000 mensuales li´quidos | 172 |  7.00 |    8.19 |  18.76
+## 10     |     De $358.001 a $448.000 mensuales li´quidos | 292 | 11.88 |   13.90 |  32.67
+## 11     |   De $448.001 a $1.000.000 mensuales li´quidos | 749 | 30.48 |   35.67 |  68.33
+## 12     | De $1.000.001 a $2.000.000 mensuales li´quidos | 425 | 17.30 |   20.24 |  88.57
+## 13     | De $2.000.001 a $3.000.000 mensuales li´quidos | 146 |  5.94 |    6.95 |  95.52
+## 14     |         Ma´s de $3.000.000 mensuales li´quidos |  85 |  3.46 |    4.05 |  99.57
+## n < 10 |                                         <none> |   9 |  0.37 |    0.43 | 100.00
+## <NA>   |                                           <NA> | 357 | 14.53 |    <NA> |   <NA>
+## 
+## 
+## Estatus subjetivo (ess01_1) <numeric>
+## # total N=2457  valid N=2116  mean=5.37  sd=1.79
+## 
+## Value |               Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------
+##     1 |  (0) Nivel más bajo |  72 |  2.93 |    3.40 |   3.40
+##     2 |                 (1) |  48 |  1.95 |    2.27 |   5.67
+##     3 |                 (2) | 165 |  6.72 |    7.80 |  13.47
+##     4 |                 (3) | 339 | 13.80 |   16.02 |  29.49
+##     5 |                 (4) | 432 | 17.58 |   20.42 |  49.91
+##     6 |                 (5) | 578 | 23.52 |   27.32 |  77.22
+##     7 |                 (6) | 254 | 10.34 |   12.00 |  89.22
+##     8 |                 (7) | 152 |  6.19 |    7.18 |  96.41
+##     9 |                 (8) |  55 |  2.24 |    2.60 |  99.01
+##    10 |                 (9) |  10 |  0.41 |    0.47 |  99.48
+##    11 | (10) Nivel más Alto |  11 |  0.45 |    0.52 | 100.00
+##  <NA> |                <NA> | 341 | 13.88 |    <NA> |   <NA>
+## 
+## 
+## Estatus subjetivo familia origen (ess02_1) <numeric>
+## # total N=2457  valid N=2114  mean=3.82  sd=1.99
+## 
+## Value |               Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------
+##     0 |  (0) Nivel más bajo | 117 |  4.76 |    5.53 |   5.53
+##     1 |                 (1) | 129 |  5.25 |    6.10 |  11.64
+##     2 |                 (2) | 284 | 11.56 |   13.43 |  25.07
+##     3 |                 (3) | 416 | 16.93 |   19.68 |  44.75
+##     4 |                 (4) | 386 | 15.71 |   18.26 |  63.01
+##     5 |                 (5) | 421 | 17.13 |   19.91 |  82.92
+##     6 |                 (6) | 167 |  6.80 |    7.90 |  90.82
+##     7 |                 (7) | 113 |  4.60 |    5.35 |  96.17
+##     8 |                 (8) |  52 |  2.12 |    2.46 |  98.63
+##     9 |                 (9) |  14 |  0.57 |    0.66 |  99.29
+##    10 | (10) Nivel más Alto |  15 |  0.61 |    0.71 | 100.00
+##  <NA> |                <NA> | 343 | 13.96 |    <NA> |   <NA>
+## 
+## 
+## Estatus subjetivo hijos (ess03_1) <numeric>
+## # total N=2457  valid N=2113  mean=5.61  sd=1.99
+## 
+## Value |               Label |   N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------------
+##     0 |  (0) Nivel más bajo |  36 |  1.47 |    1.70 |   1.70
+##     1 |                 (1) |  21 |  0.85 |    0.99 |   2.70
+##     2 |                 (2) |  81 |  3.30 |    3.83 |   6.53
+##     3 |                 (3) | 151 |  6.15 |    7.15 |  13.68
+##     4 |                 (4) | 245 |  9.97 |   11.59 |  25.27
+##     5 |                 (5) | 474 | 19.29 |   22.43 |  47.70
+##     6 |                 (6) | 383 | 15.59 |   18.13 |  65.83
+##     7 |                 (7) | 375 | 15.26 |   17.75 |  83.58
+##     8 |                 (8) | 232 |  9.44 |   10.98 |  94.56
+##     9 |                 (9) |  56 |  2.28 |    2.65 |  97.21
+##    10 | (10) Nivel más Alto |  59 |  2.40 |    2.79 | 100.00
+##  <NA> |                <NA> | 344 | 14.00 |    <NA> |   <NA>
+## 
+## 
+## ¿Cuál de estas situaciones describe mejor su actividad principal durante el último mes? (estlab) <numeric>
+## # total N=2457  valid N=2096  mean=2.66  sd=2.18
+## 
+## Value |                                                                                 Label |    N | Raw % | Valid % | Cum. %
+## -------------------------------------------------------------------------------------------------------------------------------
+##     1 |                                     Trabaja de manera remunerada con jornada completa | 1066 | 43.39 |   50.86 |  50.86
+##     2 |             Trabaja de manera remunerada a tiempo parcial o hace trabajos ocasionales |  275 | 11.19 |   13.12 |  63.98
+##     3 |                                                                     Estudia y trabaja |  125 |  5.09 |    5.96 |  69.94
+##     4 |                                                                          Sólo estudia |  139 |  5.66 |    6.63 |  76.57
+##     5 |                                                                 Jubilado o pensionado |  153 |  6.23 |    7.30 |  83.87
+##     6 |                                                         Desempleado, buscando trabajo |  153 |  6.23 |    7.30 |  91.17
+##     7 | Realiza tareas no remuneradas (quehaceres del hogar, cuidando niños y otras personas) |  148 |  6.02 |    7.06 |  98.23
+##     8 |                                                 Está enfermo o tiene una discapacidad |   15 |  0.61 |    0.72 |  98.95
+##     9 |                                             No estudia, no trabaja y no busca trabajo |   22 |  0.90 |    1.05 | 100.00
+##  <NA> |                                                                                  <NA> |  361 | 14.69 |    <NA> |   <NA>
+## 
+## 
+## ¿En qué comuna vive? (comuna) <numeric>
+## # total N=2457  valid N=1996  mean=1089.93  sd=21.07
+## 
+## Value  |               Label |   N | Raw % | Valid % | Cum. %
+## -------------------------------------------------------------
+## 1065   |         Antofagasta |  67 |  2.73 |    3.36 |   3.36
+## 1066   |          Valparaíso |  90 |  3.66 |    4.51 |   7.87
+## 1067   |        Viña del Mar |  66 |  2.69 |    3.31 |  11.17
+## 1068   |          Concepción |  79 |  3.22 |    3.96 |  15.13
+## 1069   |          Talcahuano |  13 |  0.53 |    0.65 |  15.78
+## 1070   |           Cerrillos |  20 |  0.81 |    1.00 |  16.78
+## 1071   |         Cerro Navia |  27 |  1.10 |    1.35 |  18.14
+## 1072   |            Conchalí |  27 |  1.10 |    1.35 |  19.49
+## 1073   |           El Bosque |  32 |  1.30 |    1.60 |  21.09
+## 1074   |    Estación Central |  32 |  1.30 |    1.60 |  22.70
+## 1075   |          Huechuraba |  18 |  0.73 |    0.90 |  23.60
+## 1076   |       Independencia |  22 |  0.90 |    1.10 |  24.70
+## 1077   |         La Cisterna |  32 |  1.30 |    1.60 |  26.30
+## 1078   |          La Florida | 109 |  4.44 |    5.46 |  31.76
+## 1079   |           La Granja |  25 |  1.02 |    1.25 |  33.02
+## 1080   |          La Pintana |  25 |  1.02 |    1.25 |  34.27
+## 1081   |            La Reina |  28 |  1.14 |    1.40 |  35.67
+## 1082   |          Las Condes |  61 |  2.48 |    3.06 |  38.73
+## 1083   |        Lo Barnechea |  13 |  0.53 |    0.65 |  39.38
+## 1084   |           Lo Espejo |  16 |  0.65 |    0.80 |  40.18
+## 1085   |            Lo Prado |  10 |  0.41 |    0.50 |  40.68
+## 1086   |               Macul |  33 |  1.34 |    1.65 |  42.33
+## 1087   |               Maipú | 146 |  5.94 |    7.31 |  49.65
+## 1088   |               Ñuñoa |  74 |  3.01 |    3.71 |  53.36
+## 1089   | Pedro Aguirre Cerda |  18 |  0.73 |    0.90 |  54.26
+## 1090   |           Peñalolén |  50 |  2.04 |    2.51 |  56.76
+## 1091   |         Providencia |  46 |  1.87 |    2.30 |  59.07
+## 1092   |            Pudahuel |  46 |  1.87 |    2.30 |  61.37
+## 1093   |         Puente Alto | 170 |  6.92 |    8.52 |  69.89
+## 1094   |           Quilicura |  39 |  1.59 |    1.95 |  71.84
+## 1095   |       Quinta Normal |  28 |  1.14 |    1.40 |  73.25
+## 1096   |            Recoleta |  37 |  1.51 |    1.85 |  75.10
+## 1097   |               Renca |  21 |  0.85 |    1.05 |  76.15
+## 1098   |        San Bernardo |  67 |  2.73 |    3.36 |  79.51
+## 1099   |         San Joaquín |  15 |  0.61 |    0.75 |  80.26
+## 1100   |          San Miguel |  30 |  1.22 |    1.50 |  81.76
+## 1101   |           San Ramón |  10 |  0.41 |    0.50 |  82.26
+## 1102   |            Santiago | 185 |  7.53 |    9.27 |  91.53
+## 1103   |            Vitacura |  13 |  0.53 |    0.65 |  92.18
+## 1125   |               Arica |  10 |  0.41 |    0.50 |  92.69
+## 1148   |           La Serena |  14 |  0.57 |    0.70 |  93.39
+## 1149   |            Coquimbo |  16 |  0.65 |    0.80 |  94.19
+## 1150   |            Rancagua |  13 |  0.53 |    0.65 |  94.84
+## 1152   |               Talca |  11 |  0.45 |    0.55 |  95.39
+## 1153   |             Chillán |  11 |  0.45 |    0.55 |  95.94
+## 1154   |              Temuco |  18 |  0.73 |    0.90 |  96.84
+## 1155   |        Puerto Montt |  19 |  0.77 |    0.95 |  97.80
+## 1158   |            Valdivia |  18 |  0.73 |    0.90 |  98.70
+## n < 10 |              <none> |  26 |  1.06 |    1.30 | 100.00
+## <NA>   |                <NA> | 461 | 18.76 |    <NA> |   <NA>
+## 
+## 
+## Start Date (StartDate) <numeric>
+## # total N=2457  valid N=2457  mean=1576097282.35  sd=1566509.24
+## 
+## Value  |    N | Raw % | Valid % | Cum. %
+## ----------------------------------------
+## n < 10 | 2457 |   100 |     100 |    100
+## <NA>   |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## End Date (EndDate) <numeric>
+## # total N=2457  valid N=2457  mean=1576099056.60  sd=1566049.95
+## 
+## Value  |    N | Raw % | Valid % | Cum. %
+## ----------------------------------------
+## n < 10 | 2457 |   100 |     100 |    100
+## <NA>   |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## Duration (in seconds) (Duration__in_seconds_) <numeric>
+## # total N=2457  valid N=2457  mean=1773.72  sd=11921.32
+## 
+## Value  |    N | Raw % | Valid % | Cum. %
+## ----------------------------------------
+## n < 10 | 2457 |   100 |     100 |    100
+## <NA>   |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## Recorded Date (RecordedDate) <numeric>
+## # total N=2457  valid N=2457  mean=1576120221.60  sd=1564985.64
+## 
+## Value               |    N | Raw % | Valid % | Cum. %
+## -----------------------------------------------------
+## 2019-12-02 18:38:35 |   15 |  0.61 |    0.61 |   0.61
+## 2019-12-02 18:38:36 |   11 |  0.45 |    0.45 |   1.06
+## 2019-12-02 18:38:45 |   10 |  0.41 |    0.41 |   1.47
+## n < 10              | 2421 | 98.53 |   98.53 | 100.00
+## <NA>                |    0 |  0.00 |    <NA> |   <NA>
+## 
+## 
+## IP Address (IPAddress) <character>
+## # total N=2457  valid N=2457  mean=1178.19  sd=686.70
+## 
+## Value  |    N | Raw % | Valid % | Cum. %
+## ----------------------------------------
+## n < 10 | 2457 |   100 |     100 |    100
+## <NA>   |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## Response Type (Status) <numeric>
+## # total N=2457  valid N=2457  mean=0.01  sd=0.28
+## 
+## Value  |      Label |    N | Raw % | Valid % | Cum. %
+## -----------------------------------------------------
+## 0      | IP Address | 2454 | 99.88 |   99.88 |  99.88
+## n < 10 |     <none> |    3 |  0.12 |    0.12 | 100.00
+## <NA>   |       <NA> |    0 |  0.00 |    <NA> |   <NA>
+## 
+## 
+## Recipient Last Name (RecipientLastName) <character>
+## # total N=2457  valid N=2457  mean=1.00  sd=0.00
+## 
+## Value |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------
+##       | 2457 |   100 |     100 |    100
+## <NA>  |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## Recipient First Name (RecipientFirstName) <character>
+## # total N=2457  valid N=2457  mean=1.00  sd=0.00
+## 
+## Value |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------
+##       | 2457 |   100 |     100 |    100
+## <NA>  |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## Recipient Email (RecipientEmail) <character>
+## # total N=2457  valid N=2457  mean=1.00  sd=0.00
+## 
+## Value |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------
+##       | 2457 |   100 |     100 |    100
+## <NA>  |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## External Data Reference (ExternalReference) <character>
+## # total N=2457  valid N=2457  mean=1.00  sd=0.00
+## 
+## Value |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------
+##       | 2457 |   100 |     100 |    100
+## <NA>  |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## Location Latitude (LocationLatitude) <character>
+## # total N=2457  valid N=2457  mean=31.73  sd=12.05
+## 
+## Value                |    N | Raw % | Valid % | Cum. %
+## ------------------------------------------------------
+##                      |  136 |  5.54 |    5.54 |   5.54
+## -23.646392822265625  |   50 |  2.04 |    2.04 |   7.57
+## -29.9069976806640625 |   13 |  0.53 |    0.53 |   8.10
+## -29.9532928466796875 |   10 |  0.41 |    0.41 |   8.51
+## -33.0081024169921875 |   67 |  2.73 |    2.73 |  11.23
+## -33.0446929931640625 |   42 |  1.71 |    1.71 |  12.94
+## -33.438995361328125  |   11 |  0.45 |    0.45 |  13.39
+## -33.4512939453125    | 1832 | 74.56 |   74.56 |  87.95
+## -34.1703033447265625 |   17 |  0.69 |    0.69 |  88.64
+## -35.43499755859375   |   11 |  0.45 |    0.45 |  89.09
+## -36.6006011962890625 |   10 |  0.41 |    0.41 |  89.50
+## -36.83349609375      |   52 |  2.12 |    2.12 |  91.62
+## -38.73150634765625   |   18 |  0.73 |    0.73 |  92.35
+## -39.8000030517578125 |   12 |  0.49 |    0.49 |  92.84
+## -41.4709014892578125 |   16 |  0.65 |    0.65 |  93.49
+## n < 10               |  160 |  6.51 |    6.51 | 100.00
+## <NA>                 |    0 |  0.00 |    <NA> |   <NA>
+## 
+## 
+## Location Longitude (LocationLongitude) <character>
+## # total N=2457  valid N=2457  mean=28.11  sd=13.45
+## 
+## Value                 |    N | Raw % | Valid % | Cum. %
+## -------------------------------------------------------
+##                       |  136 |  5.54 |    5.54 |   5.54
+## -70.39800262451171875 |   50 |  2.04 |    2.04 |   7.57
+## -70.6432037353515625  |   11 |  0.45 |    0.45 |   8.02
+## -70.6652984619140625  | 1832 | 74.56 |   74.56 |  82.58
+## -70.7406005859375     |   17 |  0.69 |    0.69 |  83.27
+## -71.25620269775390625 |   13 |  0.53 |    0.53 |  83.80
+## -71.33489990234375    |   10 |  0.41 |    0.41 |  84.21
+## -71.5196990966796875  |   67 |  2.73 |    2.73 |  86.94
+## -71.59839630126953125 |   42 |  1.71 |    1.71 |  88.64
+## -71.664398193359375   |   11 |  0.45 |    0.45 |  89.09
+## -72.117401123046875   |   10 |  0.41 |    0.41 |  89.50
+## -72.5991973876953125  |   18 |  0.73 |    0.73 |  90.23
+## -72.943603515625      |   16 |  0.65 |    0.65 |  90.88
+## -73.04869842529296875 |   52 |  2.12 |    2.12 |  93.00
+## -73.23329925537109375 |   12 |  0.49 |    0.49 |  93.49
+## n < 10                |  160 |  6.51 |    6.51 | 100.00
+## <NA>                  |    0 |  0.00 |    <NA> |   <NA>
+## 
+## 
+## Distribution Channel (DistributionChannel) <character>
+## # total N=2457  valid N=2457  mean=1.00  sd=0.00
+## 
+## Value     |    N | Raw % | Valid % | Cum. %
+## -------------------------------------------
+## anonymous | 2457 |   100 |     100 |    100
+## <NA>      |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## User Language (UserLanguage) <character>
+## # total N=2457  valid N=2457  mean=1.00  sd=0.00
+## 
+## Value |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------
+## ES-ES | 2457 |   100 |     100 |    100
+## <NA>  |    0 |     0 |    <NA> |   <NA>
+## 
+## 
+## FL_21 - Block Randomizer - Display Order merit_perc_pref_julio19v01 (FL_21_DO_merit_perc_pref_julio19v01) <numeric>
+## # total N=2457  valid N=721  mean=1.00  sd=0.00
+## 
+## Value |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------
+##     1 |  721 | 29.34 |     100 |    100
+##  <NA> | 1736 | 70.66 |    <NA> |   <NA>
+## 
+## 
+## FL_21 - Block Randomizer - Display Order merit_perc_pref_julio19v02 (FL_21_DO_merit_perc_pref_julio19v02) <numeric>
+## # total N=2457  valid N=721  mean=1.00  sd=0.00
+## 
+## Value |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------
+##     1 |  721 | 29.34 |     100 |    100
+##  <NA> | 1736 | 70.66 |    <NA> |   <NA>
+## 
+## 
+## FL_21 - Block Randomizer - Display Order merit_perc_pref_julio19v03 (FL_21_DO_merit_perc_pref_julio19v03) <numeric>
+## # total N=2457  valid N=719  mean=1.00  sd=0.00
+## 
+## Value |    N | Raw % | Valid % | Cum. %
+## ---------------------------------------
+##     1 |  719 | 29.26 |     100 |    100
+##  <NA> | 1738 | 70.74 |    <NA> |   <NA>
+\end{verbatim}
+
+\normalsize
+
+\end{document}

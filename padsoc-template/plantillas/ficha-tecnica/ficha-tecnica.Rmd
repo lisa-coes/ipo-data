@@ -1,0 +1,433 @@
+---
+title: "Ficha técnica"
+subtitle: 'Estudio "Meritocracia y Redistribución"'
+author: "Fondecyt regular N°1160921"
+output: 
+  bookdown::pdf_document2:
+    toc: false
+    includes:
+      in_header: input/columns.tex
+geometry: "left=2cm,right=2cm,top=2cm,bottom=2cm"      
+editor_options: 
+  chunk_output_type: console
+header-includes:
+  - \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+  - \usepackage{times}           # Times New Roman
+  - \usepackage{caption}
+  - \captionsetup[figure, table]{labelfont={bf},labelformat={default},labelsep=period}
+  - \usepackage{graphicx}
+  - \usepackage{float}
+  - \usepackage{booktabs}
+  - \usepackage{longtable}
+  - \usepackage{array}
+  - \usepackage{multirow}
+  - \usepackage{wrapfig}
+  - \usepackage{float}
+  - \usepackage{colortbl}
+  - \usepackage{pdflscape}
+  - \usepackage{tabu}
+  - \usepackage{threeparttable} 
+---
+
+```{r render, eval=FALSE, include=FALSE}
+# si no tenemos la librería pacman instalada, se instala.
+if (!require("pacman")) install.packages("pacman") 
+# instalar librerias rmarkdown, bookdown y here 
+pacman::p_load(rmarkdown,bookdown,here)
+# renderizar documento
+rmarkdown::render(input = here::here("padsoc-template/plantillas/ficha-tecnica/ficha-tecnica.Rmd"),
+                  output_dir = here::here("padsoc-template/documentacion"))
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,# mostrar advertencias durante la generación del libro de códigos
+  message = FALSE,# mostrar mensajes durante la generación del libro de códigos
+  error = FALSE,  # no interrumpir la generación del libro de códigos en caso de errores,
+                  # suele ser mejor para la depuración
+  echo = FALSE    # mostrar el código R
+  )
+```
+
+
+```{r}
+if (!require("pacman")) install.packages("pacman") # si no tenemos la librería packman instalada, se instala.
+pacman::p_load(dplyr, #librerias del tidyverse
+               haven,
+               readxl,
+               knitr,
+               kableExtra,
+               questionr,
+               sjlabelled,
+               car,
+               here) 
+```
+
+# Ola 1
+
+```{r}
+data <- read_sav(here::here("padsoc-template/datos/ola1/Estudio_3_ola1.sav"))
+```
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Título del Estudio_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+Economía moral de la meritocracia y preferencias redistributivas (Ola 1)
+:::
+::::::
+
+
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Fecha de trabajo de campo_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+
+
+Inicio: 25 de noviembre de 2019 
+
+Término: 8 de enero de 2020.
+:::
+::::::
+
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Investigadores_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+
+**Investigador Principal**: Juan Carlos Castillo, Departamento de Sociología, Universidad de Chile
+
+**Co-investigadores**: Luis Maldonado, Pontificia Universidad Católica de Chile; Jorge Atria, Universidad Diego Portales.
+:::
+::::::
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Tipo de muestra_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+
+La población objetivo del estudio son hombres y mujeres mayores de 18 años de Chile. La muestra se elaboró a través de un muestreo no probabilístico por cuotas. Las variables empleada en la elaboración de las cuotas son sexo, edad y nivel educacional. El tamaño de cada cuota fue calculado en base a las proporciones de la [Encuesta CEP de Mayo-Junio 2019](https://www.cepchile.cl/cep/noticias/notas-de-prensa/encuesta-cep-mayo-2019). La Tabla 1 muestra la comparación entre la muestra planificada y lograda a través de las cuotas.
+
+```{r echo=FALSE, warning=FALSE}
+# Datos provenientes de encuesta CEP (tablas)
+load(here::here("padsoc-template/plantillas/ficha-tecnica/input/cep_sexo.RData"))
+load(here::here("padsoc-template/plantillas/ficha-tecnica/input/cep_edadcat.RData"))
+load(here::here("padsoc-template/plantillas/ficha-tecnica/input/cep_educat.RData"))
+# adaptar nombres a las columnas
+ed2   <- ed2   %>% dplyr::select(var=EDQ, prop=rel.freq)
+edad2 <- edad2 %>% dplyr::select(var=ED_REC,prop=rel.freq)
+sex1  <- sex1  %>% dplyr::select(var=DS_P1,prop=rel.freq)
+
+# Etiquetar grupos de edad
+edad2$var <- car::recode(edad2$var,
+"'18 a 24 años'='18 - 24';
+'25 a 34 años' ='25 - 34';
+'35 a 44 años' ='35 - 44';
+'45 a 54 años' ='45 - 54';
+'55 años o más'='55 o más'")
+# unir datos CEP para sexo, edades y nivel educacional
+tab1  <- dplyr::bind_rows(sex1,edad2,ed2)
+
+# Datos de ola 1:
+# grupos de edad
+age01 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(data$edad))) %>% na.omit()
+# sexo
+sex01 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(data$sexo))) %>% na.omit()
+# educacion
+data$edcat2 <- car::recode(data$edcep,recodes = "7:8=7;8=9;9=8") 
+  # homologar etiquetas
+  data$edcat2 <- sjlabelled::set_labels(data$edcat2,labels = ed2$var)
+  # generar tabla de frecuencias para educacion
+  edu01 <-   questionr::freq(as_character(as_factor(data$edcat2)),valid = T) %>% na.omit()
+
+# homologamos nombres de columnas
+edu01$var <- rownames(edu01)
+age01$var <- rownames(age01)
+sex01$var <- rownames(sex01)
+# seleccionar columnas con porcentajes
+edu01 <-edu01 %>% dplyr::select(var,prop=`val%`)
+age01 <-age01 %>% dplyr::select(var,prop=`val%`)
+sex01 <-sex01 %>% dplyr::select(var,prop=`val%`)
+# unir datos ola 1 para sexo, edades y nivel educacional
+tab2  <- dplyr::bind_rows(sex01,age01,edu01)
+# unir datos Ola 1 y CEP
+tab3  <- dplyr::left_join(tab1,tab2,"var")
+
+#Generar tabla final
+knitr::kable(na.omit(tab3),
+      digits = 1, booktabs=T,
+      col.names = c(" ","CEP","Ola 1"),
+      linesep = "",
+      caption = "Distribución de muestra planificada y lograda ola 1",
+      format = "latex") %>% 
+  kableExtra::kable_styling(full_width = FALSE,
+                            latex_options = c("HOLD_position"),
+                            font_size = 8) %>% 
+  kableExtra::pack_rows("Sexo", 1, 2) %>%
+  kableExtra::pack_rows("Edad", 3, 7) %>% 
+  kableExtra::pack_rows("Educación", 8, 16)  %>% 
+  kableExtra::footnote(general = "Datos CEP están ponderados",footnote_as_chunk = T)
+```
+
+:::
+::::::
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Tipo de muestra_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+
+En términos territoriales, la muestra está conformada principalmente por individuos de comunas de las regiones Metropolitana, Valparaíso y BioBío. La Tabla 2 muestra un detalle de la distribución según todas las regiones del estudio.
+
+
+```{r echo=FALSE, warning=FALSE}
+data$region<- car::recode(data$comuna,
+                          recode="1125=1;1145=2; c(1065,1146)=3; 1147=4; c(1148,1149)=5; 
+                                  c(1066,1067)=6; 1070:1103=7; 1150=8; 1151:1152=9; 1153=10; 
+                                  c(1068,1069)=11; 1154=12; 1158=13; c(1155,1156)=14; 1157=15",
+                          as.factor = T)
+data$comuna.f <- sjlabelled::as_character(as_factor(data$comuna))
+
+data$region <- factor(x = data$region,
+                     levels = levels(data$region),
+                     labels = c("Arica y Parinacota","Tarapacá","Antofagasta","Atacama",
+                                "Coquimbo","Valparaíso","Metropolitana",
+                                "Gral. Lib. Bernardo O'Higgins",
+                                "Región del Maule","Ñuble","Biobío",
+                                "Araucanía","Los Ríos","Los Lagos","Aysén"), 
+                     ordered = T)
+data %>% 
+  dplyr::select(region) %>% 
+  na.omit() %>% 
+  dplyr::group_by(region) %>% 
+  dplyr::summarise(n=n()) %>%
+  dplyr::mutate(freq = round((n / sum(n))*100,2)) %>% 
+  knitr::kable(col.names = c("Región","N","%"), 
+        caption = "Distribución de muestra lograda por región.",
+        linesep = "",
+        booktabs=T, 
+        format = "latex") %>% 
+  kableExtra::kable_styling(full_width = FALSE,
+                            latex_options = c("HOLD_position"),
+                            font_size = 9)
+```
+
+:::
+::::::
+
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Estrategia de campo_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+
+La entidad a cargo del trabajo de campo brinda un servicio de paneles online, dentro de los cuales se cuenta con una serie de personas que han sido previamente contactadas y que han acordado participar de este tipo de estudios vía invitación. 
+
+Para motivar la participación de los panelistas, la entidad a cargo ofrece un sistema de incentivos por cada cuestionario completado. El sistema consiste en una serie de divisas acumulables que posteriormente pueden ser transformadas en artículos de interés para los panelistas. En el caso de que el panelista no termine o abandone el cuestionario, éste no recibe el incentivo.
+
+Dado que el estudio es de carácter longitudinal, cada individuo que acepta y termina el cuestionario tiene asignado un identificador. A través de esto, es posible realizar el seguimiento de cada encuestado en las siguientes mediciones. 
+
+:::
+::::::
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Entidad a cargo trabajo de campo_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+La entidad a cargo del trabajo de campo fue la empresa [*Netquest*](https://www.netquest.com/es/encuestas-online-investigacion)
+:::
+::::::
+
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Modo de aplicación_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+Cuestionario autoadministrado online. Se empleó la plataforma Qualtrics.
+:::
+::::::
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Número de respuestas_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+`r dim(data)[1]`
+:::
+::::::
+
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Detalle de la muestra_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+Siguiendo los estándares definidos por la _American Association for Public Opinion Research_ (AAPOR) en su novena edición [(AAPOR, 2016)](https://www.aapor.org/AAPOR_Main/media/publications/Standard-Definitions20169theditionfinal.pdf), la Tabla 3 muestra la descripción de la muestra según los criterios enunciados
+
+```{r}
+# Paso I: Duplicados base completa
+ip1 <- questionr::freq(data$IPAddress,total = TRUE) %>% # Frecuencia de cada IP
+  tibble::rownames_to_column() %>%                      # ID para IP
+  filter(n>=2)                                          # Keep IP >=2
+
+datip01 <- data %>% 
+  filter(IPAddress %in% ip1$rowname, Finished==1) %>% # Filtro ip duplicada y Finished=1
+  select(ResponseId,IPAddress,
+         Finished,
+         sexo,
+         edad,
+         edcep,
+         everything()) %>% 
+  arrange(IPAddress,Finished) # Ordenar la base según IP y Finished para observar patrón 
+
+# Paso II: Duplicados base Finished==1
+ip2 <- questionr::freq(x = datip01$IPAddress,total = TRUE) %>%# Frecuencia de cada IP
+        tibble::rownames_to_column() %>%                      # ID para IP
+        filter(n>=2)                                          # Keep IP >=2
+
+datip03 <- datip01 %>% 
+  filter(IPAddress %in% ip2$rowname) %>% # Filtro ip duplicada y Finished=1
+  select(ResponseId,IPAddress,sexo,edad,edcep, StartDate, EndDate) %>% 
+  arrange(IPAddress,sexo,edad,edcep) 
+
+# Identificar N decasos que han terminado
+finished<- data %>% 
+  dplyr::group_by(Intro,Finished) %>%
+  dplyr::summarise(n=n()) %>% 
+  dplyr::ungroup()
+
+# Identificar N decasos que fueron expulsados (screened out)
+screenout<- data %>% 
+  dplyr::filter(is.na(sexo) | is.na(edad) | is.na(educat)) %>% 
+  dplyr::group_by(Intro) %>%
+  dplyr::summarise(n=n()) %>% 
+  dplyr::ungroup()
+
+# Informacion n en cada categoria de tabla:
+n <- c(finished$n[1]+finished$n[2],
+  finished$n[2],
+  finished$n[1],
+  finished$n[3],
+  finished$n[3],
+  0,
+  screenout$n[1]+length(unique(datip03$IPAddress)),
+  screenout$n[1],
+  length(unique(datip03$IPAddress)))
+# Tabla externa para informacion del estudio
+survey_info <- 
+  readxl::read_excel(here::here("padsoc-template/plantillas/ficha-tecnica/input/survey-info.xlsx"))
+survey_info$code <- paste0("(",survey_info$code,")") #columna "code" para criterios
+survey_info$n    <- n # columna con n de cada categoria
+
+# Generar tabla:
+knitr::kable(survey_info,col.names = c("Item","","N"),
+      caption = "Descripción de logro",
+      linesep = "",
+      booktabs=T, 
+      format = "latex") %>% 
+  kableExtra::kable_styling(full_width = FALSE,
+                            latex_options = c("HOLD_position"),
+                            font_size = 9) %>% 
+  add_indent(c(2,3,5,8,9))
+```
+
+:::
+::::::
+
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Idioma_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+Español
+:::
+::::::
+
+
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.3\textwidth}"}
+_Ponderadores disponibles_
+:::
+
+::: {.col data-latex="{0.02\textwidth}"}
+\ 
+:::
+
+::: {.col data-latex="{0.65\textwidth}"}
+No
+:::
+::::::
+
+
+
+\pagebreak
+# Ola 2
+
+\pagebreak
+# Ola 3

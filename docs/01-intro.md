@@ -1,14 +1,13 @@
-# Introducción
+# Protocolo
+
+## Descripción del Estudio
+
+## Documentación
+
+## Publicación
+
+## Estructura digital
 
 
-El interés de realizar investigaciones científicas con base en la Ciencia Social Abierta ha ido aumentando en la última década. Distintos centros de investigaciones y organismos nacionales e internacionales han posicionado como un estándar mínimo de calidad, confianza y trasparencia que los(as) científicos sociales suscriban sus investigaciones bajo los principios de la Ciencia Abierta. En este libro se abordan los conceptos principales que explican de qué se trata la Ciencia Abierta, sin embargo, el objetivo final es convertirse en una guía para los(as) investigadores de las Ciencias Sociales. A partir de la revisión de los principios a los que suscriben los principales organismos internacionales y de las principales herramientas utilizadas para cumplir con este propósito es que este libro permite consolidar las experiencias actuales para transformarlas en una serie de recomendaciones que les permitan a los(as) investigadores de las Ciencias Sociales empíricas suscribirse bajo los estándares de la Ciencia Social Abierta. Este libro se guía bajo cuatro principios clave de la Ciencia Abierta y que constituyen cada uno de los capítulos tratados a continuación: 1) Transparencia; 2) Apertura de datos; 3) Reproducibilidad y 4) Publicaciones libres. 
-
-En el primer capítulo se aborda uno de los principales estándares que guían este tipo de investigaciones y que tiene que ver con la transparencia. En este libro, transparencia se asocia con la apertura pública del diseño de investigación, lo que refiere a la práctica científica de abrir al público todo tipo de información que sea relevante en la ejecución del estudio, desde las hipótesis hasta el plan de análisis. Así, quienes lean los hallazgos de la investigación (tanto científicos como el público en general) podrán evaluar la credibilidad de estos y descartar la influencia de prácticas cuestionables de investigación.
-
-En el segundo capítulo se aborda un elemento clave para fomentar la colaboración en las investigaciones de las Ciencias Sociales. La publicación de los datos de investigación (open data) se suscribe como un estándar de calidad internacional que permite contribuir a que los(as) investigadores se centren en la investigación y creación de hallazgos relevantes, antes que en la producción de datos. Más aún, se señala la importancia de publicar los datos de investigación cumpliendo con estándares internacionales sobre los datos y la documentación, de modo tal que cualquier investigador sea capaz de reutilizar los datos sin la necesidad de contactarse con el equipo que los produjo y con la información suficiente para reconocer o citar el aporte del equipo productor de los datos.
-
-En el tercer capítulo se aborda la discusión existente sobre la reproducibilidad y replicabilidad de una investigación, poniendo el principal foco en la reproducibilidad de los resultados de investigación.  Reproducibilidad refiere a una publicación detallada de la documentación, código y datos que permitan obtener los mismos resultados publicados por los autores, enfatizando que los análisis sean transparentes y claros con el objetivo de ser verificados por sus pares. En el escenario actual, la falta de reproducibilidad de los resultados afecta la robustez y credibilidad de la evidencia reportada por las investigaciones, principalmente por la falta de precisión en los procedimientos y las barreras de acceso a materiales clave del proceso de análisis [@freese_Replication_2017].
-
-Finalmente, el cuarto capítulo está enfocado en la parte final de una investigación y se centra en el proceso de divulgación científica. Para este propósito se abordan dos puntos clave. Por un lado, se aborda la idea de propiedad intelectual junto a los elementos centrales de la producción científica y el resguardo legal que poseen los(as) autores sobre sus investigaciones. Por otro lado, se aborda el movimiento del Open Access (OA), que tiene por objetivo promover el acceso libre a la producción de conocimiento científico digital y hacer uso de él sin restricciones de *copyright*, instalando la posibilidad de que cualquier persona pueda reutilizar la información de la investigación en cuanto a datos, procesos y resultados.
 
  
