@@ -35,8 +35,8 @@ if (!require("pacman")) install.packages("pacman")
 # instalar librerias rmarkdown, bookdown y here 
 pacman::p_load(rmarkdown,bookdown,here)
 # renderizar documento
-rmarkdown::render(input = here::here("padsoc-template/plantillas/ficha-tecnica/ficha-tecnica.Rmd"),
-                  output_dir = here::here("padsoc-template/documentacion"))
+rmarkdown::render(input = here::here("padsoc-template/99-plantillas/ficha-tecnica.Rmd"),
+                  output_dir = here::here("padsoc-template/02-documentacion"))
 ```
 
 ```{r setup, include=FALSE}
@@ -63,11 +63,6 @@ pacman::p_load(dplyr, #librerias del tidyverse
                here) 
 ```
 
-# Ola 1
-
-```{r}
-data <- read_sav(here::here("padsoc-template/datos/ola1/Estudio_3_ola1.sav"))
-```
 
 :::::: {.cols data-latex=""}
 ::: {.col data-latex="{0.3\textwidth}"}
@@ -79,7 +74,7 @@ _Título del Estudio_
 :::
 
 ::: {.col data-latex="{0.65\textwidth}"}
-Economía moral de la meritocracia y preferencias redistributivas (Ola 1)
+Economía moral de la meritocracia y preferencias redistributivas
 :::
 ::::::
 
@@ -121,6 +116,13 @@ _Investigadores_
 :::
 ::::::
 
+# Ola 1
+
+```{r}
+load(here::here("padsoc-template/01-datos/study_w01.RData"))
+```
+
+
 :::::: {.cols data-latex=""}
 ::: {.col data-latex="{0.3\textwidth}"}
 _Tipo de muestra_
@@ -136,9 +138,9 @@ La población objetivo del estudio son hombres y mujeres mayores de 18 años de 
 
 ```{r echo=FALSE, warning=FALSE}
 # Datos provenientes de encuesta CEP (tablas)
-load(here::here("padsoc-template/plantillas/ficha-tecnica/input/cep_sexo.RData"))
-load(here::here("padsoc-template/plantillas/ficha-tecnica/input/cep_edadcat.RData"))
-load(here::here("padsoc-template/plantillas/ficha-tecnica/input/cep_educat.RData"))
+load(here::here("padsoc-template/99-plantillas/input/cep_sexo.RData"))
+load(here::here("padsoc-template/99-plantillas/input/cep_edadcat.RData"))
+load(here::here("padsoc-template/99-plantillas/input/cep_educat.RData"))
 # adaptar nombres a las columnas
 ed2   <- ed2   %>% dplyr::select(var=EDQ, prop=rel.freq)
 edad2 <- edad2 %>% dplyr::select(var=ED_REC,prop=rel.freq)
@@ -156,15 +158,15 @@ tab1  <- dplyr::bind_rows(sex1,edad2,ed2)
 
 # Datos de ola 1:
 # grupos de edad
-age01 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(data$edad))) %>% na.omit()
+age01 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w01$edad))) %>% na.omit()
 # sexo
-sex01 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(data$sexo))) %>% na.omit()
+sex01 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w01$sexo))) %>% na.omit()
 # educacion
-data$edcat2 <- car::recode(data$edcep,recodes = "7:8=7;8=9;9=8") 
+study_w01$edcat2 <- car::recode(study_w01$edcep,recodes = "7:8=7;8=9;9=8") 
   # homologar etiquetas
-  data$edcat2 <- sjlabelled::set_labels(data$edcat2,labels = ed2$var)
+  study_w01$edcat2 <- sjlabelled::set_labels(study_w01$edcat2,labels = ed2$var)
   # generar tabla de frecuencias para educacion
-  edu01 <-   questionr::freq(as_character(as_factor(data$edcat2)),valid = T) %>% na.omit()
+  edu01 <-   questionr::freq(as_character(as_factor(study_w01$edcat2)),valid = T) %>% na.omit()
 
 # homologamos nombres de columnas
 edu01$var <- rownames(edu01)
@@ -213,22 +215,22 @@ En términos territoriales, la muestra está conformada principalmente por indiv
 
 
 ```{r echo=FALSE, warning=FALSE}
-data$region<- car::recode(data$comuna,
+study_w01$region<- car::recode(study_w01$comuna,
                           recode="1125=1;1145=2; c(1065,1146)=3; 1147=4; c(1148,1149)=5; 
                                   c(1066,1067)=6; 1070:1103=7; 1150=8; 1151:1152=9; 1153=10; 
                                   c(1068,1069)=11; 1154=12; 1158=13; c(1155,1156)=14; 1157=15",
                           as.factor = T)
-data$comuna.f <- sjlabelled::as_character(as_factor(data$comuna))
+study_w01$comuna.f <- sjlabelled::as_character(as_factor(study_w01$comuna))
 
-data$region <- factor(x = data$region,
-                     levels = levels(data$region),
+study_w01$region <- factor(x = study_w01$region,
+                     levels = levels(study_w01$region),
                      labels = c("Arica y Parinacota","Tarapacá","Antofagasta","Atacama",
                                 "Coquimbo","Valparaíso","Metropolitana",
                                 "Gral. Lib. Bernardo O'Higgins",
                                 "Región del Maule","Ñuble","Biobío",
                                 "Araucanía","Los Ríos","Los Lagos","Aysén"), 
                      ordered = T)
-data %>% 
+study_w01 %>% 
   dplyr::select(region) %>% 
   na.omit() %>% 
   dplyr::group_by(region) %>% 
@@ -375,7 +377,7 @@ n <- c(finished$n[1]+finished$n[2],
   length(unique(datip03$IPAddress)))
 # Tabla externa para informacion del estudio
 survey_info <- 
-  readxl::read_excel(here::here("padsoc-template/plantillas/ficha-tecnica/input/survey-info.xlsx"))
+  readxl::read_excel(here::here("padsoc-template/99-plantillas/input/survey-info.xlsx"))
 survey_info$code <- paste0("(",survey_info$code,")") #columna "code" para criterios
 survey_info$n    <- n # columna con n de cada categoria
 

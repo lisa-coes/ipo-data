@@ -1,5 +1,6 @@
 bookdown::gitbook:
   split_by: section
+  toc_depth: 4
   highlight: tango
   css: assets/lisa.css
   pandoc_args: [ 
@@ -9,11 +10,11 @@ bookdown::gitbook:
     after_body: assets/footer.html
   config:
     toc:
-      collapse: section
+      collapse: false
       before: |
         <li class="toc-logo"><a href="./"><img src="images/favicon.jpg"></a></li>
       after: |
-        <li><a href="https://github.com/lisa-coes" target="blank">LISA-COES <i class="fa fa-github"></i></a></li>
+        <li><a href="https://github.com/lisa-coes" t toc_depth: 2arget="blank">LISA-COES <i class="fa fa-github"></i></a></li>
 #    download: ["pdf", "epub"]
     sharing:
       github: yes

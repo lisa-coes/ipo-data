@@ -155,9 +155,12 @@ h1, h2, h3, h4 {
   color: #c7254e;
 }
 
+
+
 .summary a:hover {
   color: #3ea2aad9 !important;
 } 
+
 
 .book .book-summary ul.summary li.active>a { /*active TOC links*/
   color: #000000 !important;
@@ -177,6 +180,9 @@ li.appendix span, li.part span { /* for TOC part names */
 .part + li[data-level=""] { /* grabs first .chapter immediately after .part...but only those ch without numbers */
  text-transform: uppercase;
 }
+
+/*--------------------------*/
+
 
 
 /* The next two rules make the horizontal line go straight across in top navbar */
