@@ -17,14 +17,15 @@ url: https://github.com/lisa-coes/padsoc
 always_allow_html: yes
 ---
 
-# Presentación {-}
+# Presentación  {-}
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Hexagon.svg/2368px-Hexagon.svg.png " align="right" alt="logo" style="float: right;width: 20%;max-height: 100%" /> 
 
 
 
 
 El **Protocolo de Apertura de Datos Sociales** es una herramienta del Laboratorio de Investigación Social Abierta que se propone establecer un estándar para la preparación, documentación y publicación de datos cuantitativos en investigación social.
 
-[CREAR LOGO]
 
 
 

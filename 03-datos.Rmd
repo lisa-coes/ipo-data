@@ -7,7 +7,7 @@ La primera carpeta corresponde a **Datos**. Aquí se almacenan los archivos nece
 ---
 ### <i class="fa fa-folder-open" aria-hidden="true"></i> Preparación/ {-}
 
-La subcarpeta de Preparación contiene dos elementos principales. Primero, los datos en su formato original (sin ninguna clase de modificación) y, segundo, la rutina de código a través de la cual se preparan dichos datos.
+La **subcarpeta** de Preparación contiene dos elementos principales. Primero, los datos en su formato original (sin ninguna clase de modificación) y, segundo, la rutina de código a través de la cual se preparan dichos datos.
 
 #### <i class="fa fa-database" aria-hidden="true"></i> Datos originales {-}
 
