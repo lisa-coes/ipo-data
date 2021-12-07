@@ -51,6 +51,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 
@@ -83,7 +85,7 @@
 <li><a href="datos.html#código-preparación"><i class="fa fa-file-text" aria-hidden="true"></i> Código preparación</a></li>
 </ul></li>
 <li><a href="datos.html#datos-a-publicar"><i class="fa fa-database" aria-hidden="true"></i> Datos a publicar</a></li>
-<li><a href="datos.html#metadatos"><i class="fa fa-folder-open" aria-hidden="true"></i> Metadatos</a></li>
+<li><a href="datos.html#metadatos"><i class="fa fa-folder-open" aria-hidden="true"></i> Metadatos/</a></li>
 </ul></li>
 <li><a href="documentación.html#documentación"><i class="fa fa-folder-open" aria-hidden="true"></i> 2. Documentación/</a>
 <ul>
@@ -91,7 +93,10 @@
 <li><a href="documentación.html#libro-de-códigos"><i class="fa fa-file-text" aria-hidden="true"></i> Libro de códigos</a></li>
 <li><a href="documentación.html#instrumentos"><i class="fa fa-file-text" aria-hidden="true"></i> Instrumentos</a></li>
 </ul></li>
-<li><a href="publicación.html#publicación"><i class="fa fa-folder-open" aria-hidden="true"></i> 3. Publicación/</a></li>
+<li><a href="publicación.html#publicación"><i class="fa fa-folder-open" aria-hidden="true"></i> 3. Publicación/</a>
+<ul>
+<li><a href="publicación.html#repositorio"><i class="fa fa-archive" aria-hidden="true"></i> Repositorio</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
@@ -128,10 +133,72 @@
 </div>
 <div id="descripción-readme" class="section level2 unnumbered">
 <h2><i class="fa fa-file-text" aria-hidden="true"></i> Descripción (README)</h2>
-<p>La complejidad de una base de datos constituye un reflejo del diseño de investigación del estudio al cual pertenecen. Por este motivo, identificar las características de un estudio de manera precisa contribuye a establecer lo que debemos esclarecer antes de poner a disposición nuestros datos antes la comunidad de pares y a la sociedad en general. Al respecto, la Tabla <a href="#tab-strat"><strong>??</strong></a> establece una ejemplo minimalista respecto a cómo es posible clasificar un estudio cuantitativo según el tipo de diseño.</p>
-<p>[Tabla 10.1 Stratiegies of causal inference]</p>
-<p>Traducción propia en base a <span class="citation">(<a href="#ref-gerring_social_2012" role="doc-biblioref"><strong>gerring_social_2012?</strong></a>)</span> (p. 257)</p>
-<p>En referencia a lo anterior, teniendo un marco de referencia respecto a la complejidad de nuestro estudio, podemos proyectar las siguientes tareas a realizar para describir, documentar y publicar nuestros datos.</p>
+<p>La complejidad de una base de datos constituye un reflejo del diseño de investigación del estudio al cual pertenecen. Por este motivo, identificar las características de un estudio de manera precisa contribuye a establecer lo que debemos esclarecer antes de poner a disposición nuestros datos antes la comunidad de pares y a la sociedad en general. Al respecto, la Tabla <a href="descripción-readme.html#tab:tab-strat">1</a> establece una ejemplo minimalista respecto a cómo es posible clasificar un estudio cuantitativo según el tipo de diseño.</p>
+<table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<caption style="font-size: initial !important;">
+<span id="tab:tab-strat">Tabla 1: </span>Estrategias de inferencia causal
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Diseño
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+<ol style="list-style-type: decimal">
+<li>Diseño aleatorizados (experimentos)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<ol style="list-style-type: lower-alpha">
+<li>preprueba/postprueba, (b) sólo postprueba, (c) postpruebas múltiples, (d) roll-out, (e) crossover, (f) Salomón de cuatro grupos, (g) factorial.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+<ol start="2" style="list-style-type: decimal">
+<li>Diseños no aleatorizados (no experimentales, observacionales)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<ol style="list-style-type: lower-alpha">
+<li>regresión discontinua, (b) panel, (c) transversal, (d) longitudinal.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+<ol start="3" style="list-style-type: decimal">
+<li>Más allá de X e Y (factores distintos de la covariación de X e Y)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<ol style="list-style-type: lower-alpha">
+<li>factores de confusión condicionantes, (b) variables instrumentales, (c) mecanismos, (d) resultados alternativos, (e) heterogeneidad causal, (f) hipótesis rivales, (g) pruebas de solidez, (h) razonamiento causal.
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span> <sup></sup> Traducción propia en base a (Gerring, 2012; p. 257)
+</td>
+</tr>
+</tfoot>
+</table></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+<p>En referencia a lo anterior, teniendo un marco de referencia respecto a la complejidad de nuestro estudio, podemos proyectar las siguientes tareas a realizar para <strong>describir</strong>, <strong>documentar</strong> y <strong>publicar</strong> nuestros datos.</p>
+<p>A continuación presentaremos el esquema del protocolo en base a las tres subcarpetas principales: Datos, Documentación y Publicación.</p>
 
 </div>
 <hr>

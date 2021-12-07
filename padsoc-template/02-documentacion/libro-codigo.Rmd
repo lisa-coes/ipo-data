@@ -35,8 +35,8 @@ if (!require("pacman")) install.packages("pacman")
 # instalar librerias rmarkdown, bookdown y here 
 pacman::p_load(rmarkdown,bookdown,here)
 # renderizar documento
-rmarkdown::render(input = here::here("padsoc-template/plantillas/libro-codigo/libro-codigo.Rmd"),
-                  output_dir = here::here("padsoc-template/documentacion"))
+rmarkdown::render(input = here::here("padsoc-template/02-documentacion/libro-codigo.Rmd"),
+                  output_dir = here::here("padsoc-template/03-publicacion"))
 ```
 
 ```{r setup, include=FALSE}
@@ -59,99 +59,15 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 if (!require("pacman")) install.packages("pacman") 
 pacman::p_load(dplyr, #librerias del tidyverse
                haven,
-               here) 
+               here,
+               sjmisc) 
 ```
 
 # Ola 1
 
-
-<!-- PASO 0: cargar datos -->
-```{r}
-data <- read_sav(here::here("padsoc-template/datos/ola1/Estudio_3_ola1.sav"))
-```
-
-<!-- PASO 1: reordenar variables -->
-```{r include=FALSE}
-# Reorganizar variables:
-  
-df_w1 <- data %>% 
-  select(ResponseId,ticket,
-         Finished,Progress,
-         Intro,
-         # preguntas: importancia para salir adelante
-         starts_with("get_ah"),
-         # Orden - Display Order (DO): importancia para salir adelante
-         starts_with("get_ah_DO"),
-         # preguntas: escala percepcion y preferencia meritocracia
-         starts_with("meritv01_"), # items bloque 1
-         merit_perc_scale,
-         Q3_1,
-         Q4_1,
-         starts_with("meritv02_"), # items bloque 2
-         merit_perc_scale.0,
-         Q205_1,
-         Q206_1,
-         starts_with("meritv03_"), # items bloque 3
-         merit_perc_scale.1,
-         Q209_1,
-         Q210_1,
-         # preguntas: salario percibido y justo:
-         sal_perc_1,sal_perc_2,
-         sal_just_1,sal_just_2,
-         # Percepcion de pobreza:
-         percep_pov,
-         # preguntas: politicas y sociodemograficos
-         pospol_1,
-         # preguntas: escala de igualitarismo
-         starts_with("egal_"), 
-         # Orden - Display Order (DO): escala de igualitarismo
-         starts_with("igualitarismo_DO"),
-         edad,sexo,educat,edcep,ingresos,
-         ess01_1,ess02_1,ess03_1,
-         estlab,comuna,
-         # informacion de respuesta online
-         "StartDate","EndDate",
-         "Duration__in_seconds_",
-         "RecordedDate",
-         "IPAddress",         
-         "Status",
-         "RecipientLastName",
-         "RecipientFirstName",
-         "RecipientEmail",
-         "ExternalReference",
-         "LocationLatitude",
-         "LocationLongitude",
-         "DistributionChannel",
-         "UserLanguage",
-         # pertenencia a bloques aleatorizados:
-         "FL_21_DO_merit_perc_pref_julio19v01",# bloque 1
-         "FL_21_DO_merit_perc_pref_julio19v02",# bloque 2
-         "FL_21_DO_merit_perc_pref_julio19v03" # bloque 3 
-         )
-```
-
-```{r eval=FALSE, include=FALSE}
-names(df_w1)
-names(data)
-```
-
-```{r echo=FALSE}
-variable_label <-
-  sjlabelled::get_label(df_w1) %>% 
-  data.frame()
-
-
-knitr::kable(variable_label,
-             col.names = "Etiqueta",
-             format = "html",
-             booktabs=T) %>% 
-  kableExtra::kable_styling(full_width = F,
-                            latex_options = "scale_down") %>% 
-  kableExtra::column_spec(column = 2,width = "10cm")
-```
-
 ```{r, size="tiny"}
-sjmisc::frq(df_w1,
+load(here::here("padsoc-template/01-datos/study_w01.RData"))
+sjmisc::frq(study_w01,
             min.frq = 10
             )
 ```

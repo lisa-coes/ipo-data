@@ -36,7 +36,7 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(rmarkdown,bookdown,here)
 # renderizar documento
 rmarkdown::render(input = here::here("padsoc-template/02-documentacion/ficha-tecnica.Rmd"),
-                  output_dir = here::here("padsoc-template/02-documentacion"))
+                  output_dir = here::here("padsoc-template/03-publicacion"))
 ```
 
 ```{r setup, include=FALSE}

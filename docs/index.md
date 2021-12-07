@@ -2,7 +2,7 @@
 title: "Protocolo Apertura de Datos Sociales"
 # subtitle: "<center>Documento de trabajo</center>"
 # author: "Investigador a cargo: Juan Carlos Castillo <br> Asistente de investigación: Valentina Andrade <br> Pasante: Vanessa Leyton"
-date: "06 diciembre 2021"
+date: "07 diciembre 2021"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib, input/bib/lisacoes.bib]
