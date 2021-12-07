@@ -35,7 +35,7 @@ if (!require("pacman")) install.packages("pacman")
 # instalar librerias rmarkdown, bookdown y here 
 pacman::p_load(rmarkdown,bookdown,here)
 # renderizar documento
-rmarkdown::render(input = here::here("padsoc-template/99-plantillas/ficha-tecnica.Rmd"),
+rmarkdown::render(input = here::here("padsoc-template/02-documentacion/ficha-tecnica.Rmd"),
                   output_dir = here::here("padsoc-template/02-documentacion"))
 ```
 
@@ -138,9 +138,9 @@ La población objetivo del estudio son hombres y mujeres mayores de 18 años de 
 
 ```{r echo=FALSE, warning=FALSE}
 # Datos provenientes de encuesta CEP (tablas)
-load(here::here("padsoc-template/99-plantillas/input/cep_sexo.RData"))
-load(here::here("padsoc-template/99-plantillas/input/cep_edadcat.RData"))
-load(here::here("padsoc-template/99-plantillas/input/cep_educat.RData"))
+load(here::here("padsoc-template/02-documentacion/input/cep_sexo.RData"))
+load(here::here("padsoc-template/02-documentacion/input/cep_edadcat.RData"))
+load(here::here("padsoc-template/02-documentacion/input/cep_educat.RData"))
 # adaptar nombres a las columnas
 ed2   <- ed2   %>% dplyr::select(var=EDQ, prop=rel.freq)
 edad2 <- edad2 %>% dplyr::select(var=ED_REC,prop=rel.freq)
@@ -377,7 +377,7 @@ n <- c(finished$n[1]+finished$n[2],
   length(unique(datip03$IPAddress)))
 # Tabla externa para informacion del estudio
 survey_info <- 
-  readxl::read_excel(here::here("padsoc-template/99-plantillas/input/survey-info.xlsx"))
+  readxl::read_excel(here::here("padsoc-template/02-documentacion/input/survey-info.xlsx"))
 survey_info$code <- paste0("(",survey_info$code,")") #columna "code" para criterios
 survey_info$n    <- n # columna con n de cada categoria
 

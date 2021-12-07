@@ -5,19 +5,27 @@ La **apertura** de datos puede resumirse en tres momentos. Primero, la identific
 
 Cada uno de estos momentos se traduce en una estructura digital de carpetas que contienen cada pieza de información: 
 
-* Datos
-    a. Preparación de base de datos (nombres y etiquetado de variables)
-    b. Metadatos (cita bibliográfica)
-    c. Datos a publicar (archivos)
+* <i class="fa fa-folder-open" aria-hidden="true"></i>   Datos
+    - Preparación 
+      - Datos brutos (archivos)
+      - Procesamiento (código: organización, nombres y etiquetado de variables)
+    - Datos a publicar (archivos)
+    - Metadatos (p.ej. cita bibliográfica, manual de usuario)
   
-* Documentación
+* <i class="fa fa-folder-open" aria-hidden="true"></i>  Documentación
     - Preparación de documentación de datos
       - Preparación libro de códigos
       - Preparación ficha técnica
       - Preparación instrumentos de recolección de información
       
-* Publicación
+* <i class="fa fa-folder-open" aria-hidden="true"></i>   Publicación
 
+    - Checklist para publicación (checklist.pdf)
+    - Datos (p.ej: study_01.RData)
+    - Metadatos (user-manual.pdf)
+    - Libro de código (codebook.pdf)
+    - Ficha técnica (ficha-tecnica.pdf)
+    - Instrumentos (cuestionario_study_01.pdf)
 
 
 

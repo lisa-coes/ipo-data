@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title> Datos/ | Protocolo Apertura de Datos Sociales</title>
-  <meta name="description" content=" Datos/ | Protocolo Apertura de Datos Sociales" />
+  <title> 1. Datos/ | Protocolo Apertura de Datos Sociales</title>
+  <meta name="description" content=" 1. Datos/ | Protocolo Apertura de Datos Sociales" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content=" Datos/ | Protocolo Apertura de Datos Sociales" />
+  <meta property="og:title" content=" 1. Datos/ | Protocolo Apertura de Datos Sociales" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/lisa-coes/padsoc" />
   <meta property="og:image" content="https://github.com/lisa-coes/padsoc/images/lisa-complete.png" />
-  <meta property="og:description" content=" Datos/ | Protocolo Apertura de Datos Sociales" />
+  <meta property="og:description" content=" 1. Datos/ | Protocolo Apertura de Datos Sociales" />
   <meta name="github-repo" content="lisa-coes/padsoc" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content=" Datos/ | Protocolo Apertura de Datos Sociales" />
+  <meta name="twitter:title" content=" 1. Datos/ | Protocolo Apertura de Datos Sociales" />
   
-  <meta name="twitter:description" content=" Datos/ | Protocolo Apertura de Datos Sociales" />
+  <meta name="twitter:description" content=" 1. Datos/ | Protocolo Apertura de Datos Sociales" />
   <meta name="twitter:image" content="https://github.com/lisa-coes/padsoc/images/lisa-complete.png" />
 
 
@@ -75,19 +75,23 @@
 <li><a href="proyecto.html#proyecto"><i class="fa fa-folder-open" aria-hidden="true"></i> Proyecto/</a>
 <ul>
 <li><a href="descripción-readme.html#descripción-readme"><i class="fa fa-file-text" aria-hidden="true"></i> Descripción (README)</a></li>
-<li><a href="datos.html#datos"><i class="fa fa-folder-open" aria-hidden="true"></i> Datos/</a>
+<li><a href="datos.html#datos"><i class="fa fa-folder-open" aria-hidden="true"></i> 1. Datos/</a>
 <ul>
-<li><a href="datos.html#preparación"><i class="fa fa-file-text" aria-hidden="true"></i> Preparación</a></li>
-<li><a href="datos.html#base-de-datos"><i class="fa fa-database" aria-hidden="true"></i> Base de datos</a></li>
+<li><a href="datos.html#preparación"><i class="fa fa-folder-open" aria-hidden="true"></i> Preparación/</a>
+<ul>
+<li><a href="datos.html#datos-originales"><i class="fa fa-database" aria-hidden="true"></i> Datos originales</a></li>
+<li><a href="datos.html#código-preparación"><i class="fa fa-file-text" aria-hidden="true"></i> Código preparación</a></li>
+</ul></li>
+<li><a href="datos.html#datos-a-publicar"><i class="fa fa-database" aria-hidden="true"></i> Datos a publicar</a></li>
 <li><a href="datos.html#metadatos"><i class="fa fa-folder-open" aria-hidden="true"></i> Metadatos</a></li>
 </ul></li>
-<li><a href="documentación.html#documentación"><i class="fa fa-folder-open" aria-hidden="true"></i> Documentación/</a>
+<li><a href="documentación.html#documentación"><i class="fa fa-folder-open" aria-hidden="true"></i> 2. Documentación/</a>
 <ul>
 <li><a href="documentación.html#ficha-técnica"><i class="fa fa-file-text" aria-hidden="true"></i> Ficha técnica</a></li>
 <li><a href="documentación.html#libro-de-códigos"><i class="fa fa-file-text" aria-hidden="true"></i> Libro de códigos</a></li>
 <li><a href="documentación.html#instrumentos"><i class="fa fa-file-text" aria-hidden="true"></i> Instrumentos</a></li>
 </ul></li>
-<li><a href="publicación.html#publicación"><i class="fa fa-folder-open" aria-hidden="true"></i> Publicación/</a></li>
+<li><a href="publicación.html#publicación"><i class="fa fa-folder-open" aria-hidden="true"></i> 3. Publicación/</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
@@ -123,15 +127,131 @@
   <img class= "hero-image" src="images/lisa-complete.png">
 </div>
 <div id="datos" class="section level2 unnumbered">
-<h2><i class="fa fa-folder-open" aria-hidden="true"></i> Datos/</h2>
+<h2><i class="fa fa-folder-open" aria-hidden="true"></i> 1. Datos/</h2>
+<p>La primera carpeta corresponde a Datos. Aquí se almacenan los archivos necesarios para la preparación de los datos, la preparación de metadados y la base de datos a publicar. El contenido de esta carpeta se describe detalladamente a continuación.</p>
 <div id="preparación" class="section level3 unnumbered">
-<h3><i class="fa fa-file-text" aria-hidden="true"></i> Preparación</h3>
+<h3><i class="fa fa-folder-open" aria-hidden="true"></i> Preparación/</h3>
+<p>La subcarpeta de Preparación contiene dos elementos principales. Primero, los datos en su formato original (sin ninguna clase de modificación) y, segundo, la rutina de código a través de la cual se preparan dichos datos.</p>
+<div id="datos-originales" class="section level4 unnumbered">
+<h4><i class="fa fa-database" aria-hidden="true"></i> Datos originales</h4>
+<p>Los datos originales corresponden a la base o las bases de datos en su <strong>formato original</strong> sin modificaciones en la posición de las variables, nombres y etiquetas de variables y valores de variable.</p>
+<p>Por ejemplo, tenemos un archivo en formato original <code>.sav</code> (SPSS):</p>
+<ul>
+<li>Archivo: <code>Estudio3_ola1.sav</code></li>
+</ul>
 </div>
-<div id="base-de-datos" class="section level3 unnumbered">
-<h3><i class="fa fa-database" aria-hidden="true"></i> Base de datos</h3>
+<div id="código-preparación" class="section level4 unnumbered">
+<h4><i class="fa fa-file-text" aria-hidden="true"></i> Código preparación</h4>
+<p>Se sugiere que el procedimiento de organización, asignación de nombres y etiquetado, tanto de las variables como de valores de variable, debe registrarse en una rutina de código.</p>
+<ul>
+<li>Archivo: <code>prod_prep.Rmd</code></li>
+</ul>
+<p>Debe:</p>
+<button class="accordion">
+<ol style="list-style-type: decimal">
+<li>Organizar variables
+</button>
+<div class="panel">
+</li>
+</ol>
+<ul>
+<li>Se deben organizar las variables según su función en la base de datos. Por ejemplo, variables de identificación individual o pertenencia a unidades de nivel superior (p.ej. estudiantes en escuelas) pueden ir primero, luego las características sociodemográficas, preguntas de opinión pública o variables que identiquen pertenencia a grupos (p.ej. tratamiento o control).</li>
+</ul>
+</div>
+<button class="accordion">
+<ol start="2" style="list-style-type: decimal">
+<li>Asignar nombres
+</button>
+<div class="panel">
+</li>
+</ol>
+<ul>
+<li>hola</li>
+<li>chao</li>
+</ul>
+</div>
+<button class="accordion">
+<ol start="3" style="list-style-type: decimal">
+<li>Etiquetar
+</button>
+<div class="panel">
+</li>
+</ol>
+<ul>
+<li>hola</li>
+<li>chao</li>
+</ul>
+</div>
+<p><br></p>
+<table>
+<colgroup>
+<col width="24%" />
+<col width="17%" />
+<col width="19%" />
+<col width="17%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Datos originales</th>
+<th></th>
+<th>Preparación</th>
+<th></th>
+<th>Datos a publicar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Estudio3_ola1.sav</code></td>
+<td><span class="math inline">\(\rightarrow\)</span></td>
+<td><code>prod_prep.R/.do</code></td>
+<td><span class="math inline">\(\rightarrow\)</span></td>
+<td><code>study_w01.RData/.dta</code></td>
+</tr>
+</tbody>
+</table>
+<p>Para más detalle recomendamos visitar el capítulo de: <a href="https://lisa-coes.github.io/lisa-book/consejos-para-la-apertura-de-datos-de-investigaci%C3%B3n-social.html#datos-cuantitativos">
+<button class="button button4">Apertura de datos cuantitativos</button>
+</a></p>
+<p><br></p>
+</div>
+</div>
+<div id="datos-a-publicar" class="section level3 unnumbered">
+<h3><i class="fa fa-database" aria-hidden="true"></i> Datos a publicar</h3>
+<p>Los datos a publicar son el resultado de procesar los datos originales. Será el archivo final que unifica los datos que pondremos a disposición pública.</p>
+<ul>
+<li>Archivo: <code>study_w01.RData/.dta</code></li>
+</ul>
 </div>
 <div id="metadatos" class="section level3 unnumbered">
 <h3><i class="fa fa-folder-open" aria-hidden="true"></i> Metadatos</h3>
+<p>La Guía de Fuentes de Datos es un documento en el que se registra la información sobre las fuentes de sus Archivos de Datos de Entrada.</p>
+<button class="accordion">
+Section 1
+</button>
+<div class="panel">
+<ul>
+<li>hola</li>
+<li>chao</li>
+</ul>
+</div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
 </div>
 </div>
 <hr>
@@ -200,6 +320,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

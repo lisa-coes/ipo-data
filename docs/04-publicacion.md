@@ -1,4 +1,4 @@
-## <i class="fa fa-folder-open" aria-hidden="true"></i> Publicación/ {-}
+## <i class="fa fa-folder-open" aria-hidden="true"></i> 3. Publicación/ {-}
 
 * Documentos en pdf de todo listo para subir sin plantillas ni código
 

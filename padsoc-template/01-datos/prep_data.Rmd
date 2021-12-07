@@ -1,6 +1,6 @@
 ---
 title: "Preparacion de datos"
-subtitle: 'Estudio "Meritocracia y Redistribución"'
+subtitle: 'Estudio "Meritocracia y Redistribución "'
 author: "Fondecyt regular N°1160921"
 output: 
   html_document:
@@ -16,7 +16,7 @@ if (!require("pacman")) install.packages("pacman")
 # instalar librerias rmarkdown, bookdown y here 
 pacman::p_load(rmarkdown,bookdown,here)
 # renderizar documento
-rmarkdown::render(input = here::here("padsoc-template/99-plantillas/prep_data.Rmd"))
+rmarkdown::render(input = here::here("padsoc-template/01-datos/prep_data.Rmd"))
 ```
 
 ```{r setup, include=FALSE}
@@ -40,7 +40,7 @@ pacman::p_load(dplyr, #librerias del tidyverse
 
 ```{r prep-wave01, include=FALSE}
 # PASO 1: Cargar datos
-data <- read_sav(here::here("padsoc-template/99-plantillas/input/Estudio_3_ola1.sav"))
+data <- read_sav(here::here("padsoc-template/01-datos/input/Estudio_3_ola1.sav"))
 # PASO 2: reordenar variables
 study_w01 <- data %>% 
   select(ResponseId,ticket,
