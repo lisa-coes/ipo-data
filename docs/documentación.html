@@ -138,23 +138,97 @@
 <div id="ficha-técnica" class="section level3 unnumbered">
 <h3><i class="fa fa-file-text" aria-hidden="true"></i> Ficha técnica</h3>
 <p><strong>Contenidos</strong></p>
-<p><strong>Creando la ficha técnica</strong></p>
+<ul>
+<li>La ficha técnica es un documento que describe las principales características técnicas del estudio.</li>
+<li>Podemos encontrar información referente a la población objetivo del estudio, estrategia y tamaño muestral, estadísticos de logro (p.ej. tasa de respuesta), fecha de trabajo de campo, entre otros.</li>
+</ul>
+<button class="accordion" style="font-weight: bold;">
+Creando la ficha técnica
+</button>
+<div class="panel">
+<p>Algunas sugerencias para la creación de la ficha técnica son las siguientes:</p>
+<ul>
+<li>Si el estudio contiene una o más fuentes de datos, se debe generar una ficha técnica para cada una.</li>
+<li>La ficha técnica debe estar organizada en secciones para según las característica del estudio:
+<ul>
+<li>Tipo de muestra</li>
+<li>Estrategia de Campo</li>
+<li>Entidad a cargo del trabajo de campo</li>
+<li>Modo de aplicación</li>
+<li>Número de respuestas</li>
+<li>Detalle de la muestra</li>
+<li>Idioma</li>
+<li>Ponderadores</li>
+<li>Otros</li>
+</ul></li>
+<li>Se recomienda que la versión final de la ficha técnica se almacene en fomato <em>.pdf</em></li>
+</ul>
+</div>
 <hr />
 </div>
 <div id="libro-de-códigos" class="section level3 unnumbered">
 <h3><i class="fa fa-file-text" aria-hidden="true"></i> Libro de códigos</h3>
 <p><strong>Contenidos</strong></p>
-<p><strong>Creando el libro de códigos</strong></p>
+<ul>
+<li><p>Un libro de códigos es un documento que contiene información detallada de una fuente de datos, tales como nombres de variable, etiquetas de variable, etiquetas de valores o valores perdidos.</p></li>
+<li><p>Un libro de códigos bien documentado permite conocer el contenido, estructura y diseño de un estudio, lo cual facilita vincular las preguntas del cuestionario con cada una de las variables en la base de datos</p></li>
+</ul>
+<button class="accordion" style="font-weight: bold;">
+Creando el libro de códigos
+</button>
+<div class="panel">
+<p>Algunas sugerencias básicas de lo que puede incluir libro de códigos son las siguientes:</p>
+<ul>
+<li><p><strong>Nombre de variable:</strong> El nombre o numeración asignada a cada variable en la base de datos. En algunas ocasiones se utilizan abreviaciones mnemotécnicas (TOPBOTOM) o patrones alfanuméricos (d01_01). Para los datos provenientes de encuestas se sugiere emplear los números de las preguntas (P01, P02).</p></li>
+<li><p><strong>Etiqueta de variable:</strong> Una descripción breve que permite identificar la variable. Si es posible, se sugiere utilizar un fragmento del fraseo de la pregunta en el cuestionario.
+Valores: Los valores reales de la variable (p.ej: 1, 2, 3, 4, 5)</p></li>
+<li><p><strong>Etiquetas de valores:</strong> El texto asignado a cada uno de los valores de variable (Totalmente en desacuerdo, En desacuerdo, Ni de acuerdo ni en desacuerdo, De acuerdo, Totalmente de acuerdo)</p></li>
+<li><p><strong>Valores perdidos:</strong> Si aplica, son los valores y etiquetas de valores para los datos perdidos. La correcta descripción de estos datos evita problemas en los análisis, por lo cual deben estar correctamente descritos (ver sección de Bases de datos, Codificación de las respuesta)</p></li>
+<li><p>Se recomienda que la versión final del libro de códigos se almacene en formato <em>.pdf</em></p></li>
+</ul>
+</div>
 <hr />
 </div>
 <div id="instrumentos" class="section level3 unnumbered">
 <h3><i class="fa fa-file-text" aria-hidden="true"></i> Instrumentos</h3>
 <p><strong>Contenidos</strong></p>
-<p><strong>Creando los instrumentos</strong></p>
+<ul>
+<li>Estos documentos son lo instrumentos empleados en la producción de los datos. En el caso de las encuestas, corresponden al cuestionario con todas las preguntas que se han realizado a los participantes del estudio.<br />
+</li>
+<li>Un cuestionario debe contener las preguntas y las alternativas o campos de respuesta (preguntas abiertas) acompañado de un identificador que permita vincularlos con la variable en la base de datos que se indica en el libro de códigos.</li>
+</ul>
+<button class="accordion" style="font-weight: bold;">
+Documentando los instrumentos
+</button>
+<div class="panel">
+<p>Algunas sugerencias de lo que debe incluir un instrumento son las siguientes:</p>
+<ul>
+<li>El documento debe ser ilustrar adecuadamente cómo fueron realizadas las preguntas a los participantes. Se debe mostrar el fraseo original de las preguntas y alternativas de respuesta.</li>
+<li>Debe estar organizado en secciones a través de las cuales se organizaron originalmente las preguntas en el cuestionario.</li>
+<li>En el caso de que aplique, se debe incluir el modelo de consentimiento informado en la primera página.</li>
+<li>Se recomienda que la versión final del los instrumentos se almacene en formato <em>.pdf</em></li>
+</ul>
+</div>
 <hr />
 <p>Si deseas saber mayores detalles visita nuestra guía completa: <a href="https://lisa-coes.github.io/lisa-book/consejos-para-la-apertura-de-datos-de-investigaci%C3%B3n-social.html#documentar">
 <button class="btn btn-template-main">Documentación de datos</button>
 </a></p>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+</script>
 
 </div>
 </div>

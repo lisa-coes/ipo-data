@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Karla:400,400i,700,700i|Lora:400,400i,700,700i&display=swap');
 
+
+
 p.caption {
   color: #777;
   margin-top: 10px;
@@ -449,6 +451,8 @@ a.anchor:hover {
 
 
 /* acordion */
+
+
 .accordion {
   background-color: #eee;
   color: #444;
@@ -473,6 +477,18 @@ a.anchor:hover {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
+
+
+
+/* acordion 2*/
+
+
+
+
+
+
+
 
 /* botones*/
 

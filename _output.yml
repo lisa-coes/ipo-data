@@ -2,7 +2,7 @@ bookdown::gitbook:
   split_by: section
   toc_depth: 4
   highlight: tango
-  css: assets/lisa.css
+  css: [assets/lisa.css, assets/font-awesome.css, assets/font-awesome.min.css]
   pandoc_args: [ 
       "-M", "lang:es"]
   includes:
