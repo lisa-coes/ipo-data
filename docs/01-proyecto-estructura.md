@@ -25,9 +25,6 @@ Cada uno de estos momentos se traduce en una estructura digital de carpetas que 
     - Libro de código (codebook.pdf)
     - Ficha técnica (ficha-tecnica.pdf)
     - Instrumentos (cuestionario_study_01.pdf)
-
-
-
     
     
 

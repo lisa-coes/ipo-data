@@ -452,7 +452,6 @@ a.anchor:hover {
 
 /* acordion */
 
-
 .accordion {
   background-color: #eee;
   color: #444;
@@ -477,13 +476,6 @@ a.anchor:hover {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
-
-
-
-
-/* acordion 2*/
-
-
 
 
 
