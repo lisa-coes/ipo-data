@@ -58,14 +58,14 @@ Los metadatos corresponden a un (o más) documento(s) en el cual se registra la 
 </div> 
 
 
-### <i class="fa fa-archive" aria-hidden="true"></i>  Repositorio {-} 
+<!-- ### <i class="fa fa-archive" aria-hidden="true"></i>  Repositorio {-}  -->
 
-El proceso de publicación requiere de la elección de un repositorio donde almacenar los datos. Algunos ejemplos son el Harvard Dataverse o el Open Science Framework. 
+<!-- El proceso de publicación requiere de la elección de un repositorio donde almacenar los datos. Algunos ejemplos son el Harvard Dataverse o el Open Science Framework.  -->
 
 
-* En Dataverse:
-  * dataverse: archivos virtuales donde puedes hospedar proyectos
-  * datasets: archivos virtuales de datos
+<!-- * En Dataverse: -->
+<!--   * dataverse: archivos virtuales donde puedes hospedar proyectos -->
+<!--   * datasets: archivos virtuales de datos -->
   
   
 <script>

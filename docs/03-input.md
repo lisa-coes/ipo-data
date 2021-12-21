@@ -13,7 +13,18 @@ Por ejemplo, tenemos un archivo en formato original `.sav` (SPSS):
 
 ### <i class="fa fa-table" aria-hidden="true"></i> Tablas {-}
 
+
+En el caso de emplear información de tablas con información complementaria para la documentación (p.ej. descripciones, categorías para clasificación, etc.) deben almacenarse en esta carpeta en el formato a emplear.
+
+Sugerimos emplear formatos Valores separados por commas (`.csv`) u hojas de cálculo (`.ods`, `.xls`). 
+
+
 ### <i class="fa fa-file-image-o" aria-hidden="true"></i> Imágenes {-}
+
+Las imágenes empleadas y que serán incluidas en la documentación pueden almacenarse en formatos como `.png` o `.jpeg`. Deben ser correctamente individualizadas y el nombre del archivo debe describir su contenido.
+
+
+
 
 
 

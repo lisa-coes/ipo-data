@@ -123,6 +123,7 @@ Valores: Los valores reales de la variable (p.ej: 1, 2, 3, 4, 5)
 
 </div>
 
+---
 
 ### <i class="fa fa-file-text" aria-hidden="true"></i> Instrumentos {-}
 
@@ -145,11 +146,6 @@ Algunas sugerencias de lo que debe incluir un instrumento son las siguientes:
 
 </div>
 
-
-
----
-
-### <i class="fa fa-file-text" aria-hidden="true"></i> Instrumentos {-}
 
 <script>
 var acc = document.getElementsByClassName("accordion");
