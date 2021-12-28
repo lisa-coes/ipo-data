@@ -6,7 +6,7 @@ La segunda carpeta corresponde a **Preparación**. Aquí se almacenan los archiv
 
 ### <i class="fa fa-code" aria-hidden="true"></i> Preparación de datos {-}
 
-Se sugiere que el procedimiento de organización, asignación de nombres y etiquetado, tanto de las variables como de valores de variable, se realice en una **rutina de código**. 
+Se sugiere que el procedimiento de organización, asignación de nombres y etiquetado, tanto de las variables como de valores de variable, se realice en una **rutina de código**. Los datos originales se encuentran almacenados en la carpeta [**Input**](input.html#input)
 
 * Archivo: `prod_prep.Rmd/.R/.do `
 
@@ -22,7 +22,7 @@ La preparación se compone de:
 <button class="accordion">1. Organizar variables </button>
 <div class="panel">
 
-* Se deben organizar las variables según su función en la base de datos. Por ejemplo, variables de identificación individual o pertenencia a unidades de nivel superior (p.ej. estudiantes en escuelas) pueden ir primero, luego las características sociodemográficas, preguntas de opinión pública o variables que identiquen pertenencia a grupos (p.ej. tratamiento o control). 
+* Se deben organizar las variables según su función en la base de datos. Por ejemplo, variables de identificación individual o pertenencia a unidades de nivel superior (p.ej. estudiantes en escuelas) pueden ir primero, luego las características sociodemográficas, preguntas de opinión pública o variables que identifiquen pertenencia a grupos (p.ej. tratamiento o control). 
 </div>
 
 <button class="accordion">2. Asignar nombres</button>
@@ -64,8 +64,6 @@ Para almacenar la base de datos resultante del procesamiento, sugerimos consider
 
 Los datos resultantes de la preparación, corresponden al archivo final que unifica los datos que pondremos a disposición pública y que deben ser almacenados en la carpeta [**Output**](output.html#output)
 
----
-
 Si deseas saber mayores detalles visita nuestra guía completa: <a href="https://lisa-coes.github.io/lisa-book/consejos-para-la-apertura-de-datos-de-investigaci%C3%B3n-social.html#datos-cuantitativos">
    <button class="btn btn-template-main">Preparación de datos</button>
 </a>
@@ -95,7 +93,7 @@ Algunas sugerencias para la creación de la ficha técnica son las siguientes:
   - Idioma
   - Ponderadores
   - Otros 
-* Se recomienda que la versión final de la ficha técnica se almacene en fomato _.pdf_
+* Se recomienda que la versión final de la ficha técnica se almacene en fomato _.pdf_ en la carpeta [**Output/Documentación/**](output.html#documentaci%C3%B3n)
 </div>
 
 ---
@@ -119,7 +117,7 @@ Valores: Los valores reales de la variable (p.ej: 1, 2, 3, 4, 5)
 * **Etiquetas de valores:** El texto asignado a cada uno de los valores de variable (Totalmente en desacuerdo, En desacuerdo, Ni de acuerdo ni en desacuerdo, De acuerdo, Totalmente de acuerdo)
 * **Valores perdidos:** Si aplica, son los valores y etiquetas de valores para los datos perdidos. La correcta descripción de estos datos evita problemas en los análisis, por lo cual deben estar correctamente descritos (ver sección de Bases de datos, Codificación de las respuesta)
 
-* Se recomienda que la versión final del libro de códigos se almacene en formato _.pdf_
+* Se recomienda que la versión final del libro de códigos se almacene un archivo formato _.pdf_ en la carpeta [**Output/Documentación/**](output.html#documentaci%C3%B3n)
 
 </div>
 
@@ -142,7 +140,7 @@ Algunas sugerencias de lo que debe incluir un instrumento son las siguientes:
 * El documento debe ser ilustrar adecuadamente cómo fueron realizadas las preguntas a los participantes. Debe mostrar el fraseo original de las preguntas y alternativas de respuesta.
 * Debe estar organizado en secciones a través de las cuales se organizaron originalmente las preguntas en el cuestionario.
 
-* Se recomienda que la versión final del los instrumentos se almacene en formato _.pdf_
+* Se recomienda que la versión final del los instrumentos se almacene en un archivo formato _.pdf_ en la carpeta [**Output/Documentación/**](output.html#documentaci%C3%B3n)
 
 </div>
 

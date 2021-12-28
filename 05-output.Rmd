@@ -16,7 +16,7 @@ La tercera carpeta corresponde a **Output**. Aquí se almacenan todos los archiv
 Los metadatos corresponden a un (o más) documento(s) en el cual se registra la información sobre los datos a publicar La información que se pondrá a disposición en esta sección puede variar según la naturaleza del estudio. No obstante, se deben tener presente algunos elementos comunes que se presentan a continuación: 
   
   
-<button class="accordion"> <i class="fa fa-file-text" aria-hidden="true"></i>   Guía de usuario</button>
+<button class="accordion"> <i class="fa fa-file-pdf-o" aria-hidden="true"></i>   Guía de usuario</button>
 <div class="panel">
 
 * Debemos generar un documento que oriente a los usuarios cómo emplear los datos. Algunos ejemplos pueden ser:

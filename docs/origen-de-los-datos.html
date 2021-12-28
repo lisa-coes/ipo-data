@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title> Proyecto/ | Protocolo Apertura de Datos Sociales</title>
-  <meta name="description" content=" Proyecto/ | Protocolo Apertura de Datos Sociales" />
+  <title>Origen de los datos | Protocolo Apertura de Datos Sociales</title>
+  <meta name="description" content="Origen de los datos | Protocolo Apertura de Datos Sociales" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content=" Proyecto/ | Protocolo Apertura de Datos Sociales" />
+  <meta property="og:title" content="Origen de los datos | Protocolo Apertura de Datos Sociales" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/lisa-coes/padsoc" />
   <meta property="og:image" content="https://github.com/lisa-coes/padsoc/images/lisa-complete.png" />
-  <meta property="og:description" content=" Proyecto/ | Protocolo Apertura de Datos Sociales" />
+  <meta property="og:description" content="Origen de los datos | Protocolo Apertura de Datos Sociales" />
   <meta name="github-repo" content="lisa-coes/padsoc" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content=" Proyecto/ | Protocolo Apertura de Datos Sociales" />
+  <meta name="twitter:title" content="Origen de los datos | Protocolo Apertura de Datos Sociales" />
   
-  <meta name="twitter:description" content=" Proyecto/ | Protocolo Apertura de Datos Sociales" />
+  <meta name="twitter:description" content="Origen de los datos | Protocolo Apertura de Datos Sociales" />
   <meta name="twitter:image" content="https://github.com/lisa-coes/padsoc/images/lisa-complete.png" />
 
 
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="images/lisa.ico" type="image/x-icon" />
-<link rel="prev" href="origen-de-los-datos.html"/>
-<link rel="next" href="descripción-readme.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="proyecto.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,43 +135,96 @@
 <div class="hero-image-container"> 
   <img class= "hero-image" src="images/lisa-complete.png">
 </div>
-<div id="proyecto" class="section level1 unnumbered">
-<h1><i class="fa fa-folder-open" aria-hidden="true"></i> Proyecto/</h1>
-<p>La <strong>apertura</strong> de datos puede resumirse en tres momentos. Primero, la identificación de la complejidad del estudio a través de la descripción del diseño de investigación. Segundo, la preparación y documentación de la base de datos. Tercero, el proceso de organización de cada archivo necesario para la publicación de los datos.</p>
-<p>Cada uno de estos momentos se traduce en una estructura digital de carpetas que contienen cada pieza de información:</p>
-<ul>
-<li><p><i class="fa fa-folder-open" aria-hidden="true"></i> <strong>1. Input</strong></p>
-<ul>
-<li>Datos brutos (archivos)</li>
-<li>Tablas</li>
-<li>Imagenes</li>
-</ul></li>
-<li><p><i class="fa fa-folder-open" aria-hidden="true"></i> <strong>2. Preparación</strong></p>
-<ul>
-<li>Preparación datos
-<ul>
-<li>Procesamiento (código: organización, nombres y etiquetado de variables)</li>
-<li>Metadatos (p.ej. cita bibliográfica, manual de usuario)</li>
-</ul></li>
-<li>Preparación de documentación de datos
-<ul>
-<li>Preparación libro de códigos</li>
-<li>Preparación ficha técnica</li>
-<li>Preparación instrumentos de producción de información</li>
-</ul></li>
-</ul></li>
-<li><p><i class="fa fa-folder-open" aria-hidden="true"></i> <strong>3. Output</strong></p>
-<ul>
-<li>Checklist para publicación (checklist.pdf)</li>
-<li>Datos (p.ej: study_01.RData)</li>
-<li>Metadatos (user-manual.pdf)</li>
-<li>Libro de código (codebook.pdf)</li>
-<li>Ficha técnica (ficha-tecnica.pdf)</li>
-<li>Instrumentos (cuestionario_study_01.pdf)</li>
-</ul></li>
-</ul>
-<!--chapter:end:01-proyecto-estructura.Rmd-->
+<div id="origen-de-los-datos" class="section level2 unnumbered">
+<h2>Origen de los datos</h2>
+<p>El rol de los datos en la investigación social cuantitativa juega un rol fundamental, por lo cual la tarea de documentar y guiar al usuario en su uso es clave. Al respecto, debemos puntualizar que el el proceso de apertura de datos no es completamente comparable entre estudios. No obstante, el objetivo de este protocolo es establecer algunos <strong>estándares comunes</strong> entre los estudios que emplean datos cuantitativos.</p>
+<p>En segunda instancia, también debemos reconocer que la investigación social cuantitativa se nutre, por un lado, de la disponibilidad de datos secundarios que son producidos por las diversas instituciones, tanto académicas como de la sociedad civil, las cuales se hacen cargo de documentar y publicar sus datos en repositorios institucionales.</p>
+<p>Por otro lado, existen escenarios en los cuales los datos son producidos de primera mano en los proyectos de investigación, donde la documentación y publicación de datos representa una de las piezas clave del proceso de <strong>apertura</strong> en la investigación social.</p>
+<p>En el contexto de datos producidos por proyectos de investigación (p.ej. Fondecyt), tales como son los datos de encuestas, es posible identificar dos escenarios como los que muestra la Tabla <a href="origen-de-los-datos.html#tab:tab-datos">1</a></p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<caption>
+<span id="tab:tab-datos">Tabla 1: </span>Tipos de datos según su origen
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Modalidad
+</th>
+<th style="text-align:left;">
+Administración
+</th>
+<th style="text-align:left;">
+Mediado por
+</th>
+<th style="text-align:left;">
+Formato de datos
+</th>
+<th style="text-align:left;">
+Etiquetado variables
+</th>
+<th style="text-align:left;">
+Libro de códigos
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Internet
+</td>
+<td style="text-align:left;">
+Autoadministrado
+</td>
+<td style="text-align:left;">
+Plataforma web (p.ej. Qualtrics)
+</td>
+<td style="text-align:left;">
+<code>.csv</code>, <code>.sav</code>
+</td>
+<td style="text-align:left;">
+Sí
+</td>
+<td style="text-align:left;">
+No
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Presencial
+</td>
+<td style="text-align:left;">
+Cara a cara (<em>CAPI</em>)
+</td>
+<td style="text-align:left;">
+Entidad externa (p.ej. Consultora)
+</td>
+<td style="text-align:left;">
+-
+</td>
+<td style="text-align:left;">
+-
+</td>
+<td style="text-align:left;">
+-
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Nota: Este es un ejemplo minimalista de cómo podemos obtener datos, sin embargo existen fuentes de datos secundarios o datos primarios que no son de encuestas.</span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup>
+</td>
+</tr>
+</tfoot>
+</table>
+
 </div>
+<!-- </div> -->
 <hr>
 <center> 
   <div class="footer">
@@ -186,8 +239,8 @@
           </div>
         </div>
       </div>
-<a href="origen-de-los-datos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="descripción-readme.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="proyecto.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

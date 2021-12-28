@@ -1,5 +1,5 @@
 --- 
-#title: "Protocolo Apertura de Datos Sociales"
+title: "Protocolo Apertura de Datos Sociales"
 # subtitle: "<center>Documento de trabajo</center>"
 # author: "Investigador a cargo: Juan Carlos Castillo <br> Asistente de investigación: Valentina Andrade <br> Pasante: Vanessa Leyton"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
@@ -36,21 +36,23 @@ El **Protocolo IPO-data** es una herramienta del Laboratorio de Investigación S
 
 El rol de los datos en la investigación social cuantitativa juega un rol fundamental, por lo cual la tarea de documentar y guiar al usuario en su uso es clave. Al respecto, debemos puntualizar que el el proceso de apertura de datos no es completamente comparable entre estudios. No obstante, el objetivo de este protocolo es establecer algunos **estándares comunes** entre los estudios que emplean datos cuantitativos.
 
-En segunda instancia, también debemos reconocer que la investigación social cuantitativa se nutre, por un lado, de la disponibilidad de datos secundarios que son producidos por las diversas instituciones, tanto académicas como de la sociedad civil, las cuales se han hecho cargo de documentar y publicar los datos en sus respectivos repositorios institucionales. 
+En segunda instancia, también debemos reconocer que la investigación social cuantitativa se nutre, por un lado, de la disponibilidad de datos secundarios que son producidos por las diversas instituciones, tanto académicas como de la sociedad civil, las cuales se hacen cargo de documentar y publicar sus datos en repositorios institucionales. 
 
 Por otro lado, existen escenarios en los cuales los datos son producidos de primera mano en los proyectos de investigación, donde la documentación y publicación de datos representa una de las piezas clave del proceso de **apertura** en la investigación social. 
 
 
+En el contexto de datos producidos por proyectos de investigación (p.ej. Fondecyt), tales como son los datos de encuestas, es posible identificar dos escenarios como los que muestra la Tabla \@ref(tab:tab-datos)  
 
-Es en este contexto dentro del cual nos interesa identificar diferencias
+```{r tab-datos, echo=FALSE}
+pacman::p_load(readxl,knitr,kableExtra,dplyr)
+table_0 <- read_excel(here::here("input/tables/table-1.xlsx"),sheet = 2)
+table_0 %>% 
+  knitr::kable(caption = "Tipos de datos según su origen") %>% 
+  kableExtra::kable_styling(full_width = F) %>% 
+  kableExtra::footnote(general = "",
+                       general_title = "Nota: Este es un ejemplo minimalista de cómo podemos obtener datos, sin embargo existen fuentes de datos secundarios o datos primarios que no son de encuestas.") 
+```
 
-
-
-
-Encuestas:
-
-* Formato presencial
-* Formato web
 
 
 
