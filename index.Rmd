@@ -1,5 +1,5 @@
 --- 
-title: "Protocolo Apertura de Datos Sociales"
+title: "Protocolo IPO-data"
 # subtitle: "<center>Documento de trabajo</center>"
 # author: "Investigador a cargo: Juan Carlos Castillo <br> Asistente de investigación: Valentina Andrade <br> Pasante: Vanessa Leyton"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
