@@ -2,7 +2,7 @@
 title: "Protocolo IPO-data"
 # subtitle: "<center>Documento de trabajo</center>"
 # author: "Investigador a cargo: Juan Carlos Castillo <br> Asistente de investigación: Valentina Andrade <br> Pasante: Vanessa Leyton"
-date: "28 diciembre 2021"
+date: "23 marzo 2022"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib, input/bib/lisacoes.bib]
@@ -19,10 +19,11 @@ always_allow_html: yes
 
 # Presentación  {-}
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Hexagon.svg/2368px-Hexagon.svg.png " align="right" alt="logo" style="float: right;width: 20%;max-height: 100%" />     
+<img src="images/ipo-data-hex.png" align="right" alt="logo" style="float: right;width: 20%;max-height: 100%" />     
 
 
 
+<br>
 
 El **Protocolo IPO-data** es una herramienta del Laboratorio de Investigación Social Abierta que se propone establecer un estándar para la preparación, documentación y publicación de datos cuantitativos en investigación social.
 

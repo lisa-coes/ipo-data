@@ -1,0 +1,334 @@
+---
+title: "Preparacion de datos"
+subtitle: 'Estudio "Meritocracia y Redistribución "'
+author: "Fondecyt regular N°1160921"
+output: 
+  html_document:
+    toc: true  
+editor_options: 
+  chunk_output_type: console
+fontsize: 10
+---
+
+```{r render, eval=FALSE, include=FALSE}
+# si no tenemos la librería pacman instalada, se instala.
+if (!require("pacman")) install.packages("pacman") 
+# instalar librerias rmarkdown, bookdown y here 
+pacman::p_load(rmarkdown,bookdown,here)
+# renderizar documento
+rmarkdown::render(input = here::here("ipo-data-template/01-input/proc_preparacion.Rmd"))
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	error = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+```{r}
+if (!require("pacman")) install.packages("pacman") 
+pacman::p_load(dplyr, #librerias del tidyverse
+               haven,
+               here) 
+```
+
+# Ola 1
+
+```{r prep-wave01, include=FALSE}
+# PASO 1: Cargar datos
+data <- read_sav(here::here("ipo-data-template/01-input/original/Estudio_3_ola1.sav"))
+# PASO 2: reordenar variables
+
+#seleccionar ID proveniente de la variable ticket
+data$folio_encuestado<- stringr::str_split(data$ticket,pattern = "_",simplify = T)[,4]
+
+study_w01 <- data %>% 
+  select(idqualtrics=ResponseId,
+         idencuestado=ticket,
+         folio_encuestado,
+         termina=Finished,
+         progreso=Progress,
+         consentimiento=Intro,
+         # preguntas: importancia para salir adelante
+         starts_with("get_ah"),
+         # Orden - Display Order (DO): importancia para salir adelante
+         starts_with("get_ah_DO"),
+         # preguntas: escala percepcion y preferencia meritocracia
+         starts_with("meritv01_"), # items bloque 1
+         meritv01_perc_scale=merit_perc_scale,
+         meritv01_pref_scale=Q3_1,
+         meritv01_ind_scale =Q4_1,
+         starts_with("meritv02_"), # items bloque 2
+         meritv02_perc_scale=merit_perc_scale.0,
+         meritv02_pref_scale=Q205_1,
+         meritv02_ind_scale =Q206_1,
+         starts_with("meritv03_"), # items bloque 3
+         meritv03_perc_scale=merit_perc_scale.1,
+         meritv03_pref_scale=Q209_1,
+         meritv03_ind_scale =Q210_1,
+         # preguntas: salario percibido y justo:
+         sal_perc_1,sal_perc_2,
+         sal_just_1,sal_just_2,
+         # Percepcion de pobreza:
+         percep_pov,
+         # preguntas: politicas y sociodemograficos
+         pospol_1,
+         # preguntas: escala de igualitarismo
+         starts_with("egal_"), 
+         # Orden - Display Order (DO): escala de igualitarismo
+         starts_with("igualitarismo_DO"),
+         edad,sexo,educat,edcep,ingresos,
+         ess01_1,ess02_1,ess03_1,
+         estlab,comuna,
+         # pertenencia a bloques aleatorizados:
+         id_v1="FL_21_DO_merit_perc_pref_julio19v01",# bloque 1
+         id_v2="FL_21_DO_merit_perc_pref_julio19v02",# bloque 2
+         id_v3="FL_21_DO_merit_perc_pref_julio19v03", # bloque 3 
+         # informacion de respuesta online
+         "StartDate","EndDate",
+         "Duration__in_seconds_",
+         "RecordedDate",
+         "IPAddress",         
+         "Status",
+         "RecipientLastName",
+         "RecipientFirstName",
+         "RecipientEmail",
+         "ExternalReference",
+         "LocationLatitude",
+         "LocationLongitude",
+         "DistributionChannel",
+         "UserLanguage"
+         ) 
+
+
+
+# Etiquetado...................................................................
+sjlabelled::set_label(study_w01$idqualtrics)  <- "ID Qualtrics"
+sjlabelled::set_label(study_w01$idencuestado) <- "Identificador Encuestado (original)"
+sjlabelled::set_label(study_w01$folio_encuestado) <- "Folio Encuestado (panel)"
+sjlabelled::set_label(study_w01$termina)     <- "Termina cuestionario"
+sjlabelled::set_label(study_w01$progreso)    <- "Progreso cuestionario"
+sjlabelled::set_label(study_w01$consentimiento)    <- "Consentimiento Informado"
+
+sjlabelled::set_label(study_w01$termina)     <- "Termina cuestionario"
+sjlabelled::set_label(study_w01$progreso)    <- "Progreso cuestionario"
+sjlabelled::set_label(study_w01$consentimiento)    <- "Consentimiento Informado"
+
+sjlabelled::set_label(study_w01$id_v1) <- "v1 - Escala Meritocracia: Percepción/Preferencia "
+sjlabelled::set_label(study_w01$id_v2) <- "v2 - Escala Meritocracia: Meritocratico/No-Meritocrático"
+sjlabelled::set_label(study_w01$id_v3) <- "v3 - Escala Meritocracia: Aleatorizado"
+
+# variables en lowercase
+names(study_w01) <- tolower(names(study_w01))
+#Declarar missing = -999
+#nombres variables substantivas
+sub_varnames <- names(select(study_w01,get_ah_1:comuna))
+study_w01[,sub_varnames] <- 
+  sjmisc::replace_na(study_w01[,sub_varnames],
+                     value = -999)
+study_w01[,sub_varnames] <-
+  sjlabelled::add_labels(study_w01[,sub_varnames],
+                         labels = c(`Perdido (-999)` = -999))
+# PASO 3: generar codebook
+
+# PASO 3: generar codebook
+sjPlot::view_df(study_w01,
+                show.frq = T, 
+                show.prc = T, 
+                show.na = T,
+                file = here::here("ipo-data-template/03-output/codebook_study_w01.html"))
+
+#  PASO 4: guardar datos
+save(study_w01,file = here::here("ipo-data-template/03-output/study_w01.RData"))
+```
+
+# Ola 2
+
+```{r prep-wave02, include=FALSE}
+# PASO 1: Cargar datos
+data <- 
+  read_sav(here::here("ipo-data-template/01-input/original/Estudio_3_ola2.sav"))
+
+#seleccionar ID proveniente de la variable ticket
+data$folio_encuestado<- stringr::str_split(data$ticket,pattern = "_",simplify = T)[,4]
+
+# PASO 2: reordenar variables
+study_w02 <- data %>% 
+  select(idqualtrics=ResponseId,
+         idencuestado=ticket,
+         folio_encuestado,
+         termina=Finished,
+         progreso=Progress,
+         consentimiento=Intro,
+         # preguntas: importancia para salir adelante
+         starts_with("get_ah"),
+         # Orden - Display Order (DO): importancia para salir adelante
+         starts_with("get_ah_DO"),
+         # preguntas: escala percepcion y preferencia meritocracia
+         starts_with("meritv03_"), 
+         # Orden - Display Order (DO): escala percepcion y preferencia meritocracia         
+         starts_with("Q177_DO_meritv03"),
+         meritv03_perc_scale=merit_perc_scale,
+         meritv03_pref_scale=Q179_1,
+         meritv03_ind_scale=Q180_1,
+         conocimiento_pobreza=Q175, # Conocimiento sobre pobreza (pre tratamiento)
+         # preguntas: escala de igualitarismo
+         starts_with("egal_"), 
+         # Orden - Display Order (DO): escala de igualitarismo
+         starts_with("Q176_DO_egal"),                  
+         # preguntas: sociodemograficos
+         edad,sexo,edcep,comuna,
+         # pertenencia a bloques aleatorizados:
+         tratamiento_pobreza="FL_6_DO_Tratamiento",            # bloque 1
+         tratamiento_desigualdad="FL_6_DO_Tratamiento_desigualdad",# bloque 2
+         tratamiento_placebo="FL_6_DO_Control",                # bloque 3
+         # check manipulacion :
+         check_mani_poverty=mani_poverty,
+         check_mani_desigualdad=mani_desigualdad,
+         check_mani_placebo=mani_placebo,
+         # check atencion
+         check_atencion=atencion,         
+         # tiempos de respuesta en cada condicion experimental
+         starts_with("time_t1"),
+         starts_with("time_t2"),
+         starts_with("time_ctrl"),
+         # informacion de respuesta online
+         "StartDate","EndDate",
+         "Duration__in_seconds_",
+         "RecordedDate",
+         "IPAddress",         
+         "Status",
+         "RecipientLastName",
+         "RecipientFirstName",
+         "RecipientEmail",
+         "ExternalReference",
+         "LocationLatitude",
+         "LocationLongitude",
+         "DistributionChannel",
+         "UserLanguage",
+         everything()
+         )
+# Etiquetado...................................................................
+sjlabelled::set_label(study_w02$idqualtrics) <- "ID Qualtrics"
+sjlabelled::set_label(study_w02$idencuestado)<- "Identificador Encuestado (original)"
+sjlabelled::set_label(study_w02$folio_encuestado)<- "Folio Encuestado (panel)"
+sjlabelled::set_label(study_w02$termina)     <- "Termina cuestionario"
+sjlabelled::set_label(study_w02$progreso)    <- "Progreso cuestionario"
+sjlabelled::set_label(study_w02$consentimiento)    <- "Consentimiento Informado"
+sjlabelled::set_label(study_w02$tratamiento_pobreza)    <- "Condición experimental: Pobreza"
+sjlabelled::set_label(study_w02$tratamiento_desigualdad)    <- "Condición experimental: Desigualdad"
+sjlabelled::set_label(study_w02$tratamiento_placebo)    <- "Condición experimental: Control/Placebo"
+
+sjlabelled::set_label(study_w02$check_mani_poverty)    <- "Check manipulación: Pobreza"
+sjlabelled::set_label(study_w02$check_mani_desigualdad)<- "Check manipulación: Desigualdad"
+sjlabelled::set_label(study_w02$check_mani_placebo)    <- "Check manipulación: Control/Placebo"
+sjlabelled::set_label(study_w02$conocimiento_pobreza)  <- "Conocimiento sobre pobreza (pre tratamiento)"
+
+# variables en lowercase
+names(study_w02) <- tolower(names(study_w02))
+#Declarar missing = -999
+#nombres variables substantivas
+sub_varnames <- names(select(study_w02,get_ah_estr:check_atencion))
+study_w02[,sub_varnames] <- 
+  sjmisc::replace_na(study_w02[,sub_varnames],
+                     value = -999)
+study_w02[,sub_varnames] <-
+  sjlabelled::add_labels(study_w02[,sub_varnames],
+                         labels = c(`Perdido (-999)` = -999))
+# PASO 3: generar codebook
+sjPlot::view_df(study_w02,
+                show.frq = T, 
+                show.prc = T, 
+                show.na = T,                
+                file = here::here("ipo-data-template/03-output/codebook_study_w02.html"))
+#  PASO 4: guardar datos
+save(study_w02,file = here::here("ipo-data-template/03-output/study_w02.RData"))
+```
+
+# Ola 3
+
+```{r prep-wave03, include=FALSE}
+# PASO 1: Cargar datos
+data <- 
+  read_sav(here::here("ipo-data-template/01-input/original/Estudio_3_ola3.sav"))
+
+# names(data)
+
+# PASO 2: reordenar variables
+study_w03 <- data %>% 
+  select(idqualtrics=ResponseId,
+         idencuestado=ticket,
+         termina=Finished,
+         progreso=Progress,
+         # preguntas: importancia para salir adelante
+         starts_with("get_ah"),
+         # Orden - Display Order (DO): importancia para salir adelante
+         starts_with("get_ah_DO"),
+         # preguntas: escala percepcion y preferencia meritocracia
+         starts_with("meritv03_"), 
+         meritv03_perc_scale=merit_perc_scale,
+         meritv03_pref_scale=Q179_1,
+         meritv03_ind_scale=Q180_1,
+         # preguntas: salario percibido y justo:
+         sal_perc_1,sal_perc_2,
+         sal_just_1=Q190_1,
+         sal_just_2=Q190_3,
+         # preguntas: escala de igualitarismo
+         starts_with("egal_"), 
+         # preguntas: escala neoliberalismo
+         starts_with("nb_"),
+         benefit,
+         # preguntas: sociodemograficos
+         edad,sexo,edcep,comuna,nacion,nac_otra,
+         ess01_1,ess02_1,ess03_1,
+         # informacion de respuesta online
+         "StartDate","EndDate",
+         "Duration__in_seconds_",
+         "RecordedDate",
+         "IPAddress",         
+         "Status",
+         "RecipientLastName",
+         "RecipientFirstName",
+         "RecipientEmail",
+         "ExternalReference",
+         "LocationLatitude",
+         "LocationLongitude",
+         "DistributionChannel",
+         "UserLanguage",
+         everything()
+         )
+# Etiquetado...................................................................
+sjlabelled::set_label(study_w03$idqualtrics)  <- "ID Qualtrics"
+sjlabelled::set_label(study_w03$idencuestado) <- "Identificador Encuestado"
+sjlabelled::set_label(study_w03$termina)     <- "Termina cuestionario"
+sjlabelled::set_label(study_w03$progreso)    <- "Progreso cuestionario"
+
+# variables en lowercase
+names(study_w03) <- tolower(names(study_w03))
+
+#Declarar missing = -999
+#nombres variables substantivas
+sub_varnames <- names(select(study_w03,get_ah_estr:ess03_1))
+study_w03[,sub_varnames] <- 
+  sjmisc::replace_na(study_w03[,sub_varnames],
+                     value = -999)
+study_w03[,sub_varnames] <-
+  sjlabelled::add_labels(study_w03[,sub_varnames],
+                         labels = c(`Perdido (-999)` = -999))
+
+# PASO 3: generar codebook
+sjPlot::view_df(study_w03,
+                show.frq = T, 
+                show.prc = T,
+                show.na = T,                
+                file = here::here("ipo-data-template/03-output/codebook_study_w03.html"))
+#  PASO 4: guardar datos
+save(study_w03,file = here::here("ipo-data-template/03-output/study_w03.RData"))
+```
+
+
+
+

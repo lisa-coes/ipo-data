@@ -119,7 +119,9 @@ _Investigadores_
 # Ola 1
 
 ```{r}
-load(here::here("padsoc-template/01-datos/study_w01.RData"))
+load(here::here("ipo-data-template/03-output/study_w01.RData"))
+load(here::here("ipo-data-template/03-output/study_w02.RData"))
+load(here::here("ipo-data-template/03-output/study_w03.RData"))
 ```
 
 
@@ -138,9 +140,9 @@ La población objetivo del estudio son hombres y mujeres mayores de 18 años de 
 
 ```{r echo=FALSE, warning=FALSE}
 # Datos provenientes de encuesta CEP (tablas)
-load(here::here("padsoc-template/02-documentacion/input/cep_sexo.RData"))
-load(here::here("padsoc-template/02-documentacion/input/cep_edadcat.RData"))
-load(here::here("padsoc-template/02-documentacion/input/cep_educat.RData"))
+load(here::here("ipo-data-template/02-proc/input/cep_sexo.RData"))
+load(here::here("ipo-data-template/02-proc/input/cep_edadcat.RData"))
+load(here::here("ipo-data-template/02-proc/input/cep_educat.RData"))
 # adaptar nombres a las columnas
 ed2   <- ed2   %>% dplyr::select(var=EDQ, prop=rel.freq)
 edad2 <- edad2 %>% dplyr::select(var=ED_REC,prop=rel.freq)
@@ -156,18 +158,43 @@ edad2$var <- car::recode(edad2$var,
 # unir datos CEP para sexo, edades y nivel educacional
 tab1  <- dplyr::bind_rows(sex1,edad2,ed2)
 
-# Datos de ola 1:
+# 1 Sin estudios                                
+# 2 Básica incompleta                           
+# 3 Básica completa                             
+# 4 Media incompleta                            
+# 5 Media completa                              
+# 6 Técnica incompleta                          
+# 7 Técnica completa - Universitaria incompleta 
+# 8 Universitaria completa                      
+# 9 Postgrado
+
+# Datos de ola 1................................................................
+    #  1                                    No estudio´
+    #  2                    Educación básica incompleta
+    #  3                      Educación básica completa
+    #  4                     Educación media incompleta
+    #  5                       Educación media completa
+    #  6 Educación superior no universitaria incompleta
+    #  7   Educación superior no universitaria completa = 7
+    #  8             Educación universitaria incompleta = 7
+    #  9               Educación universitaria completa = 8
+    # 10       Estudios de postgrado, master, doctorado = 9
 # grupos de edad
+study_w01 <- sjmisc::set_na(study_w01,na = -999)
 age01 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w01$edad))) %>% na.omit()
 # sexo
 sex01 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w01$sexo))) %>% na.omit()
 # educacion
-study_w01$edcat2 <- car::recode(study_w01$edcep,recodes = "7:8=7;8=9;9=8") 
+
+study_w01$edcat2 <- car::recode(study_w01$edcep,recodes = "7:8=7;9=8;10=9") 
   # homologar etiquetas
   study_w01$edcat2 <- sjlabelled::set_labels(study_w01$edcat2,labels = ed2$var)
   # generar tabla de frecuencias para educacion
   edu01 <-   questionr::freq(as_character(as_factor(study_w01$edcat2)),valid = T) %>% na.omit()
 
+# sjmisc::frq(study_w01$edcep)
+# sjmisc::frq(study_w01$edcat2)
+  
 # homologamos nombres de columnas
 edu01$var <- rownames(edu01)
 age01$var <- rownames(age01)
@@ -176,18 +203,98 @@ sex01$var <- rownames(sex01)
 edu01 <-edu01 %>% dplyr::select(var,prop=`val%`)
 age01 <-age01 %>% dplyr::select(var,prop=`val%`)
 sex01 <-sex01 %>% dplyr::select(var,prop=`val%`)
+
+# Datos de ola 2................................................................
+study_w02 <- sjmisc::set_na(study_w02,na = -999)
+# grupos de edad
+age02 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w02$edad))) %>% na.omit()
+# sexo
+sex02 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w02$sexo))) %>% na.omit()
+# educacion
+study_w02$edcat2 <- car::recode(study_w02$edcep,recodes = "7:8=7;9=8;10=9") 
+  # homologar etiquetas
+  study_w02$edcat2 <- sjlabelled::set_labels(study_w02$edcat2,
+                                             labels =   c(
+                                               "Sin estudios" = 1,
+                                               "Básica incompleta" = 2,
+                                               "Básica completa" = 3,
+                                               "Media incompleta" = 4,
+                                               "Media completa" = 5,
+                                               "Técnica incompleta" = 6,
+                                               "Técnica completa - Universitaria incompleta" = 7,
+                                               "Universitaria completa" = 8,
+                                               "Postgrado" = 9
+                                             ))
+  # generar tabla de frecuencias para educacion
+  edu02 <-   questionr::freq(as_character(as_factor(study_w02$edcat2)),valid = T) %>% na.omit()
+
+# sjmisc::frq(study_w02$edcep)
+# sjmisc::frq(study_w02$edcat2)  
+  
+# homologamos nombres de columnas
+edu02$var <- rownames(edu02)
+age02$var <- rownames(age02)
+sex02$var <- rownames(sex02)
+# seleccionar columnas con porcentajes
+edu02 <-edu02 %>% dplyr::select(var,prop=`val%`)
+age02 <-age02 %>% dplyr::select(var,prop=`val%`)
+sex02 <-sex02 %>% dplyr::select(var,prop=`val%`)  
+  
+  
+# Datos de ola 3................................................................
+study_w03 <- sjmisc::set_na(study_w03,na = -999)
+# grupos de edad
+age03 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w03$edad))) %>% na.omit()
+# sexo
+sex03 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w03$sexo))) %>% na.omit()
+# educacion
+study_w03$edcat3 <- car::recode(study_w03$edcep,recodes = "7:8=7;9=8;10=9") 
+  # homologar etiquetas
+  study_w03$edcat3 <- sjlabelled::set_labels(study_w03$edcat3,
+                                             labels =   c(
+                                               "Sin estudios" = 1,
+                                               "Básica incompleta" = 2,
+                                               "Básica completa" = 3,
+                                               "Media incompleta" = 4,
+                                               "Media completa" = 5,
+                                               "Técnica incompleta" = 6,
+                                               "Técnica completa - Universitaria incompleta" = 7,
+                                               "Universitaria completa" = 8,
+                                               "Postgrado" = 9
+                                             ))
+  # generar tabla de frecuencias para educacion
+  edu03 <-sjmisc::frq(study_w03$edcat3,show.na = F) %>% data.frame()
+
+sjmisc::frq(study_w03$edcep)
+sjmisc::frq(study_w03$edcat2)
+  
+# homologamos nombres de columnas
+edu03$var <- rownames(edu03)
+age03$var <- rownames(age03)
+sex03$var <- rownames(sex03)
+# seleccionar columnas con porcentajes
+edu03 <-edu03 %>% dplyr::select(var,prop=`val%`)
+age03 <-age03 %>% dplyr::select(var,prop=`val%`)
+sex03 <-sex03 %>% dplyr::select(var,prop=`val%`)    
+  
+
 # unir datos ola 1 para sexo, edades y nivel educacional
 tab2  <- dplyr::bind_rows(sex01,age01,edu01)
+tab3  <- dplyr::bind_rows(sex02,age02,edu02)
+tab4  <- dplyr::bind_rows(sex03,age04,edu04)
 # unir datos Ola 1 y CEP
-tab3  <- dplyr::left_join(tab1,tab2,"var")
+tab_full  <- 
+  dplyr::left_join(tab1,tab2,"var") %>% 
+  left_join(tab3)
 
 #Generar tabla final
-knitr::kable(na.omit(tab3),
+knitr::kable(na.omit(tab_full),
       digits = 1, booktabs=T,
       col.names = c(" ","CEP","Ola 1"),
       linesep = "",
       caption = "Distribución de muestra planificada y lograda ola 1",
-      format = "latex") %>% 
+      # format = "latex"
+      ) %>% 
   kableExtra::kable_styling(full_width = FALSE,
                             latex_options = c("HOLD_position"),
                             font_size = 8) %>% 
