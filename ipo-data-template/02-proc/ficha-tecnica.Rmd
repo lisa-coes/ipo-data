@@ -3,10 +3,11 @@ title: "Ficha técnica"
 subtitle: 'Estudio "Meritocracia y Redistribución"'
 author: "Fondecyt regular N°1160921"
 output: 
-  bookdown::pdf_document2:
+  pdf_document:
     toc: false
     includes:
       in_header: input/columns.tex
+    latex_engine: pdflatex  
 geometry: "left=2cm,right=2cm,top=2cm,bottom=2cm"      
 editor_options: 
   chunk_output_type: console
@@ -35,8 +36,8 @@ if (!require("pacman")) install.packages("pacman")
 # instalar librerias rmarkdown, bookdown y here 
 pacman::p_load(rmarkdown,bookdown,here)
 # renderizar documento
-rmarkdown::render(input = here::here("padsoc-template/02-documentacion/ficha-tecnica.Rmd"),
-                  output_dir = here::here("padsoc-template/03-publicacion"))
+rmarkdown::render(input = here::here("ipo-data-template/02-proc/ficha-tecnica.Rmd"),
+                  output_dir = here::here("ipo-data-template/03-output"))
 ```
 
 ```{r setup, include=FALSE}
@@ -116,7 +117,7 @@ _Investigadores_
 :::
 ::::::
 
-# Ola 1
+# Descripción
 
 ```{r}
 load(here::here("ipo-data-template/03-output/study_w01.RData"))
@@ -144,12 +145,12 @@ load(here::here("ipo-data-template/02-proc/input/cep_sexo.RData"))
 load(here::here("ipo-data-template/02-proc/input/cep_edadcat.RData"))
 load(here::here("ipo-data-template/02-proc/input/cep_educat.RData"))
 # adaptar nombres a las columnas
-ed2   <- ed2   %>% dplyr::select(var=EDQ, prop=rel.freq)
-edad2 <- edad2 %>% dplyr::select(var=ED_REC,prop=rel.freq)
-sex1  <- sex1  %>% dplyr::select(var=DS_P1,prop=rel.freq)
+ed2   <- ed2   %>% dplyr::select(label=EDQ, frq=freq,raw.prc=rel.freq)
+edad2 <- edad2 %>% dplyr::select(label=ED_REC,frq=freq,raw.prc=rel.freq)
+sex1  <- sex1  %>% dplyr::select(label=DS_P1,frq=freq,raw.prc=rel.freq)
 
 # Etiquetar grupos de edad
-edad2$var <- car::recode(edad2$var,
+edad2$label <- car::recode(edad2$label,
 "'18 a 24 años'='18 - 24';
 '25 a 34 años' ='25 - 34';
 '35 a 44 años' ='35 - 44';
@@ -157,6 +158,7 @@ edad2$var <- car::recode(edad2$var,
 '55 años o más'='55 o más'")
 # unir datos CEP para sexo, edades y nivel educacional
 tab1  <- dplyr::bind_rows(sex1,edad2,ed2)
+tab1$frq <- round(tab1$frq,0)
 
 # 1 Sin estudios                                
 # 2 Básica incompleta                           
@@ -181,35 +183,33 @@ tab1  <- dplyr::bind_rows(sex1,edad2,ed2)
     # 10       Estudios de postgrado, master, doctorado = 9
 # grupos de edad
 study_w01 <- sjmisc::set_na(study_w01,na = -999)
-age01 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w01$edad))) %>% na.omit()
+age01 <- 
+  data.frame(sjmisc::frq(study_w01$edad,show.na = F)) %>% 
+  select(label,frq,raw.prc)
 # sexo
-sex01 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w01$sexo))) %>% na.omit()
+sex01 <- 
+  data.frame(sjmisc::frq(study_w01$sexo,show.na = F)) %>% 
+  select(label,frq,raw.prc)
 # educacion
-
 study_w01$edcat2 <- car::recode(study_w01$edcep,recodes = "7:8=7;9=8;10=9") 
   # homologar etiquetas
-  study_w01$edcat2 <- sjlabelled::set_labels(study_w01$edcat2,labels = ed2$var)
+  study_w01$edcat2 <- sjlabelled::set_labels(study_w01$edcat2,labels = ed2$label)
   # generar tabla de frecuencias para educacion
-  edu01 <-   questionr::freq(as_character(as_factor(study_w01$edcat2)),valid = T) %>% na.omit()
+  edu01 <-   
+    data.frame(sjmisc::frq(study_w01$edcat2,show.na = F)) %>%
+    select(label,frq,raw.prc)
 
 # sjmisc::frq(study_w01$edcep)
 # sjmisc::frq(study_w01$edcat2)
   
-# homologamos nombres de columnas
-edu01$var <- rownames(edu01)
-age01$var <- rownames(age01)
-sex01$var <- rownames(sex01)
-# seleccionar columnas con porcentajes
-edu01 <-edu01 %>% dplyr::select(var,prop=`val%`)
-age01 <-age01 %>% dplyr::select(var,prop=`val%`)
-sex01 <-sex01 %>% dplyr::select(var,prop=`val%`)
-
 # Datos de ola 2................................................................
 study_w02 <- sjmisc::set_na(study_w02,na = -999)
 # grupos de edad
-age02 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w02$edad))) %>% na.omit()
+age02 <- data.frame(sjmisc::frq(study_w02$edad,show.na = F)) %>% 
+  select(label,frq,raw.prc)
 # sexo
-sex02 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w02$sexo))) %>% na.omit()
+sex02 <- data.frame(sjmisc::frq(study_w02$sexo,show.na = F)) %>% 
+  select(label,frq,raw.prc)
 # educacion
 study_w02$edcat2 <- car::recode(study_w02$edcep,recodes = "7:8=7;9=8;10=9") 
   # homologar etiquetas
@@ -226,27 +226,20 @@ study_w02$edcat2 <- car::recode(study_w02$edcep,recodes = "7:8=7;9=8;10=9")
                                                "Postgrado" = 9
                                              ))
   # generar tabla de frecuencias para educacion
-  edu02 <-   questionr::freq(as_character(as_factor(study_w02$edcat2)),valid = T) %>% na.omit()
+  edu02 <- data.frame(sjmisc::frq(study_w02$edcat2,show.na = F)) %>% 
+    select(label,frq,raw.prc)
 
 # sjmisc::frq(study_w02$edcep)
 # sjmisc::frq(study_w02$edcat2)  
   
-# homologamos nombres de columnas
-edu02$var <- rownames(edu02)
-age02$var <- rownames(age02)
-sex02$var <- rownames(sex02)
-# seleccionar columnas con porcentajes
-edu02 <-edu02 %>% dplyr::select(var,prop=`val%`)
-age02 <-age02 %>% dplyr::select(var,prop=`val%`)
-sex02 <-sex02 %>% dplyr::select(var,prop=`val%`)  
-  
-  
 # Datos de ola 3................................................................
 study_w03 <- sjmisc::set_na(study_w03,na = -999)
 # grupos de edad
-age03 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w03$edad))) %>% na.omit()
+age03 <- data.frame(sjmisc::frq(study_w03$edad,show.na = F)) %>% 
+  select(label,frq,raw.prc)
 # sexo
-sex03 <- questionr::freq(sjlabelled::as_character(sjlabelled::as_factor(study_w03$sexo))) %>% na.omit()
+sex03 <- data.frame(sjmisc::frq(study_w03$sexo,show.na = F)) %>% 
+  select(label,frq,raw.prc)
 # educacion
 study_w03$edcat3 <- car::recode(study_w03$edcep,recodes = "7:8=7;9=8;10=9") 
   # homologar etiquetas
@@ -263,45 +256,38 @@ study_w03$edcat3 <- car::recode(study_w03$edcep,recodes = "7:8=7;9=8;10=9")
                                                "Postgrado" = 9
                                              ))
   # generar tabla de frecuencias para educacion
-  edu03 <-sjmisc::frq(study_w03$edcat3,show.na = F) %>% data.frame()
+  edu03 <-data.frame(sjmisc::frq(study_w03$edcat3,show.na = F)) %>% 
+    select(label,frq,raw.prc)
 
-sjmisc::frq(study_w03$edcep)
-sjmisc::frq(study_w03$edcat2)
+# sjmisc::frq(study_w03$edcep)
+# sjmisc::frq(study_w03$edcat2)
   
-# homologamos nombres de columnas
-edu03$var <- rownames(edu03)
-age03$var <- rownames(age03)
-sex03$var <- rownames(sex03)
-# seleccionar columnas con porcentajes
-edu03 <-edu03 %>% dplyr::select(var,prop=`val%`)
-age03 <-age03 %>% dplyr::select(var,prop=`val%`)
-sex03 <-sex03 %>% dplyr::select(var,prop=`val%`)    
-  
-
-# unir datos ola 1 para sexo, edades y nivel educacional
+# unir datos ola 1, 2 y 3 para sexo, edades y nivel educacional
 tab2  <- dplyr::bind_rows(sex01,age01,edu01)
 tab3  <- dplyr::bind_rows(sex02,age02,edu02)
-tab4  <- dplyr::bind_rows(sex03,age04,edu04)
+tab4  <- dplyr::bind_rows(sex03,age03,edu03)
 # unir datos Ola 1 y CEP
 tab_full  <- 
-  dplyr::left_join(tab1,tab2,"var") %>% 
-  left_join(tab3)
+  dplyr::left_join(tab1,tab2,"label") %>%  
+  left_join(tab3,"label") %>% 
+  left_join(tab4,"label")
 
 #Generar tabla final
 knitr::kable(na.omit(tab_full),
       digits = 1, booktabs=T,
-      col.names = c(" ","CEP","Ola 1"),
+      col.names = c(" ","Freq.","%","Freq.","%","Freq.","%","Freq.","%"),
       linesep = "",
-      caption = "Distribución de muestra planificada y lograda ola 1",
-      # format = "latex"
+      caption = "Distribución de muestra planificada y panel",
+      format = "latex"
       ) %>% 
   kableExtra::kable_styling(full_width = FALSE,
-                            latex_options = c("HOLD_position"),
+                            latex_options = c("HOLD_position","scale_down"),
                             font_size = 8) %>% 
+  kableExtra::add_header_above(c(" " = 1,"Objetivo" = 2, "Ola 1" = 2, "Ola 2" = 2, "Ola 3" = 2)) %>% 
   kableExtra::pack_rows("Sexo", 1, 2) %>%
   kableExtra::pack_rows("Edad", 3, 7) %>% 
   kableExtra::pack_rows("Educación", 8, 16)  %>% 
-  kableExtra::footnote(general = "Datos CEP están ponderados",footnote_as_chunk = T)
+  kableExtra::footnote(general = "Datos para la población objetivo provienen de la encuesta del CEP y están ponderados",footnote_as_chunk = T)
 ```
 
 :::
@@ -328,7 +314,6 @@ study_w01$region<- car::recode(study_w01$comuna,
                                   c(1068,1069)=11; 1154=12; 1158=13; c(1155,1156)=14; 1157=15",
                           as.factor = T)
 study_w01$comuna.f <- sjlabelled::as_character(as_factor(study_w01$comuna))
-
 study_w01$region <- factor(x = study_w01$region,
                      levels = levels(study_w01$region),
                      labels = c("Arica y Parinacota","Tarapacá","Antofagasta","Atacama",
@@ -344,7 +329,7 @@ study_w01 %>%
   dplyr::summarise(n=n()) %>%
   dplyr::mutate(freq = round((n / sum(n))*100,2)) %>% 
   knitr::kable(col.names = c("Región","N","%"), 
-        caption = "Distribución de muestra lograda por región.",
+        caption = "Distribución de muestra lograda en la Ola 1 por región.",
         linesep = "",
         booktabs=T, 
         format = "latex") %>% 
@@ -416,7 +401,29 @@ _Número de respuestas_
 :::
 
 ::: {.col data-latex="{0.65\textwidth}"}
-`r dim(data)[1]`
+
+```{r}
+options(knitr.kable.NA = '')
+ola <- c("Ola 1", "Ola 2", "Ola 3")
+n <- c(dim(study_w01)[1], dim(study_w02)[1], dim(study_w03)[1])
+atri <-  c(NA, 
+               1-(dim(study_w02)[1]/dim(study_w01)[1]),
+               1-(dim(study_w03)[1]/dim(study_w01)[1])
+           )*100
+
+bind_cols(ola,n, atri) %>% 
+  knitr::kable(col.names = c("Ola","N","% Atrición"), 
+        caption = "Muestra lograda y atrición",
+        linesep = "",
+        digits = 2,
+        booktabs=T, 
+        format = "latex"
+        ) %>% 
+  kableExtra::kable_styling(full_width = FALSE,
+                            latex_options = c("HOLD_position"))
+```
+
+
 :::
 ::::::
 
@@ -431,69 +438,184 @@ _Detalle de la muestra_
 :::
 
 ::: {.col data-latex="{0.65\textwidth}"}
-Siguiendo los estándares definidos por la _American Association for Public Opinion Research_ (AAPOR) en su novena edición [(AAPOR, 2016)](https://www.aapor.org/AAPOR_Main/media/publications/Standard-Definitions20169theditionfinal.pdf), la Tabla 3 muestra la descripción de la muestra según los criterios enunciados
+Siguiendo los estándares definidos por la _American Association for Public Opinion Research_ (AAPOR) en su novena edición [(AAPOR, 2016)](https://www.aapor.org/AAPOR_Main/media/publications/Standard-Definitions20169theditionfinal.pdf), la Tabla 4 muestra la descripción de la muestra según los criterios enunciados
 
-```{r}
+```{r echo=FALSE}
+load(here::here("ipo-data-template/03-output/study_w01.RData"))
+load(here::here("ipo-data-template/03-output/study_w02.RData"))
+load(here::here("ipo-data-template/03-output/study_w03.RData"))
+options(knitr.kable.NA = '-')
+
+# Ola 1........................................................................
 # Paso I: Duplicados base completa
-ip1 <- questionr::freq(data$IPAddress,total = TRUE) %>% # Frecuencia de cada IP
+ip1 <- questionr::freq(study_w01$ipaddress,total = TRUE) %>% # Frecuencia de cada IP
   tibble::rownames_to_column() %>%                      # ID para IP
   filter(n>=2)                                          # Keep IP >=2
 
-datip01 <- data %>% 
-  filter(IPAddress %in% ip1$rowname, Finished==1) %>% # Filtro ip duplicada y Finished=1
-  select(ResponseId,IPAddress,
-         Finished,
+datip01 <- study_w01 %>% 
+  filter(ipaddress %in% ip1$rowname, termina==1) %>% # Filtro ip duplicada y Finished=1
+  select(idqualtrics,ipaddress,
+         termina,
          sexo,
          edad,
          edcep,
          everything()) %>% 
-  arrange(IPAddress,Finished) # Ordenar la base según IP y Finished para observar patrón 
+  arrange(ipaddress,termina) # Ordenar la base según IP y Finished para observar patrón 
 
 # Paso II: Duplicados base Finished==1
-ip2 <- questionr::freq(x = datip01$IPAddress,total = TRUE) %>%# Frecuencia de cada IP
+ip2 <- questionr::freq(x = datip01$ipaddress,total = TRUE) %>%# Frecuencia de cada IP
         tibble::rownames_to_column() %>%                      # ID para IP
         filter(n>=2)                                          # Keep IP >=2
 
 datip03 <- datip01 %>% 
-  filter(IPAddress %in% ip2$rowname) %>% # Filtro ip duplicada y Finished=1
-  select(ResponseId,IPAddress,sexo,edad,edcep, StartDate, EndDate) %>% 
-  arrange(IPAddress,sexo,edad,edcep) 
+  filter(ipaddress %in% ip2$rowname) %>% # Filtro ip duplicada y Finished=1
+  select(idqualtrics,ipaddress,sexo,edad,edcep, startdate, enddate) %>% 
+  arrange(ipaddress,sexo,edad,edcep) 
 
 # Identificar N decasos que han terminado
-finished<- data %>% 
-  dplyr::group_by(Intro,Finished) %>%
+finished<- study_w01 %>% 
+  dplyr::group_by(consentimiento,termina) %>%
   dplyr::summarise(n=n()) %>% 
   dplyr::ungroup()
 
 # Identificar N decasos que fueron expulsados (screened out)
-screenout<- data %>% 
-  dplyr::filter(is.na(sexo) | is.na(edad) | is.na(educat)) %>% 
-  dplyr::group_by(Intro) %>%
+screenout<- study_w01 %>% 
+  dplyr::filter(is.na(sexo) | is.na(edad) | is.na(edcep)) %>% 
+  dplyr::group_by(consentimiento) %>%
   dplyr::summarise(n=n()) %>% 
   dplyr::ungroup()
 
 # Informacion n en cada categoria de tabla:
-n <- c(finished$n[1]+finished$n[2],
+n1 <- c(finished$n[1]+finished$n[2],
   finished$n[2],
   finished$n[1],
   finished$n[3],
   finished$n[3],
   0,
-  screenout$n[1]+length(unique(datip03$IPAddress)),
+  screenout$n[1]+length(unique(datip03$ipaddress)),
   screenout$n[1],
-  length(unique(datip03$IPAddress)))
+  length(unique(datip03$ipaddress)))
+
+# Ola 2........................................................................
+
+ip1 <- questionr::freq(study_w02$ipaddress,total = TRUE) %>% # Frecuencia de cada IP
+  tibble::rownames_to_column() %>%                      # ID para IP
+  filter(n>=2)                                          # Keep IP >=2
+
+datip01 <- study_w02 %>% 
+  filter(ipaddress %in% ip1$rowname, termina==1) %>% # Filtro ip duplicada y Finished=1
+  select(idqualtrics,ipaddress,
+         termina,
+         sexo,
+         edad,
+         edcep,
+         everything()) %>% 
+  arrange(ipaddress,termina) # Ordenar la base según IP y Finished para observar patrón 
+
+# Paso II: Duplicados base Finished==1
+ip2 <- questionr::freq(x = datip01$ipaddress,total = TRUE) %>%# Frecuencia de cada IP
+        tibble::rownames_to_column() %>%                      # ID para IP
+        filter(n>=2)                                          # Keep IP >=2
+
+datip03 <- datip01 %>% 
+  filter(ipaddress %in% ip2$rowname) %>% # Filtro ip duplicada y Finished=1
+  select(idqualtrics,ipaddress,sexo,edad,edcep, startdate, enddate) %>% 
+  arrange(ipaddress,sexo,edad,edcep) 
+
+# Identificar N decasos que han terminado
+finished<- study_w02 %>% 
+  dplyr::group_by(consentimiento,termina) %>%
+  dplyr::summarise(n=n()) %>% 
+  dplyr::ungroup()
+
+# Identificar N decasos que fueron expulsados (screened out)
+screenout<- study_w02 %>% 
+  dplyr::filter(is.na(sexo) | is.na(edad) | is.na(edcep)) %>% 
+  dplyr::group_by(consentimiento) %>%
+  dplyr::summarise(n=n()) %>% 
+  dplyr::ungroup()
+
+# Informacion n en cada categoria de tabla:
+n2 <- c(finished$n[1]+finished$n[2],
+  finished$n[2],
+  finished$n[1],
+  finished$n[3],
+  finished$n[3],
+  0,
+  screenout$n[1]+length(unique(datip03$ipaddress)),
+  screenout$n[1],
+  length(unique(datip03$ipaddress)))
+
+
+# Ola 3........................................................................
+
+ip1 <- questionr::freq(study_w03$ipaddress,total = TRUE) %>% # Frecuencia de cada IP
+  tibble::rownames_to_column() %>%                      # ID para IP
+  filter(n>=2)                                          # Keep IP >=2
+
+datip01 <- study_w03 %>% 
+  filter(ipaddress %in% ip1$rowname, termina==1) %>% # Filtro ip duplicada y Finished=1
+  select(idqualtrics,ipaddress,
+         termina,
+         sexo,
+         edad,
+         edcep,
+         everything()) %>% 
+  arrange(ipaddress,termina) # Ordenar la base según IP y Finished para observar patrón 
+
+# Paso II: Duplicados base Finished==1
+ip2 <- questionr::freq(x = datip01$ipaddress,total = TRUE) %>%# Frecuencia de cada IP
+        tibble::rownames_to_column() %>%                      # ID para IP
+        filter(n>=2)                                          # Keep IP >=2
+
+datip03 <- datip01 %>% 
+  filter(ipaddress %in% ip2$rowname) %>% # Filtro ip duplicada y Finished=1
+  select(idqualtrics,ipaddress,sexo,edad,edcep, startdate, enddate) %>% 
+  arrange(ipaddress,sexo,edad,edcep) 
+
+# Identificar N decasos que han terminado
+study_w03$consentimiento <- 1
+
+finished<- study_w03 %>% 
+  dplyr::group_by(consentimiento,termina) %>%
+  dplyr::summarise(n=n()) %>% 
+  dplyr::ungroup()
+
+# Identificar N decasos que fueron expulsados (screened out)
+screenout<- study_w03 %>% 
+  dplyr::filter(is.na(sexo) | is.na(edad) | is.na(edcep)) %>% 
+  dplyr::group_by(consentimiento) %>%
+  dplyr::summarise(n=n()) %>% 
+  dplyr::ungroup()
+
+# Informacion n en cada categoria de tabla:
+n3 <- c(finished$n[1]+finished$n[2],
+  finished$n[2],
+  finished$n[1],
+  finished$n[3],
+  finished$n[3],
+  0,
+  screenout$n[1]+length(unique(datip03$ipaddress)),
+  screenout$n[1],
+  length(unique(datip03$ipaddress)))
+
+
 # Tabla externa para informacion del estudio
 survey_info <- 
-  readxl::read_excel(here::here("padsoc-template/02-documentacion/input/survey-info.xlsx"))
+  readxl::read_excel(here::here("ipo-data-template/02-proc/input/survey-info.xlsx"))
 survey_info$code <- paste0("(",survey_info$code,")") #columna "code" para criterios
-survey_info$n    <- n # columna con n de cada categoria
+
+survey_info$ola1    <- n1 # columna con n de cada categoria
+survey_info$ola2    <- n2 # columna con n de cada categoria
+survey_info$ola3    <- n3 # columna con n de cada categoria
 
 # Generar tabla:
-knitr::kable(survey_info,col.names = c("Item","","N"),
+knitr::kable(survey_info,col.names = c("Item","","Ola 1", "Ola 2", "Ola 3"),
       caption = "Descripción de logro",
       linesep = "",
       booktabs=T, 
-      format = "latex") %>% 
+      format = "latex"
+      ) %>% 
   kableExtra::kable_styling(full_width = FALSE,
                             latex_options = c("HOLD_position"),
                             font_size = 9) %>% 
@@ -534,9 +656,29 @@ No
 ::::::
 
 
+\pagebreak 
 
-\pagebreak
-# Ola 2
+# Uso de base de datos
 
-\pagebreak
-# Ola 3
+Dado el diseño longitudinal del estudio, disponemos a continuación de una breve descripción de cómo unificar la base de datos a través del identificador único de cada participante de la encuesta. Para ello, debemos seguir las siguientes indicaciones:
+
+
+* la variable identificadora en las tres bases de datos es `folio_encuestado`
+* si deseamos vincular una base de datos, por ejemplo, la ola 1 y ola 2, podemos emplear el siguiente código:
+
+```{r echo=TRUE}
+load(here::here("ipo-data-template/03-output/study_w01.RData"))
+load(here::here("ipo-data-template/03-output/study_w02.RData"))
+
+library(dplyr)
+
+data_wide <- left_join(x = study_w01, #datos ola 1
+                       y = study_w02, #datos ola 2
+                       by = "folio_encuestado", #identificador 
+                       #aplica sufijo a variables que se repiten entre olas
+                       suffix = c("_w01",
+                                  "_w02"
+                                  )) 
+```
+
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Protocolo IPO-data</title>
+  <meta name="description" content="Protocolo Apertura de Datos Sociales" />
+  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Protocolo IPO-data" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="<a href="https://github.com/lisa-coes/padsoc" class="uri">https://github.com/lisa-coes/padsoc</a>" />
+  <meta property="og:image" content="<a href="https://github.com/lisa-coes/padsoc" class="uri">https://github.com/lisa-coes/padsoc</a>/images/lisa-complete.png" />
+  <meta property="og:description" content="Protocolo Apertura de Datos Sociales" />
+  <meta name="github-repo" content="lisa-coes/padsoc" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Protocolo IPO-data" />
+  
+  <meta name="twitter:description" content="Protocolo Apertura de Datos Sociales" />
+  <meta name="twitter:image" content="<a href="https://github.com/lisa-coes/padsoc" class="uri">https://github.com/lisa-coes/padsoc</a>/images/lisa-complete.png" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="images/lisa.ico" type="image/x-icon" />
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+<link rel="stylesheet" href="assets/lisa.css" type="text/css" />
+<link rel="stylesheet" href="assets/font-awesome.css" type="text/css" />
+<link rel="stylesheet" href="assets/font-awesome.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">Protocolo IPO-data</h1>
+<p class="date" style="margin-top: 1.5em;"><em>23 marzo 2022</em></p>
+</div>
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+<!--bookdown:toc2:start-->
+<ul>
+<li><a href="#origen-de-los-datos">Origen de los datos</a></li>
+<li><a href="#proyecto"><i class="fa fa-folder-open" aria-hidden="true"></i> Proyecto/</a>
+<ul>
+<li><a href="#descripción-readme"><i class="fa fa-file-text" aria-hidden="true"></i> Descripción (README)</a></li>
+<li><a href="#input"><i class="fa fa-folder-open" aria-hidden="true"></i> 1. Input/</a>
+<ul>
+<li><a href="#datos-originales"><i class="fa fa-database" aria-hidden="true"></i> Datos originales</a></li>
+<li><a href="#tablas"><i class="fa fa-table" aria-hidden="true"></i> Tablas</a></li>
+<li><a href="#imágenes"><i class="fa fa-file-image-o" aria-hidden="true"></i> Imágenes</a></li>
+</ul></li>
+<li><a href="#preparación"><i class="fa fa-folder-open" aria-hidden="true"></i> 2. Preparación/</a>
+<ul>
+<li><a href="#preparación-de-datos"><i class="fa fa-code" aria-hidden="true"></i> Preparación de datos</a></li>
+<li><a href="#ficha-técnica"><i class="fa fa-file-text" aria-hidden="true"></i> Ficha técnica</a></li>
+<li><a href="#libro-de-códigos"><i class="fa fa-file-text" aria-hidden="true"></i> Libro de códigos</a></li>
+<li><a href="#instrumentos"><i class="fa fa-file-text" aria-hidden="true"></i> Instrumentos</a></li>
+</ul></li>
+<li><a href="#output"><i class="fa fa-folder-open" aria-hidden="true"></i> 3. Output/</a>
+<ul>
+<li><a href="#datos-a-publicar"><i class="fa fa-database" aria-hidden="true"></i> Datos a publicar</a></li>
+<li><a href="#metadatos"><i class="fa fa-folder-open" aria-hidden="true"></i> Metadatos/</a></li>
+<li><a href="#documentación"><i class="fa fa-folder-open" aria-hidden="true"></i> Documentación/</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#referencias">Referencias</a></li>
+</ul>
+<!--bookdown:toc2:end-->
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Protocolo IPO-data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <script src="assets/hideOutput.js"></script>
+  <link href="assets/lisa.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="images/lisa-complete.png">
+</div>
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
+# subtitle: "
+<center>
+Documento de trabajo
+</center>
+<p>"</p>
+<p>Placeholder</p>
+<div id="origen-de-los-datos" class="section level2 unnumbered">
+<h2 class="unnumbered">Origen de los datos</h2>
+<!--chapter:end:index.Rmd-->
+</div>
+<div id="proyecto" class="section level1 unnumbered">
+<h1 class="unnumbered"><i class="fa fa-folder-open" aria-hidden="true"></i> Proyecto/</h1>
+<p>Placeholder</p>
+<!--chapter:end:01-proyecto-estructura.Rmd-->
+<div id="descripción-readme" class="section level2 unnumbered">
+<h2 class="unnumbered"><i class="fa fa-file-text" aria-hidden="true"></i> Descripción (README)</h2>
+<!--chapter:end:02-descripcion.Rmd-->
+</div>
+<div id="input" class="section level2 unnumbered">
+<h2 class="unnumbered"><i class="fa fa-folder-open" aria-hidden="true"></i> 1. Input/</h2>
+<div id="datos-originales" class="section level3 unnumbered">
+<h3 class="unnumbered"><i class="fa fa-database" aria-hidden="true"></i> Datos originales</h3>
+</div>
+<div id="tablas" class="section level3 unnumbered">
+<h3 class="unnumbered"><i class="fa fa-table" aria-hidden="true"></i> Tablas</h3>
+</div>
+<div id="imágenes" class="section level3 unnumbered">
+<h3 class="unnumbered"><i class="fa fa-file-image-o" aria-hidden="true"></i> Imágenes</h3>
+<!--chapter:end:03-input.Rmd-->
+</div>
+</div>
+<div id="preparación" class="section level2 unnumbered">
+<h2 class="unnumbered"><i class="fa fa-folder-open" aria-hidden="true"></i> 2. Preparación/</h2>
+<div id="preparación-de-datos" class="section level3 unnumbered">
+<h3 class="unnumbered"><i class="fa fa-code" aria-hidden="true"></i> Preparación de datos</h3>
+</div>
+<div id="ficha-técnica" class="section level3 unnumbered">
+<h3 class="unnumbered"><i class="fa fa-file-text" aria-hidden="true"></i> Ficha técnica</h3>
+</div>
+<div id="libro-de-códigos" class="section level3 unnumbered">
+<h3 class="unnumbered"><i class="fa fa-file-text" aria-hidden="true"></i> Libro de códigos</h3>
+</div>
+<div id="instrumentos" class="section level3 unnumbered">
+<h3 class="unnumbered"><i class="fa fa-file-text" aria-hidden="true"></i> Instrumentos</h3>
+<!--chapter:end:04-preparacion.Rmd-->
+</div>
+</div>
+<div id="output" class="section level2 unnumbered">
+<h2 class="unnumbered"><i class="fa fa-folder-open" aria-hidden="true"></i> 3. Output/</h2>
+<div id="datos-a-publicar" class="section level3 unnumbered">
+<h3 class="unnumbered"><i class="fa fa-database" aria-hidden="true"></i> Datos a publicar</h3>
+</div>
+<div id="metadatos" class="section level3 unnumbered">
+<h3 class="unnumbered"><i class="fa fa-folder-open" aria-hidden="true"></i> Metadatos/</h3>
+</div>
+<div id="documentación" class="section level3 unnumbered">
+<h3 class="unnumbered"><i class="fa fa-folder-open" aria-hidden="true"></i> Documentación/</h3>
+<!--chapter:end:05-output.Rmd-->
+</div>
+</div>
+</div>
+<div id="referencias" class="section level1 unnumbered">
+<h1 class="unnumbered">Referencias</h1>
+<!--chapter:end:99-referencias.Rmd-->
+</div>
+<!--bookdown:body:end-->
+<hr>
+<center> 
+  <div class="footer">
+      Laboratorio de Ciencia Social Abierta <a href="https://lisa-coes.netlify.app/"> (LISA) </a> del Centro de Estudios de Conflicto y Cohesión Social (COES) <a href="https://coes.cl/"></a>
+      <br>
+      Para más información puedes contactárnos <a href= "lisa@coes.cl"> en nuestro correo </a>
+  </div>
+</center>
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+    </div>
+  </div>
+<!--bookdown:config-->
+
+</body>
+
+</html>
