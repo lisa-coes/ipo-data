@@ -43,7 +43,7 @@ data <- read_sav(here::here("ipo-data-template/01-input/original/Estudio_3_ola1.
 # PASO 2: reordenar variables
 
 #seleccionar ID proveniente de la variable ticket
-data$folio_encuestado<- stringr::str_split(data$ticket,pattern = "_",simplify = T)[,4]
+data$folio_encuestado<- stringr::str_split(data$ticket,pattern = "_",simplify = T)[,1]
 
 study_w01 <- data %>% 
   select(idqualtrics=ResponseId,
@@ -153,7 +153,7 @@ data <-
   read_sav(here::here("ipo-data-template/01-input/original/Estudio_3_ola2.sav"))
 
 #seleccionar ID proveniente de la variable ticket
-data$folio_encuestado<- stringr::str_split(data$ticket,pattern = "_",simplify = T)[,4]
+data$folio_encuestado<- stringr::str_split(data$ticket,pattern = "_",simplify = T)[,1]
 
 # PASO 2: reordenar variables
 study_w02 <- data %>% 
@@ -254,6 +254,9 @@ save(study_w02,file = here::here("ipo-data-template/03-output/study_w02.RData"))
 # PASO 1: Cargar datos
 data <- 
   read_sav(here::here("ipo-data-template/01-input/original/Estudio_3_ola3.sav"))
+
+#seleccionar ID proveniente de la variable ticket
+data$folio_encuestado<- stringr::str_split(data$ticket,pattern = "_",simplify = T)[,1]
 
 # names(data)
 

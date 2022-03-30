@@ -679,6 +679,8 @@ data_wide <- left_join(x = study_w01, #datos ola 1
                        suffix = c("_w01",
                                   "_w02"
                                   )) 
+data_wide[data_wide==-999] <- NA
+cor(data_wide$sexo_w01,data_wide$sexo_w02, use="complete.obs")
 ```
 
 
